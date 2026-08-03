@@ -113,55 +113,13 @@ export const translations = {
     },
     timeline: {
       title: "How the Initiative Works",
-      subtitle: "A 9-step tech-enabled framework empowering representatives from election preparation to measurable village impact.",
-      badge: "Governance Pipeline",
-      steps: [
-        {
-          num: "01",
-          title: "Election",
-          desc: "Preparation, candidate readiness, and awareness for contesting Grama Panchayat elections."
-        },
-        {
-          num: "02",
-          title: "Digital Onboarding",
-          desc: "Seamless registration on the platform to access digital tools and governance resources."
-        },
-        {
-          num: "03",
-          title: "Leadership Assessment",
-          desc: "Comprehensive evaluation of candidate capabilities, local priorities, and skill gaps."
-        },
-        {
-          num: "04",
-          title: "Learning Modules",
-          desc: "Structured capacity-building on Panchayati Raj laws, government schemes, and ward management."
-        },
-        {
-          num: "05",
-          title: "Village Diagnostics",
-          desc: "Data-backed mapping of ward-level infrastructure, basic amenities, and welfare delivery gaps."
-        },
-        {
-          num: "06",
-          title: "AI Governance Assistant",
-          desc: "24/7 intelligent decision support for drafting ward plans, scheme resolution, and advisory."
-        },
-        {
-          num: "07",
-          title: "Gram Sabha Planning",
-          desc: "Preparing actionable Ward Sabha agendas and citizen proposals for Gram Sabha approvals."
-        },
-        {
-          num: "08",
-          title: "Monitoring Dashboards",
-          desc: "Real-time tracking of public works, budget allocations, and citizen grievance resolution."
-        },
-        {
-          num: "09",
-          title: "Impact Measurement",
-          desc: "Quantifying developmental outcomes, transparency gains, and long-term village progress."
-        }
-      ]
+      phase1: "Phase 1: Preparation",
+      phase1Desc: "Establishing constituency coordinators, trainers, and panchayat level volunteers. Developing training content, digital tools, and programme structure.",
+      phase2: "Phase 2: Identification",
+      phase2Desc: "Identifying suitable candidates for ward member, with a major focus on youth aged 21 to 35, women, community leaders, SHG members, student leaders, social workers, and those with a progressive, public service mindset.",
+      phase3: "Phase 3: Execution",
+      phase3Desc: "Delivering training modules on understanding the ward, Ward Sabha agendas, local manifestos, campaign planning, and providing guidance on nomination and candidature filing.",
+      disclaimer: "Final candidature and eligibility remain subject to applicable election laws, reservation rules, government notifications and official election procedures."
     },
     eligibility: {
       title: "Who Can Become a Ward Member",
@@ -372,55 +330,13 @@ export const translations = {
     },
     timeline: {
       title: "ಉಪಕ್ರಮವು ಹೇಗೆ ಕಾರ್ಯನಿರ್ವಹಿಸುತ್ತದೆ",
-      subtitle: "ಚುನಾವಣಾ ಸಿದ್ಧತೆಯಿಂದ ಹಿಡಿದು ಅಳೆಯಬಹುದಾದ ಗ್ರಾಮ ಪ್ರಗತಿಯವರೆಗೆ ಪ್ರತಿನಿಧಿಗಳನ್ನು ಸಶಕ್ತಗೊಳಿಸುವ 9 ಹಂತಗಳ ಚೌಕಟ್ಟು.",
-      badge: "ಆಡಳಿತ ಪ್ರಕ್ರಿಯೆ",
-      steps: [
-        {
-          num: "01",
-          title: "ಚುನಾವಣೆ",
-          desc: "ಗ್ರಾಮ ಪಂಚಾಯತಿ ಚುನಾವಣೆಗಳಲ್ಲಿ ಸ್ಪರ್ಧಿಸಲು ಸಿದ್ಧತೆ, ಅಭ್ಯರ್ಥಿ ಸನ್ನದ್ಧತೆ ಮತ್ತು ಜಾಗೃತಿ."
-        },
-        {
-          num: "02",
-          title: "ಡಿಜಿಟಲ್ ನೋಂದಣಿ",
-          desc: "ಡಿಜಿಟಲ್ ಉಪಕರಣಗಳು ಮತ್ತು ಆಡಳಿತ ಸಂಪನ್ಮೂಲಗಳನ್ನು ಪಡೆಯಲು ಸರಳ ವೇದಿಕೆ ನೋಂದಣಿ."
-        },
-        {
-          num: "03",
-          title: "ನಾಯಕತ್ವ ಮೌಲ್ಯಮಾಪನ",
-          desc: "ಅಭ್ಯರ್ಥಿಯ ಸಾಮರ್ಥ್ಯಗಳು, ಸ್ಥಳೀಯ ಆದ್ಯತೆಗಳು ಮತ್ತು ಕೌಶಲ್ಯ ಅಗತ್ಯಗಳ ಸಮಗ್ರ ಮೌಲ್ಯಮಾಪನ."
-        },
-        {
-          num: "04",
-          title: "ಕಲಿಕಾ ತರಬೇತಿಗಳು",
-          desc: "ಪಂಚಾಯತ್ ರಾಜ್ ಕಾಯಿದೆಗಳು, ಯೋಜನೆಗಳು ಮತ್ತು ವಾರ್ಡ್ ನಿರ್ವಹಣೆ ಕುರಿತು ತರಬೇತಿ."
-        },
-        {
-          num: "05",
-          title: "ಗ್ರಾಮ ಪರೀಕ್ಷೆ & ನಕ್ಷೆ ತಯಾರಿಕೆ",
-          desc: "ವಾರ್ಡ್ ಮಟ್ಟದ ಮೂಲಸೌಕರ್ಯ, ಮೂಲ ಸೌಲಭ್ಯಗಳು ಮತ್ತು ಕಲ್ಯಾಣ ಕೊರತೆಗಳ ದತ್ತಾಂಶ ಆಧಾರಿತ ನಕ್ಷೆ."
-        },
-        {
-          num: "06",
-          title: "AI ಆಡಳಿತ ಸಹಾಯಕ",
-          desc: "ವಾರ್ಡ್ ಯೋಜನೆ, ಯೋಜನೆಗಳ ವಿವರಣೆ ಮತ್ತು ನಿರ್ಧಾರ ಬೆಂಬಲಕ್ಕಾಗಿ 24/7 AI ಸಹಾಯಕ."
-        },
-        {
-          num: "07",
-          title: "ಗ್ರಾಮ ಸಭೆಯ ಯೋಜನೆ",
-          desc: "ಗ್ರಾಮ ಸಭೆಯ ಅನುಮೋದನೆಗಾಗಿ ವಾರ್ಡ್ ಸಭೆಯ ಕಾರ್ಯಸೂಚಿಗಳು ಮತ್ತು ನಾಗರಿಕ ಪ್ರಸ್ತಾಪಗಳ ಸಿದ್ಧತೆ."
-        },
-        {
-          num: "08",
-          title: "ಮೇಲ್ವಿಚಾರಣಾ ಡ್ಯಾಶ್‌ಬೋರ್ಡ್‌ಗಳು",
-          desc: "ಸಾರ್ವಜನಿಕ ಕಾಮಗಾರಿಗಳು, ಬಜೆಟ್ ಹಂಚಿಕೆಗಳು ಮತ್ತು ಕುಂದುಕೊರತೆಗಳ ರಿಯಲ್-ಟೈಮ್ ಟ್ರ್ಯಾಕಿಂಗ್."
-        },
-        {
-          num: "09",
-          title: "ಪರಿಣಾಮದ ಅಳತೆ",
-          desc: "ಅಭಿವೃದ್ಧಿ ಫಲಿತಾಂಶಗಳು, ಪಾರದರ್ಶಕತೆ ಸುಧಾರಣೆಗಳು ಮತ್ತು ಸುಸ್ಥಿರ ಗ್ರಾಮ ಪ್ರಗತಿಯ ಅಳತೆ."
-        }
-      ]
+      phase1: "ಹಂತ 1: ಸಿದ್ಧತೆ",
+      phase1Desc: "ಸಂಯೋಜಕರು, ತರಬೇತುದಾರರು ಮತ್ತು ಸ್ವಯಂಸೇವಕರನ್ನು ಸ್ಥಾಪಿಸುವುದು. ತರಬೇತಿ ವಿಷಯ ಮತ್ತು ಡಿಜಿಟಲ್ ಸಾಧನಗಳನ್ನು ಅಭಿವೃದ್ಧಿಪಡಿಸುವುದು.",
+      phase2: "ಹಂತ 2: ಗುರುತಿಸುವಿಕೆ",
+      phase2Desc: "ಯುವಕರು, ಮಹಿಳೆಯರು, ಸಮುದಾಯದ ಮುಖಂಡರು ಮತ್ತು ಸೇವಾ ಮನೋಭಾವವುಳ್ಳ ಸೂಕ್ತ ವಾರ್ಡ್ ಸದಸ್ಯ ಅಭ್ಯರ್ಥಿಗಳನ್ನು ಗುರುತಿಸುವುದು.",
+      phase3: "ಹಂತ 3: ಅನುಷ್ಠಾನ",
+      phase3Desc: "ವಾರ್ಡ್ ಸಭೆ, ಪ್ರಣಾಳಿಕೆ, ಪ್ರಚಾರ ಯೋಜನೆ ಮತ್ತು ನಾಮಪತ್ರ ಸಲ್ಲಿಕೆ ಕುರಿತು ತರಬೇತಿ ನೀಡುವುದು.",
+      disclaimer: "ಅಂತಿಮ ಉಮೇದುವಾರಿಕೆ ಮತ್ತು ಅರ್ಹತೆಯು ಅನ್ವಯವಾಗುವ ಚುನಾವಣಾ ಕಾನೂನುಗಳು ಮತ್ತು ಮೀಸಲಾತಿ ನಿಯಮಗಳಿಗೆ ಒಳಪಟ್ಟಿರುತ್ತದೆ."
     },
     eligibility: {
       title: "ಯಾರು ವಾರ್ಡ್ ಸದಸ್ಯರಾಗಬಹುದು?",
