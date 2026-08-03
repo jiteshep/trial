@@ -126,15 +126,34 @@ export const Header = () => {
 export const Hero = () => {
   const { t } = useLanguage();
   return (
-    <section id="home" className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden bg-slate-50">
-      <div className="absolute inset-0 z-0 opacity-10" style={{ backgroundImage: 'radial-gradient(#15803d 1px, transparent 1px)', backgroundSize: '32px 32px' }}></div>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="flex flex-col md:flex-row items-center gap-12">
-          <div className="flex-1 text-center md:text-left space-y-8">
+    <section id="home" className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden bg-slate-50 min-h-[85vh] flex items-center">
+      {/* Background Dot Pattern */}
+      <div className="absolute inset-0 z-0 opacity-15 pointer-events-none" style={{ backgroundImage: 'radial-gradient(#15803d 1px, transparent 1px)', backgroundSize: '32px 32px' }}></div>
+
+      {/* Right-Side Full-Height Vivid & Expanded Image */}
+      <div className="absolute top-0 right-0 bottom-0 w-full lg:w-2/3 xl:w-7/12 h-full z-0 pointer-events-none overflow-hidden flex items-center justify-end">
+        <motion.img 
+          initial={{ opacity: 0, scale: 1.05 }}
+          animate={{ opacity: 1, scale: 1.02 }}
+          transition={{ duration: 0.8 }}
+          src="/logo-ngn.png" 
+          alt="Namma Grama Nayaka Visual" 
+          className="w-full h-full object-cover object-right md:object-center mix-blend-multiply filter contrast-105 brightness-95 scale-105 transition-all duration-700" 
+        />
+        {/* Soft edge gradient fades focused on the left edge only to merge smoothly into text section while keeping right side crisp and full */}
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-50 via-slate-50/50 to-transparent w-full md:w-3/5"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-50/50 via-transparent to-slate-50/30"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-50/30 via-transparent to-slate-50/50"></div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+        <div className="grid lg:grid-cols-12 gap-8 items-center">
+          {/* Left Side Content */}
+          <div className="lg:col-span-7 xl:col-span-6 space-y-8 text-center md:text-left">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="inline-block px-4 py-1.5 rounded-full bg-green-100 text-green-800 text-sm font-bold uppercase tracking-wider mb-2"
+              className="inline-block px-4 py-1.5 rounded-full bg-green-100 text-green-800 text-sm font-bold uppercase tracking-wider mb-2 border border-green-200 shadow-sm"
             >
               {t.hero.urgency}
             </motion.div>
@@ -142,7 +161,7 @@ export const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight"
+              className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight tracking-tight"
             >
               {t.hero.headline}
             </motion.h1>
@@ -158,24 +177,16 @@ export const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="flex flex-col sm:flex-row items-center gap-4 justify-center md:justify-start"
+              className="flex flex-col sm:flex-row items-center gap-4 justify-center md:justify-start pt-2"
             >
-              <a href="#apply" className="w-full sm:w-auto px-8 py-3.5 bg-green-700 hover:bg-green-800 text-white text-lg font-bold rounded-full transition-colors shadow-lg hover:shadow-xl text-center">
+              <a href="#apply" className="w-full sm:w-auto px-8 py-3.5 bg-green-700 hover:bg-green-800 text-white text-lg font-bold rounded-full transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 text-center">
                 {t.hero.primaryCta}
               </a>
-              <a href="#about" className="w-full sm:w-auto px-8 py-3.5 bg-white border-2 border-slate-200 hover:border-slate-300 text-slate-700 text-lg font-bold rounded-full transition-colors text-center">
+              <a href="#about" className="w-full sm:w-auto px-8 py-3.5 bg-white border-2 border-slate-200 hover:border-slate-300 text-slate-700 text-lg font-bold rounded-full transition-all hover:bg-slate-50 text-center shadow-sm">
                 {t.hero.secondaryCta}
               </a>
             </motion.div>
           </div>
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.2 }}
-            className="flex-1 flex justify-center w-full max-w-md mx-auto"
-          >
-            <img src="/logo-ngn.png" alt="Namma Grama Nayaka Logo" className="w-full h-auto drop-shadow-2xl" />
-          </motion.div>
         </div>
       </div>
     </section>
