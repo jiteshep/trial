@@ -2,7 +2,7 @@ import React from 'react';
 import { useLanguage, LanguageProvider } from './LanguageContext';
 import { Section, SectionTitle } from './components/Sections';
 import { Header, Hero, Footer } from './components/Layout';
-import { AboutSection, WhyMatterSection, DeliverablesSection, LeadershipSection, ObjectivesSection, TimelineSection, EligibilitySection } from './components/Sections';
+import { AboutSection, WhyMatterSection, LeadershipSection, ObjectivesSection, TimelineSection, EligibilitySection } from './components/Sections';
 import { ApplySection, VolunteerSection, FaqSection, ContactSection, PartnersSection } from './components/FormsAndInfo';
 import { CheckCircle, Target } from 'lucide-react';
 import { motion } from 'motion/react';
@@ -90,7 +90,6 @@ function MainContent() {
         <Hero />
         <AboutSection />
         <WhyMatterSection />
-        <DeliverablesSection />
         <LeadershipSection />
         <ObjectivesSection />
         <TimelineSection />

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLanguage } from '../LanguageContext';
 import { config } from '../config';
-import { CheckCircle, Users, Lightbulb, TrendingUp, HandHeart, Flag, Shield, Laptop, BookOpen, Clock, Target, Home, Phone, Mail, MapPin } from 'lucide-react';
+import { CheckCircle, Users, Lightbulb, TrendingUp, HandHeart, Flag, Shield, Laptop, BookOpen, Clock, Target, Home, Phone, Mail, MapPin, Scroll, Layers, Building2, Coins, AlertCircle, Quote } from 'lucide-react';
 import { motion } from 'motion/react';
 
 // Common Section Wrapper
@@ -20,50 +20,102 @@ export const SectionTitle = ({ title, subtitle, centered = true }: { title: stri
   </div>
 );
 
-// ABOUT SECTION
+// ABOUT SECTION (Why This Initiative Exists)
 export const AboutSection = () => {
   const { t } = useLanguage();
+  
+  const highlightIcons = [
+    <BookOpen className="w-6 h-6 text-amber-600" />,
+    <Layers className="w-6 h-6 text-blue-600" />,
+    <Building2 className="w-6 h-6 text-red-600" />,
+    <Coins className="w-6 h-6 text-emerald-600" />,
+    <Users className="w-6 h-6 text-purple-600" />,
+  ];
+
   return (
     <Section id="about" className="bg-slate-50">
       <SectionTitle title={t.about.title} />
-      <div className="grid md:grid-cols-2 gap-12 items-center">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="space-y-6 text-lg text-slate-700 leading-relaxed"
-        >
-          <p>{t.about.content1}</p>
-          <p>{t.about.content2}</p>
-          <p>{t.about.content3}</p>
-        </motion.div>
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100"
-        >
-          <h3 className="text-xl font-bold text-slate-900 mb-6">{t.stats.title}</h3>
-          <div className="grid grid-cols-2 gap-6">
+      
+      {/* Narrative Card */}
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="max-w-4xl mx-auto mb-12 p-8 md:p-10 rounded-2xl bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-white shadow-xl relative overflow-hidden border border-slate-700/50"
+      >
+        <div className="absolute -top-10 -right-10 w-40 h-40 bg-orange-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        <Quote className="w-10 h-10 text-orange-500/40 mb-4" />
+        <p className="text-xl md:text-2xl font-serif leading-relaxed text-slate-100 italic relative z-10">
+          "{t.about.narrative}"
+        </p>
+      </motion.div>
+
+      {/* Problem Highlights */}
+      <div className="mb-12">
+        <h3 className="text-xl font-bold text-slate-800 mb-6 text-center">{t.about.highlightsTitle}</h3>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {t.about.highlights.map((item, idx) => (
+            <motion.div 
+              key={idx}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: idx * 0.1 }}
+              className="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between"
+            >
+              <div>
+                <div className="w-12 h-12 rounded-xl bg-slate-100 flex items-center justify-center mb-4">
+                  {highlightIcons[idx % highlightIcons.length]}
+                </div>
+                <h4 className="text-lg font-bold text-slate-900 mb-2">{item.title}</h4>
+                <p className="text-slate-600 text-sm leading-relaxed">{item.desc}</p>
+              </div>
+            </motion.div>
+          ))}
+
+          {/* Landscape Stats Card in Grid */}
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="bg-gradient-to-br from-green-900 to-slate-900 text-white p-6 rounded-2xl shadow-sm flex flex-col justify-between border border-green-800/40"
+          >
             <div>
-              <p className="text-3xl font-bold text-blue-900">{config.STATS.PANCHAYATS}</p>
-              <p className="text-sm text-slate-600 mt-1">{t.stats.panchayats}</p>
+              <h4 className="text-lg font-bold text-orange-400 mb-4">{t.stats.title}</h4>
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <p className="text-2xl font-extrabold text-white">{config.STATS.PANCHAYATS}</p>
+                  <p className="text-xs text-slate-300 mt-0.5">{t.stats.panchayats}</p>
+                </div>
+                <div>
+                  <p className="text-2xl font-extrabold text-green-400">{config.STATS.WARDS}</p>
+                  <p className="text-xs text-slate-300 mt-0.5">{t.stats.wards}</p>
+                </div>
+                <div>
+                  <p className="text-2xl font-extrabold text-orange-400">{config.STATS.RURAL_VOTERS}</p>
+                  <p className="text-xs text-slate-300 mt-0.5">{t.stats.voters}</p>
+                </div>
+                <div>
+                  <p className="text-2xl font-extrabold text-blue-300">{config.STATS.RURAL_ACS}</p>
+                  <p className="text-xs text-slate-300 mt-0.5">{t.stats.acs}</p>
+                </div>
+              </div>
             </div>
-            <div>
-              <p className="text-3xl font-bold text-green-700">{config.STATS.WARDS}</p>
-              <p className="text-sm text-slate-600 mt-1">{t.stats.wards}</p>
-            </div>
-            <div>
-              <p className="text-3xl font-bold text-orange-600">{config.STATS.RURAL_VOTERS}</p>
-              <p className="text-sm text-slate-600 mt-1">{t.stats.voters}</p>
-            </div>
-            <div>
-              <p className="text-3xl font-bold text-slate-700">{config.STATS.RURAL_ACS}</p>
-              <p className="text-sm text-slate-600 mt-1">{t.stats.acs}</p>
-            </div>
-          </div>
-        </motion.div>
+          </motion.div>
+        </div>
       </div>
+
+      {/* Transition Statement */}
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="max-w-3xl mx-auto text-center bg-orange-50 border-2 border-orange-200 p-6 rounded-2xl shadow-sm"
+      >
+        <p className="text-xl md:text-2xl font-extrabold text-orange-900 tracking-tight">
+          ⚡ {t.about.transition}
+        </p>
+      </motion.div>
     </Section>
   );
 };
@@ -73,18 +125,16 @@ export const WhyMatterSection = () => {
   const { t } = useLanguage();
   
   const points = [
-    { icon: <Home className="w-6 h-6" />, title: t.whyMatter.everyday, desc: t.whyMatter.everydayDesc },
+    { icon: <Home className="w-6 h-6" />, title: t.whyMatter.amenities, desc: t.whyMatter.amenitiesDesc },
     { icon: <TrendingUp className="w-6 h-6" />, title: t.whyMatter.infra, desc: t.whyMatter.infraDesc },
-    { icon: <HandHeart className="w-6 h-6" />, title: t.whyMatter.welfare, desc: t.whyMatter.welfareDesc },
-    { icon: <Lightbulb className="w-6 h-6" />, title: t.whyMatter.livelihood, desc: t.whyMatter.livelihoodDesc },
-    { icon: <Shield className="w-6 h-6" />, title: t.whyMatter.accountability, desc: t.whyMatter.accountabilityDesc },
-    { icon: <Users className="w-6 h-6" />, title: t.whyMatter.participation, desc: t.whyMatter.participationDesc },
+    { icon: <Shield className="w-6 h-6" />, title: t.whyMatter.social, desc: t.whyMatter.socialDesc },
+    { icon: <Lightbulb className="w-6 h-6" />, title: t.whyMatter.earning, desc: t.whyMatter.earningDesc },
   ];
 
   return (
     <Section className="bg-white">
       <SectionTitle title={t.whyMatter.title} subtitle={t.whyMatter.subtitle} />
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid md:grid-cols-2 gap-8">
         {points.map((point, idx) => (
           <motion.div 
             key={idx}
@@ -92,48 +142,15 @@ export const WhyMatterSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: idx * 0.1 }}
-            className="p-6 rounded-2xl bg-slate-50 border border-slate-100 flex gap-4"
+            className="p-6 rounded-2xl bg-slate-50 border border-slate-200/80 hover:shadow-md transition-shadow flex gap-4"
           >
             <div className="flex-shrink-0 w-12 h-12 rounded-full bg-green-100 text-green-700 flex items-center justify-center">
               {point.icon}
             </div>
             <div>
-              <h3 className="font-bold text-slate-900 mb-2">{point.title}</h3>
+              <h3 className="font-bold text-slate-900 text-lg mb-2">{point.title}</h3>
               <p className="text-slate-600 text-sm leading-relaxed">{point.desc}</p>
             </div>
-          </motion.div>
-        ))}
-      </div>
-    </Section>
-  );
-};
-
-// DELIVERABLES
-export const DeliverablesSection = () => {
-  const { t } = useLanguage();
-  
-  const cards = [
-    { title: t.deliverables.amenities, desc: t.deliverables.amenitiesDesc },
-    { title: t.deliverables.infra, desc: t.deliverables.infraDesc },
-    { title: t.deliverables.earning, desc: t.deliverables.earningDesc },
-    { title: t.deliverables.social, desc: t.deliverables.socialDesc },
-  ];
-
-  return (
-    <Section className="bg-blue-900 text-white">
-      <SectionTitle title={t.deliverables.title} />
-      <div className="grid md:grid-cols-2 gap-6">
-        {cards.map((card, idx) => (
-          <motion.div 
-            key={idx}
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: idx * 0.1 }}
-            className="bg-blue-800/50 p-8 rounded-2xl border border-blue-700/50"
-          >
-            <h3 className="text-xl font-bold mb-4 text-orange-400">{card.title}</h3>
-            <p className="text-blue-100 leading-relaxed">{card.desc}</p>
           </motion.div>
         ))}
       </div>

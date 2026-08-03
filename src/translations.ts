@@ -20,10 +20,32 @@ export const translations = {
       urgency: "The Grama Panchayat elections are approaching. The time to prepare is now."
     },
     about: {
-      title: "About the Initiative",
-      content1: "Namma Grama Nayaka is focused on building a pipeline of prepared grassroots leaders for Karnataka’s Grama Panchayats.",
-      content2: "We believe in youth participation in grassroots governance, empowering women's leadership, and ensuring prepared and capable representatives at the ward level.",
-      content3: "By leveraging governance supported by technology and promoting progressive development agendas at the ward level, we aim to enable affordable participation driven by merit that leads to stronger accountability and service delivery."
+      title: "Why This Initiative Exists",
+      narrative: "Every five years, millions of citizens elect leaders to shape the future of their villages. Yet most representatives begin their journey without structured training, decision-support systems or digital governance tools.",
+      highlightsTitle: "The Challenges Facing Elected Leaders",
+      highlights: [
+        {
+          title: "Constitutional Responsibilities",
+          desc: "Handling complex devolved duties under the 73rd Amendment across 29 subjects without prior governance training."
+        },
+        {
+          title: "Multiple Schemes",
+          desc: "Navigating dozens of central and state welfare programs, budgets, and compliance guidelines."
+        },
+        {
+          title: "Limited Institutional Support",
+          desc: "Entering public office without structured onboarding, continuous training, or mentorship."
+        },
+        {
+          title: "Underutilized Resources",
+          desc: "Struggling to translate available government grants into structured, impactful village development plans."
+        },
+        {
+          title: "Citizen Expectations",
+          desc: "Meeting high community demands for transparent, fast, and responsive service delivery."
+        }
+      ],
+      transition: "Leadership should never depend on trial and error."
     },
     stats: {
       title: "The Landscape of Local Governance",
@@ -37,29 +59,14 @@ export const translations = {
     whyMatter: {
       title: "Why Grama Panchayats Matter",
       subtitle: "The foundation of local self governance.",
-      everyday: "Everyday Public Services",
-      everydayDesc: "Ensuring access to clean water, sanitation, and primary healthcare.",
-      infra: "Local Infrastructure",
-      infraDesc: "Building and maintaining village roads, streetlights, and community halls.",
-      welfare: "Welfare Delivery",
-      welfareDesc: "Directing government schemes to the most vulnerable households.",
-      livelihood: "Livelihood Opportunities",
-      livelihoodDesc: "Supporting agriculture, local enterprises, and rural employment.",
-      accountability: "Community Accountability",
-      accountabilityDesc: "Transparent use of public funds for local development.",
-      participation: "Citizen Participation",
-      participationDesc: "Active engagement through Grama Sabhas and Ward Sabhas."
-    },
-    deliverables: {
-      title: "What an Empowered Grama Panchayat Can Deliver",
       amenities: "Basic Amenities",
       amenitiesDesc: "Healthcare, Education, Housing, Sanitation, Drinking water, Sports and community facilities.",
       infra: "Foundational Infrastructure",
       infraDesc: "Roads and bridges, Electricity, Water, Irrigation, Digital connectivity, Community assets.",
-      earning: "Earning Opportunities",
-      earningDesc: "Agriculture, Animal husbandry, Fisheries, Forestry, Self help groups, Farmer producer organisations, Cottage and small industries, Skills, credit, raw materials and market access.",
       social: "Social Protection",
-      socialDesc: "Welfare schemes, SC and ST communities, Women and children, Elderly citizens, Persons with disabilities, Family welfare, Scholarships and pensions."
+      socialDesc: "Welfare schemes, SC and ST communities, Women and children, Elderly citizens, Persons with disabilities, Family welfare, Scholarships and pensions.",
+      earning: "Earning Opportunities",
+      earningDesc: "Agriculture, Animal husbandry, Fisheries, Forestry, Self help groups, Farmer producer organisations, Cottage and small industries, Skills, credit, raw materials and market access."
     },
     leadership: {
       title: "Why Leadership at the Ward Level Matters",
@@ -207,10 +214,32 @@ export const translations = {
       urgency: "ಗ್ರಾಮ ಪಂಚಾಯತಿ ಚುನಾವಣೆಗಳು ಸಮೀಪಿಸುತ್ತಿವೆ. ಸಿದ್ಧತೆಗೆ ಇದುವೇ ಸಕಾಲ."
     },
     about: {
-      title: "ಉಪಕ್ರಮದ ಬಗ್ಗೆ",
-      content1: "ನಮ್ಮ ಗ್ರಾಮ ನಾಯಕವು ಕರ್ನಾಟಕದ ಗ್ರಾಮ ಪಂಚಾಯತಿಗಳಿಗಾಗಿ ತರಬೇತಿ ಪಡೆದ ತಳಮಟ್ಟದ ನಾಯಕರನ್ನು ರೂಪಿಸುವತ್ತ ಗಮನಹರಿಸಿದೆ.",
-      content2: "ತಳಮಟ್ಟದ ಆಡಳಿತದಲ್ಲಿ ಯುವಕರ ಭಾಗವಹಿಸುವಿಕೆ, ಮಹಿಳಾ ನಾಯಕತ್ವದ ಸಬಲೀಕರಣವನ್ನು ನಾವು ನಂಬುತ್ತೇವೆ.",
-      content3: "ತಂತ್ರಜ್ಞಾನ ಬೆಂಬಲಿತ ಆಡಳಿತ ಮತ್ತು ಪ್ರಗತಿಪರ ಅಭಿವೃದ್ಧಿ ಅಜೆಂಡಾಗಳ ಮೂಲಕ ಉತ್ತಮ ಸೇವೆ ಒದಗಿಸುವುದು ನಮ್ಮ ಗುರಿ."
+      title: "ಈ ಉಪಕ್ರಮವೇಕೆ ಅಗತ್ಯ?",
+      narrative: "ಪ್ರತಿ ಐದು ವರ್ಷಗಳಿಗೊಮ್ಮೆ, ಲಕ್ಷಾಂತರ ನಾಗರಿಕರು ತಮ್ಮ ಹಳ್ಳಿಗಳ ಭವಿಷ್ಯವನ್ನು ರೂಪಿಸಲು ನಾಯಕರನ್ನು ಆರಿಸುತ್ತಾರೆ. ಆದರೆ ಹೆಚ್ಚಿನ ಪ್ರತಿನಿಧಿಗಳು ಯಾವುದೇ ರಚನಾತ್ಮಕ ತರಬೇತಿ, ನಿರ್ಧಾರ ಬೆಂಬಲ ವ್ಯವಸ್ಥೆಗಳು ಅಥವಾ ಡಿಜಿಟಲ್ ಆಡಳಿತ ಉಪಕರಣಗಳಿಲ್ಲದೆ ತಮ್ಮ ಪಯಣವನ್ನು ಪ್ರಾರಂಭಿಸುತ್ತಾರೆ.",
+      highlightsTitle: "ಚುನಾಯಿತ ಪ್ರತಿನಿಧಿಗಳು ಎದುರಿಸುತ್ತಿರುವ ಸವಾಲುಗಳು",
+      highlights: [
+        {
+          title: "ಸಂವಿಧಾನಾತ್ಮಕ ಜವಾಬ್ದಾರಿಗಳು",
+          desc: "ಯಾವುದೇ ಪೂರ್ವಾಪರ ಆಡಳಿತ ತರಬೇತಿಯಿಲ್ಲದೆ 73ನೇ ತಿದ್ದುಪಡಿಯಡಿಯ 29 ವಿಷಯಗಳನ್ನು ನಿರ್ವಹಿಸುವ ಸವಾಲು."
+        },
+        {
+          title: "ಹಲವು ಯೋಜನೆಗಳು",
+          desc: "ಕೇಂದ್ರ ಮತ್ತು ರಾಜ್ಯ ಸರ್ಕಾರಗಳ ಹಲವಾರು ಕಲ್ಯಾಣ ಯೋಜನೆಗಳು, ಬಜೆಟ್‌ಗಳು ಮತ್ತು ನಿಯಮಾವಳಿಗಳನ್ನು ನಿಯಂತ್ರಿಸುವುದು."
+        },
+        {
+          title: "ಪರಿಮಿತ ಸಾಂಸ್ಥಿಕ ಬೆಂಬಲ",
+          desc: "ರಚನಾತ್ಮಕ ತರಬೇತಿ, ನಿರಂತರ ಕಲಿಕೆ ಅಥವಾ ಸಾಂಸ್ಥಿಕ ಮಾರ್ಗದರ್ಶನವಿಲ್ಲದೆ ಸಾರ್ವಜನಿಕ ಸೇವೆಗೆ ಬರುವುದು."
+        },
+        {
+          title: "ಅಪೂರ್ಣ ಬಳಕೆಯ ಸಂಪನ್ಮೂಲಗಳು",
+          desc: "ಲಭ್ಯವಿರುವ ಸರ್ಕಾರಿ ಅನುದಾನಗಳನ್ನು ಸೂಕ್ತ ಗ್ರಾಮ ಅಭಿವೃದ್ಧಿ ಯೋಜನೆಗಳಾಗಿ ಪರಿವರ್ತಿಸಲು ಶ್ರಮಿಸುವುದು."
+        },
+        {
+          title: "ನಾಗರಿಕರ ನಿರೀಕ್ಷೆಗಳು",
+          desc: "ಪಾರದರ್ಶಕ, ಕ್ಷಿಪ್ರ ಮತ್ತು ಜವಾಬ್ದಾರಿಯುತ ಸೇವೆಗಳಿಗಾಗಿ ಗ್ರಾಮಸ್ಥರ ನಿರೀಕ್ಷೆಗಳನ್ನು ಪೂರೈಸುವುದು."
+        }
+      ],
+      transition: "ನಾಯಕತ್ವವು ಎಂದಿಗೂ ಪ್ರಯೋಗ ಮತ್ತು ದೋಷವನ್ನು ಅವಲಂಬಿಸಿರಬಾರದು."
     },
     stats: {
       title: "ಸ್ಥಳೀಯ ಆಡಳಿತದ ನೋಟ",
@@ -224,29 +253,14 @@ export const translations = {
     whyMatter: {
       title: "ಗ್ರಾಮ ಪಂಚಾಯತಿಗಳ ಪ್ರಾಮುಖ್ಯತೆ",
       subtitle: "ಸ್ಥಳೀಯ ಸ್ವ ಆಡಳಿತದ ಬುನಾದಿ.",
-      everyday: "ದೈನಂದಿನ ಸಾರ್ವಜನಿಕ ಸೇವೆಗಳು",
-      everydayDesc: "ಶುದ್ಧ ನೀರು, ನೈರ್ಮಲ್ಯ ಮತ್ತು ಪ್ರಾಥಮಿಕ ಆರೋಗ್ಯ ಸೇವೆಯನ್ನು ಖಚಿತಪಡಿಸುವುದು.",
-      infra: "ಸ್ಥಳೀಯ ಮೂಲಸೌಕರ್ಯ",
-      infraDesc: "ರಸ್ತೆಗಳು, ಬೀದಿದೀಪಗಳು ಮತ್ತು ಸಮುದಾಯ ಭವನಗಳ ನಿರ್ಮಾಣ ಹಾಗೂ ನಿರ್ವಹಣೆ.",
-      welfare: "ಕಲ್ಯಾಣ ಕಾರ್ಯಕ್ರಮಗಳ ತಲುಪುವಿಕೆ",
-      welfareDesc: "ಅರ್ಹ ಕುಟುಂಬಗಳಿಗೆ ಸರ್ಕಾರಿ ಯೋಜನೆಗಳನ್ನು ತಲುಪಿಸುವುದು.",
-      livelihood: "ಜೀವನೋಪಾಯದ ಅವಕಾಶಗಳು",
-      livelihoodDesc: "ಕೃಷಿ, ಸ್ಥಳೀಯ ಉದ್ಯಮಗಳು ಮತ್ತು ಗ್ರಾಮೀಣ ಉದ್ಯೋಗಕ್ಕೆ ಬೆಂಬಲ.",
-      accountability: "ಸಮುದಾಯದ ಹೊಣೆಗಾರಿಕೆ",
-      accountabilityDesc: "ಸ್ಥಳೀಯ ಅಭಿವೃದ್ಧಿಗಾಗಿ ಸಾರ್ವಜನಿಕ ಹಣದ ಪಾರದರ್ಶಕ ಬಳಕೆ.",
-      participation: "ನಾಗರಿಕರ ಭಾಗವಹಿಸುವಿಕೆ",
-      participationDesc: "ಗ್ರಾಮ ಸಭೆ ಮತ್ತು ವಾರ್ಡ್ ಸಭೆಗಳ ಮೂಲಕ ಸಕ್ರಿಯ ತೊಡಗಿಸಿಕೊಳ್ಳುವಿಕೆ."
-    },
-    deliverables: {
-      title: "ಸಶಕ್ತ ಗ್ರಾಮ ಪಂಚಾಯತಿ ಏನು ನೀಡಬಲ್ಲದು?",
       amenities: "ಮೂಲ ಸೌಲಭ್ಯಗಳು",
       amenitiesDesc: "ಆರೋಗ್ಯ, ಶಿಕ್ಷಣ, ವಸತಿ, ನೈರ್ಮಲ್ಯ, ಕುಡಿಯುವ ನೀರು, ಕ್ರೀಡೆ ಮತ್ತು ಸಮುದಾಯ ಸೌಲಭ್ಯಗಳು.",
       infra: "ಮೂಲಸೌಕರ್ಯ",
       infraDesc: "ರಸ್ತೆಗಳು ಮತ್ತು ಸೇತುವೆಗಳು, ವಿದ್ಯುತ್, ನೀರು, ನೀರಾವರಿ, ಡಿಜಿಟಲ್ ಸಂಪರ್ಕ, ಸಮುದಾಯ ಆಸ್ತಿಗಳು.",
-      earning: "ಗಳಿಕೆಯ ಅವಕಾಶಗಳು",
-      earningDesc: "ಕೃಷಿ, ಪಶುಸಂಗೋಪನೆ, ಮೀನುಗಾರಿಕೆ, ಅರಣ್ಯ, ಸ್ವ ಸಹಾಯ ಸಂಘಗಳು, ಕೌಶಲ್ಯ ಮತ್ತು ಮಾರುಕಟ್ಟೆ ಪ್ರವೇಶ.",
       social: "ಸಾಮಾಜಿಕ ರಕ್ಷಣೆ",
-      socialDesc: "ಕಲ್ಯಾಣ ಯೋಜನೆಗಳು, ಪರಿಶಿಷ್ಟ ಜಾತಿ/ಪಂಗಡದ ಸಮುದಾಯಗಳು, ಮಹಿಳೆಯರು ಮತ್ತು ಮಕ್ಕಳು, ಹಿರಿಯ ನಾಗರಿಕರು, ವಿಕಲಚೇತನರು."
+      socialDesc: "ಕಲ್ಯಾಣ ಯೋಜನೆಗಳು, ಪರಿಶಿಷ್ಟ ಜಾತಿ/ಪಂಗಡದ ಸಮುದಾಯಗಳು, ಮಹಿಳೆಯರು ಮತ್ತು ಮಕ್ಕಳು, ಹಿರಿಯ ನಾಗರಿಕರು, ವಿಕಲಚೇತನರು, ಸ್ಕಾಲರ್‌ಶಿಪ್‌ಗಳು ಮತ್ತು ಪಿಂಚಣಿಗಳು.",
+      earning: "ಗಳಿಕೆಯ ಅವಕಾಶಗಳು",
+      earningDesc: "ಕೃಷಿ, ಪಶುಸಂಗೋಪನೆ, ಮೀನುಗಾರಿಕೆ, ಅರಣ್ಯ, ಸ್ವ ಸಹಾಯ ಸಂಘಗಳು, ಕೌಶಲ್ಯ ಮತ್ತು ಮಾರುಕಟ್ಟೆ ಪ್ರವೇಶ."
     },
     leadership: {
       title: "ವಾರ್ಡ್ ಮಟ್ಟದ ನಾಯಕತ್ವ ಏಕೆ ಮುಖ್ಯ?",
