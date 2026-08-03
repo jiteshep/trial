@@ -32,7 +32,7 @@ export const Header = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <a href="#home" className="flex items-center gap-3">
-            <img src="/logo-ngn.png" alt="Namma Grama Nayaka" className="h-10 md:h-12 object-contain" />
+            <img src="/logo-header.png" alt="Namma Grama Nayaka" className="h-12 sm:h-14 md:h-16 object-contain mix-blend-multiply filter contrast-105" />
           </a>
 
           {/* Desktop Nav */}
@@ -203,7 +203,7 @@ export const Footer = () => {
       <div className="py-12 md:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-4 gap-12 mb-12">
           <div className="col-span-1 md:col-span-2">
-            <img src="/logo-ngn.png" alt="Namma Grama Nayaka" className="h-12 mb-6 brightness-0 invert" />
+            <img src="/logo-header.png" alt="Namma Grama Nayaka" className="h-14 md:h-16 mb-6 brightness-0 invert" />
             <p className="text-emerald-200/90 mb-6 max-w-sm leading-relaxed text-sm md:text-base">
               {t.footer.mission}
             </p>

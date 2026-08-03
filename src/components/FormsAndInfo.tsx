@@ -253,8 +253,8 @@ export const PartnersSection = () => {
         <p className="text-xs font-extrabold text-slate-400 uppercase tracking-widest">{t.partners.supportedBy}</p>
       </div>
       <div className="flex flex-wrap justify-center items-center gap-12 md:gap-24">
-        <img src="/logo-ep.png" alt="Empower Panchayat" className="h-16 md:h-20 object-contain opacity-80 hover:opacity-100 transition-opacity" />
-        <img src="/logo-ts.png" alt="Tejasvi Surya" className="h-12 md:h-16 object-contain opacity-80 hover:opacity-100 transition-opacity" />
+        <img src="/logo-ep.png" alt="Empower Panchayat" className="h-16 md:h-20 object-contain mix-blend-multiply opacity-90 hover:opacity-100 transition-opacity filter contrast-105" />
+        <img src="/logo-ts.png" alt="Tejasvi Surya" className="h-12 md:h-16 object-contain mix-blend-multiply opacity-90 hover:opacity-100 transition-opacity filter contrast-105" />
       </div>
     </Section>
   );
