@@ -53,19 +53,20 @@ export const AboutSection = () => {
       {/* Single Viewport Responsive Split Grid */}
       <div className="grid lg:grid-cols-12 gap-6 items-stretch max-w-7xl mx-auto">
         
-        {/* HERO CARD (HIGHEST PRIVILEGE): The Landscape of Local Governance (Bright Luminous Light Emerald Card) */}
+        {/* HERO CARD (HIGHEST PRIVILEGE): The Landscape of Local Governance */}
         <motion.div 
           initial={{ opacity: 0, scale: 0.98 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.4 }}
-          className="lg:col-span-7 bg-gradient-to-br from-emerald-50 via-teal-50/40 to-amber-50/30 text-slate-900 p-7 md:p-9 rounded-3xl shadow-xl border-2 border-emerald-600/30 relative overflow-hidden flex flex-col justify-between group"
+          className="lg:col-span-7 bg-gradient-to-br from-emerald-50 via-teal-50/40 to-amber-50/30 text-slate-900 p-6 md:p-8 rounded-3xl shadow-xl border-2 border-emerald-600/30 relative overflow-hidden flex flex-col justify-between group"
         >
           {/* Ambient Decorative Backdrops */}
           <div className="absolute -top-20 -right-20 w-72 h-72 bg-emerald-400/15 rounded-full blur-3xl pointer-events-none"></div>
           <div className="absolute -bottom-20 -left-20 w-72 h-72 bg-amber-400/15 rounded-full blur-3xl pointer-events-none"></div>
 
           <div className="relative z-10">
+            {/* Badges & Headers */}
             <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
               <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-black uppercase tracking-wider bg-emerald-700 text-white shadow-xs">
                 <Sparkles className="w-4 h-4 text-amber-300" /> Featured Pillar
@@ -78,37 +79,61 @@ export const AboutSection = () => {
             <h3 className="text-2xl md:text-3xl lg:text-4xl font-black text-slate-900 mb-3 tracking-tight">
               {t.stats.title}
             </h3>
-            <p className="text-sm md:text-base text-slate-700 mb-6 leading-relaxed max-w-xl font-medium">
+            <p className="text-sm md:text-base text-slate-700 mb-6 leading-relaxed font-medium">
               Grassroots democracy in Karnataka functions across thousands of rural communities. Building institutional capacity at this scale is critical to grassroots transformation.
             </p>
 
-            {/* Stats Grid with Clean Crisp White Cards & Vibrant Numbers */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3.5 md:gap-4">
-              <div className="bg-white/90 backdrop-blur-sm p-4 md:p-5 rounded-2xl border border-emerald-200/80 shadow-md hover:shadow-lg transition-all flex flex-col justify-between">
-                <p className="text-2xl md:text-3xl lg:text-4xl font-black text-slate-900">{config.STATS.PANCHAYATS}</p>
-                <p className="text-xs md:text-sm text-slate-700 mt-2 font-bold leading-snug">{t.stats.panchayats}</p>
+            {/* 2x2 Spacious Stats Grid (No text clipping or squishing) */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {/* Panchayats */}
+              <div className="bg-white/95 backdrop-blur-xs p-4 md:p-5 rounded-2xl border border-emerald-200/90 shadow-sm hover:shadow-md transition-all flex items-center gap-4">
+                <div className="w-11 h-11 rounded-xl bg-emerald-100/90 text-emerald-700 flex items-center justify-center shrink-0 border border-emerald-200">
+                  <Building2 className="w-5 h-5" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <p className="text-2xl md:text-3xl font-black text-slate-900 tracking-tight">{config.STATS.PANCHAYATS}</p>
+                  <p className="text-xs md:text-sm font-bold text-slate-700 leading-snug mt-0.5">{t.stats.panchayats}</p>
+                </div>
               </div>
 
-              <div className="bg-white/90 backdrop-blur-sm p-4 md:p-5 rounded-2xl border border-emerald-200/80 shadow-md hover:shadow-lg transition-all flex flex-col justify-between">
-                <p className="text-2xl md:text-3xl lg:text-4xl font-black text-emerald-700">{config.STATS.WARDS}</p>
-                <p className="text-xs md:text-sm text-slate-700 mt-2 font-bold leading-snug">{t.stats.wards}</p>
+              {/* Wards */}
+              <div className="bg-white/95 backdrop-blur-xs p-4 md:p-5 rounded-2xl border border-teal-200/90 shadow-sm hover:shadow-md transition-all flex items-center gap-4">
+                <div className="w-11 h-11 rounded-xl bg-teal-100/90 text-teal-700 flex items-center justify-center shrink-0 border border-teal-200">
+                  <Layers className="w-5 h-5" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <p className="text-2xl md:text-3xl font-black text-emerald-700 tracking-tight">{config.STATS.WARDS}</p>
+                  <p className="text-xs md:text-sm font-bold text-slate-700 leading-snug mt-0.5">{t.stats.wards}</p>
+                </div>
               </div>
 
-              <div className="bg-white/90 backdrop-blur-sm p-4 md:p-5 rounded-2xl border border-amber-200/80 shadow-md hover:shadow-lg transition-all flex flex-col justify-between">
-                <p className="text-2xl md:text-3xl lg:text-4xl font-black text-orange-600">{config.STATS.RURAL_VOTERS}</p>
-                <p className="text-xs md:text-sm text-slate-700 mt-2 font-bold leading-snug">{t.stats.voters}</p>
+              {/* Rural Voters */}
+              <div className="bg-white/95 backdrop-blur-xs p-4 md:p-5 rounded-2xl border border-amber-200/90 shadow-sm hover:shadow-md transition-all flex items-center gap-4">
+                <div className="w-11 h-11 rounded-xl bg-amber-100/90 text-amber-700 flex items-center justify-center shrink-0 border border-amber-200">
+                  <Users className="w-5 h-5" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <p className="text-2xl md:text-3xl font-black text-orange-600 tracking-tight">{config.STATS.RURAL_VOTERS}</p>
+                  <p className="text-xs md:text-sm font-bold text-slate-700 leading-snug mt-0.5">{t.stats.voters}</p>
+                </div>
               </div>
 
-              <div className="bg-white/90 backdrop-blur-sm p-4 md:p-5 rounded-2xl border border-blue-200/80 shadow-md hover:shadow-lg transition-all flex flex-col justify-between">
-                <p className="text-2xl md:text-3xl lg:text-4xl font-black text-blue-700">{config.STATS.RURAL_ACS}</p>
-                <p className="text-xs md:text-sm text-slate-700 mt-2 font-bold leading-snug">{t.stats.acs}</p>
+              {/* Rural Assembly Constituencies */}
+              <div className="bg-white/95 backdrop-blur-xs p-4 md:p-5 rounded-2xl border border-blue-200/90 shadow-sm hover:shadow-md transition-all flex items-center gap-4">
+                <div className="w-11 h-11 rounded-xl bg-blue-100/90 text-blue-700 flex items-center justify-center shrink-0 border border-blue-200">
+                  <MapPin className="w-5 h-5" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <p className="text-2xl md:text-3xl font-black text-blue-700 tracking-tight">{config.STATS.RURAL_ACS}</p>
+                  <p className="text-xs md:text-sm font-bold text-slate-700 leading-snug mt-0.5">{t.stats.acs}</p>
+                </div>
               </div>
             </div>
           </div>
 
           {/* High Visibility Transition Highlight Bar */}
           <div className="relative z-10 mt-6 pt-4 border-t border-emerald-200/80 flex items-center justify-between">
-            <span className="flex items-center gap-2 text-sm md:text-base text-emerald-950 font-extrabold bg-white/80 px-4 py-2 rounded-xl border border-emerald-200 w-full shadow-2xs">
+            <span className="flex items-center gap-2 text-sm md:text-base text-emerald-950 font-extrabold bg-white/90 px-4 py-2.5 rounded-xl border border-emerald-200 w-full shadow-2xs">
               <Zap className="w-5 h-5 text-orange-500 shrink-0 fill-orange-500/20" />
               <span>{t.about.transition}</span>
             </span>
