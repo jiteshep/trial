@@ -252,22 +252,28 @@ export const PartnersSection = () => {
         <p className="text-xs sm:text-sm font-extrabold text-slate-400 uppercase tracking-widest">{t.partners.supportedBy}</p>
       </div>
       <div className="flex flex-col sm:flex-row justify-center items-center gap-8 md:gap-12 max-w-4xl mx-auto px-4">
-        {/* Card 1: Empower Panchayat (Vertical Card) */}
-        <div className="w-64 sm:w-64 md:w-72 h-64 sm:h-72 md:h-80 p-6 rounded-3xl bg-slate-50/80 border border-slate-200/80 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex items-center justify-center">
-          <img 
-            src="/logo-ep.png" 
-            alt="Empower Panchayat" 
-            className="max-h-[80%] max-w-[85%] object-contain mix-blend-multiply filter contrast-105 transition-all duration-300" 
-          />
+        {/* Card 1: Empower Panchayat */}
+        <div className="flex flex-col items-center gap-3">
+          <div className="w-64 sm:w-64 md:w-72 h-64 sm:h-72 md:h-80 p-6 rounded-3xl bg-slate-50/80 border border-slate-200/80 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex items-center justify-center">
+            <img 
+              src="/logo-ep.png" 
+              alt={t.partners.epName}
+              className="max-h-[80%] max-w-[85%] object-contain mix-blend-multiply filter contrast-105 transition-all duration-300" 
+            />
+          </div>
+          <h4 className="text-base font-bold text-slate-800 tracking-tight mt-1">{t.partners.epName}</h4>
         </div>
 
-        {/* Card 2: Tejasvi Surya (Vertical Card - Person Portrait Prominently Displayed) */}
-        <div className="w-64 sm:w-64 md:w-72 h-64 sm:h-72 md:h-80 p-6 rounded-3xl bg-slate-50/80 border border-slate-200/80 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex items-center justify-center">
-          <img 
-            src="/logo-ts-enhanced.png" 
-            alt="Tejasvi Surya" 
-            className="max-h-[95%] max-w-[95%] object-contain mix-blend-multiply filter contrast-105 brightness-105 transition-all duration-300" 
-          />
+        {/* Card 2: Tejasvi Surya */}
+        <div className="flex flex-col items-center gap-3">
+          <div className="w-64 sm:w-64 md:w-72 h-64 sm:h-72 md:h-80 p-6 rounded-3xl bg-slate-50/80 border border-slate-200/80 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex items-center justify-center">
+            <img 
+              src="/logo-ts-enhanced.png" 
+              alt={t.partners.tsName}
+              className="max-h-[95%] max-w-[95%] object-contain mix-blend-multiply filter contrast-105 brightness-105 transition-all duration-300" 
+            />
+          </div>
+          <h4 className="text-base font-bold text-slate-800 tracking-tight mt-1">{t.partners.tsName}</h4>
         </div>
       </div>
     </Section>

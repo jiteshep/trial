@@ -225,7 +225,9 @@ export const translations = {
     },
     partners: {
       title: "Together for Stronger Grama Panchayats",
-      supportedBy: "An Initiative Of"
+      supportedBy: "An Initiative Of",
+      epName: "Empower Panchayat",
+      tsName: "Tejasvi Surya"
     },
     faq: {
       title: "Frequently Asked Questions",
@@ -499,7 +501,9 @@ export const translations = {
     },
     partners: {
       title: "ಸಶಕ್ತ ಗ್ರಾಮ ಪಂಚಾಯತಿಗಳಿಗಾಗಿ ಒಟ್ಟಾಗಿ",
-      supportedBy: "ಇವರ ಉಪಕ್ರಮ"
+      supportedBy: "ಇವರ ಉಪಕ್ರಮ",
+      epName: "ಎಂಪವರ್ ಪಂಚಾಯತ್",
+      tsName: "ತೇಜಸ್ವಿ ಸೂರ್ಯ"
     },
     faq: {
       title: "ಪದೇ ಪದೇ ಕೇಳಲಾಗುವ ಪ್ರಶ್ನೆಗಳು",
