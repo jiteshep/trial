@@ -233,6 +233,10 @@ export const translations = {
       title: "Election & Eligibility",
       eligibilityTitle: "Legal Eligibility Criteria",
       profilesTitle: "Who Should Lead?",
+      brochureTitle: "Official Programme Brochure",
+      brochureDesc: "Download the complete Namma Grama Nayaka brochure to understand the ward member election process, roles, responsibilities, and training curriculum in detail.",
+      brochureBtnDownload: "Download Brochure (PDF)",
+      brochureBtnPreview: "Preview Brochure",
       legalPoints: [
         "Any Indian citizen who is registered as a voter in the concerned ward.",
         "Must be at least 21 years of age.",
@@ -518,6 +522,10 @@ export const translations = {
       title: "ಚುನಾವಣೆ ಮತ್ತು ಅರ್ಹತೆ",
       eligibilityTitle: "ಕಾನೂನುಬದ್ಧ ಅರ್ಹತಾ ಮಾನದಂಡಗಳು",
       profilesTitle: "ಯಾರು ಸ್ಪರ್ಧಿಸಬಹುದು?",
+      brochureTitle: "ಅಧಿಕೃತ ಕಾರ್ಯಕ್ರಮದ ಕರಪತ್ರ",
+      brochureDesc: "ವಾರ್ಡ್ ಸದಸ್ಯರ ಚುನಾವಣಾ ಪ್ರಕ್ರಿಯೆ, ಪಾತ್ರಗಳು, ಜವಾಬ್ದಾರಿಗಳು ಮತ್ತು ತರಬೇತಿ ಪಠ್ಯಕ್ರಮದ ವಿವರಗಳನ್ನು ತಿಳಿಯಲು ನಮ್ಮ ಗ್ರಾಮ ನಾಯಕ ಅಧಿಕೃತ ಕರಪತ್ರವನ್ನು ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ.",
+      brochureBtnDownload: "ಕರಪತ್ರ ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ (PDF)",
+      brochureBtnPreview: "ಕರಪತ್ರದ ಮುನ್ನೋಟ",
       legalPoints: [
         "ಸಂಬಂಧಿತ ವಾರ್ಡ್‌ನಲ್ಲಿ ಮತದಾರರಾಗಿ ನೋಂದಾಯಿಸಲ್ಪಟ್ಟಿರುವ ಯಾವುದೇ ಭಾರತೀಯ ನಾಗರಿಕ.",
         "ಕನಿಷ್ಠ 21 ವರ್ಷ ವಯಸ್ಸಿನವರಾಗಿರಬೇಕು.",

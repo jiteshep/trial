@@ -151,7 +151,8 @@ export const VolunteerSection = () => {
 
 // ELECTION & ELIGIBILITY SECTION
 export const ElectionSection = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+  const [isBrochureModalOpen, setIsBrochureModalOpen] = useState(false);
 
   const legalIcons = [
     <UserCheck className="w-5 h-5 text-emerald-600 shrink-0" />,
@@ -200,77 +201,200 @@ export const ElectionSection = () => {
       
       <SectionTitle title={t.election.title} />
 
-      <div className="max-w-6xl mx-auto grid lg:grid-cols-12 gap-8 items-stretch relative z-10">
+      <div className="max-w-6xl mx-auto space-y-16 relative z-10">
         
-        {/* Left Column: Legal Eligibility Rules */}
+        {/* 1. Who Should Lead? (Election Profiles) */}
         <motion.div 
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="lg:col-span-6 bg-white p-6 md:p-8 rounded-3xl border border-slate-200/80 shadow-md hover:shadow-lg transition-shadow flex flex-col justify-between"
+          className="bg-white p-6 md:p-8 rounded-3xl border border-slate-200/80 shadow-md hover:shadow-lg transition-shadow"
         >
-          <div>
-            <h3 className="text-xl md:text-2xl font-black text-slate-900 mb-6 pb-3 border-b border-slate-100 flex items-center gap-3">
-              <Scale className="w-6 h-6 text-emerald-700" />
-              <span>{t.election.eligibilityTitle}</span>
-            </h3>
-            
-            <div className="space-y-4">
-              {t.election.legalPoints.map((point, idx) => (
-                <div key={idx} className="flex gap-4 items-start">
-                  <div className="w-8 h-8 rounded-full bg-emerald-50 border border-emerald-100 flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
-                    {legalIcons[idx] || <UserCheck className="w-4 h-4 text-emerald-600" />}
-                  </div>
-                  <p className="text-slate-700 font-medium text-sm md:text-base leading-relaxed">{point}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-          
-          <div className="mt-8 p-4 bg-amber-50/50 border border-amber-200/60 rounded-2xl flex gap-3 items-start">
-            <ShieldCheck className="w-5 h-5 text-orange-600 shrink-0 mt-0.5" />
-            <p className="text-xs text-amber-950 font-bold leading-relaxed">{t.timeline.disclaimer}</p>
-          </div>
-        </motion.div>
+          <h3 className="text-xl md:text-2xl font-black text-slate-900 mb-6 pb-3 border-b border-slate-100 flex items-center gap-3">
+            <Users className="w-6 h-6 text-orange-600" />
+            <span>{t.election.profilesTitle}</span>
+          </h3>
 
-        {/* Right Column: Ideal Profiles / Who can lead */}
-        <motion.div 
-          initial={{ opacity: 0, x: 20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="lg:col-span-6 flex flex-col justify-between"
-        >
-          <div className="bg-white p-6 md:p-8 rounded-3xl border border-slate-200/80 shadow-md hover:shadow-lg transition-shadow h-full flex flex-col">
-            <h3 className="text-xl md:text-2xl font-black text-slate-900 mb-6 pb-3 border-b border-slate-100 flex items-center gap-3">
-              <Users className="w-6 h-6 text-orange-600" />
-              <span>{t.election.profilesTitle}</span>
-            </h3>
-
-            <div className="grid sm:grid-cols-2 gap-4 flex-1">
-              {t.election.profiles.map((profile, idx) => {
-                const config = profileConfigs[idx] || profileConfigs[0];
-                return (
-                  <div 
-                    key={idx}
-                    className={`p-4 rounded-2xl border transition-all duration-300 flex flex-col justify-between ${config.bgColor} ${config.borderColor}`}
-                  >
-                    <div>
-                      <div className="w-10 h-10 rounded-xl bg-white flex items-center justify-center shadow-xs mb-3 border border-slate-100/50">
-                        {config.icon}
-                      </div>
-                      <h4 className="font-extrabold text-slate-950 text-sm md:text-base leading-snug mb-1">{profile.title}</h4>
-                      <p className="text-xs md:text-sm font-semibold text-slate-700 leading-normal">{profile.desc}</p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {t.election.profiles.map((profile, idx) => {
+              const config = profileConfigs[idx] || profileConfigs[0];
+              return (
+                <div 
+                  key={idx}
+                  className={`p-5 rounded-2xl border transition-all duration-300 flex flex-col justify-between hover:shadow-md hover:-translate-y-0.5 ${config.bgColor} ${config.borderColor}`}
+                >
+                  <div>
+                    <div className="w-10 h-10 rounded-xl bg-white flex items-center justify-center shadow-xs mb-4 border border-slate-100/50">
+                      {config.icon}
                     </div>
+                    <h4 className="font-extrabold text-slate-950 text-sm md:text-base leading-snug mb-2">{profile.title}</h4>
+                    <p className="text-xs md:text-sm font-semibold text-slate-700 leading-relaxed">{profile.desc}</p>
                   </div>
-                );
-              })}
-            </div>
+                </div>
+              );
+            })}
           </div>
         </motion.div>
+
+        {/* 2. Split Row: Legal Eligibility & Brochure Card */}
+        <div className="grid lg:grid-cols-12 gap-8 items-stretch">
+          
+          {/* Left Column: Legal Eligibility Rules (Eligibility) */}
+          <motion.div 
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="lg:col-span-7 bg-white p-6 md:p-8 rounded-3xl border border-slate-200/80 shadow-md hover:shadow-lg transition-shadow flex flex-col justify-between"
+          >
+            <div>
+              <h3 className="text-xl md:text-2xl font-black text-slate-900 mb-6 pb-3 border-b border-slate-100 flex items-center gap-3">
+                <Scale className="w-6 h-6 text-emerald-700" />
+                <span>{t.election.eligibilityTitle}</span>
+              </h3>
+              
+              <div className="space-y-4">
+                {t.election.legalPoints.map((point, idx) => (
+                  <div key={idx} className="flex gap-4 items-start">
+                    <div className="w-8 h-8 rounded-full bg-emerald-50 border border-emerald-100 flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
+                      {legalIcons[idx] || <UserCheck className="w-4 h-4 text-emerald-600" />}
+                    </div>
+                    <p className="text-slate-700 font-medium text-sm md:text-base leading-relaxed">{point}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+            <div className="mt-8 p-4 bg-amber-50/50 border border-amber-200/60 rounded-2xl flex gap-3 items-start">
+              <ShieldCheck className="w-5 h-5 text-orange-600 shrink-0 mt-0.5" />
+              <p className="text-xs text-amber-950 font-bold leading-relaxed">{t.timeline.disclaimer}</p>
+            </div>
+          </motion.div>
+
+          {/* Right Column: Brochure Download & Interactive Preview */}
+          <motion.div 
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="lg:col-span-5 bg-gradient-to-br from-emerald-800 to-green-950 text-white p-6 md:p-8 rounded-3xl shadow-xl flex flex-col justify-between relative overflow-hidden group"
+          >
+            {/* Ambient Background Effects */}
+            <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full blur-2xl"></div>
+            <div className="absolute bottom-0 left-0 w-32 h-32 bg-emerald-500/10 rounded-full blur-2xl"></div>
+
+            <div className="relative z-10 space-y-6">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-emerald-700/60 text-emerald-200 flex items-center justify-center border border-emerald-600/50">
+                  <BookOpen className="w-5 h-5" />
+                </div>
+                <h3 className="text-xl md:text-2xl font-black">{t.election.brochureTitle}</h3>
+              </div>
+              
+              <p className="text-emerald-100/90 text-sm md:text-base leading-relaxed font-medium">
+                {t.election.brochureDesc}
+              </p>
+
+              {/* PDF Mini Preview / Interactive Visual */}
+              <button
+                onClick={() => setIsBrochureModalOpen(true)}
+                className="w-full text-left p-4 rounded-2xl bg-emerald-900/50 border border-emerald-700/50 backdrop-blur-xs flex items-center gap-4 hover:bg-emerald-900/80 transition-all cursor-pointer group/card"
+              >
+                <div className="w-12 h-16 bg-white rounded-lg flex flex-col items-center justify-center shrink-0 shadow-md border border-emerald-800 relative overflow-hidden">
+                  <span className="text-[10px] font-black text-rose-600 tracking-tighter">PDF</span>
+                  <div className="w-7 h-[2px] bg-slate-200 mt-1"></div>
+                  <div className="w-7 h-[2px] bg-slate-200 mt-0.5"></div>
+                  <div className="absolute inset-0 bg-black/5 opacity-0 group-hover/card:opacity-100 transition-opacity flex items-center justify-center">
+                    <Maximize2 className="w-4 h-4 text-emerald-900" />
+                  </div>
+                </div>
+                <div className="flex-1 min-w-0">
+                  <p className="text-[10px] font-black text-emerald-300 uppercase tracking-widest">Brochure Preview</p>
+                  <p className="text-sm font-extrabold text-white mt-0.5 truncate">NGN Ward Member Brochure</p>
+                </div>
+              </button>
+            </div>
+
+            <div className="relative z-10 mt-8 flex flex-col sm:flex-row gap-3">
+              <button
+                onClick={() => setIsBrochureModalOpen(true)}
+                className="flex-1 flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-white hover:bg-emerald-50 text-emerald-900 font-extrabold text-sm transition-all hover:scale-102 active:scale-98 shadow-md cursor-pointer"
+              >
+                <Maximize2 className="w-4 h-4" />
+                <span>{t.election.brochureBtnPreview}</span>
+              </button>
+              
+              <a
+                href="/NGN%20Ward%20Member%20Brochure.pdf"
+                download="NGN_Ward_Member_Brochure.pdf"
+                className="flex-1 flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-orange-600 hover:bg-orange-700 text-white font-extrabold text-sm transition-all hover:scale-102 active:scale-98 shadow-md text-center"
+              >
+                <ExternalLink className="w-4 h-4" />
+                <span>{t.election.brochureBtnDownload}</span>
+              </a>
+            </div>
+          </motion.div>
+          
+        </div>
 
       </div>
+
+      {/* Fullscreen Brochure Modal */}
+      <AnimatePresence>
+        {isBrochureModalOpen && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-emerald-950/70 backdrop-blur-md"
+          >
+            <motion.div 
+              initial={{ scale: 0.95, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.95, opacity: 0 }}
+              className="bg-white w-full max-w-5xl h-[85vh] rounded-3xl overflow-hidden shadow-2xl flex flex-col"
+            >
+              {/* Modal Header */}
+              <div className="p-4 bg-emerald-900 text-white flex justify-between items-center px-6">
+                <div className="flex items-center gap-3">
+                  <BookOpen className="w-5 h-5 text-emerald-300" />
+                  <span className="font-extrabold text-base md:text-lg">
+                    {language === 'kn' ? 'ನಮ್ಮ ಗ್ರಾಮ ನಾಯಕ ಕರಪತ್ರ' : 'Namma Grama Nayaka Brochure'}
+                  </span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <a 
+                    href="/NGN%20Ward%20Member%20Brochure.pdf" 
+                    download="NGN_Ward_Member_Brochure.pdf"
+                    className="flex items-center gap-1.5 text-xs font-bold px-3.5 py-2 rounded-xl bg-orange-600 hover:bg-orange-700 text-white transition-colors shadow-sm"
+                  >
+                    <ExternalLink className="w-3.5 h-3.5" />
+                    <span>{t.election.brochureBtnDownload}</span>
+                  </a>
+                  <button 
+                    onClick={() => setIsBrochureModalOpen(false)}
+                    className="p-1.5 rounded-full hover:bg-emerald-800 text-emerald-200 hover:text-white transition-colors cursor-pointer"
+                  >
+                    <X className="w-6 h-6" />
+                  </button>
+                </div>
+              </div>
+
+              {/* Modal PDF Iframe Content */}
+              <div className="flex-1 w-full h-full relative bg-slate-100">
+                <iframe 
+                  src="/NGN%20Ward%20Member%20Brochure.pdf" 
+                  width="100%" 
+                  height="100%" 
+                  title="Namma Grama Nayaka Brochure Preview"
+                  className="w-full h-full border-0"
+                />
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </Section>
   );
 };
