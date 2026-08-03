@@ -13,8 +13,8 @@ export const translations = {
       contact: "Contact"
     },
     hero: {
-      headline: "Youth Must Lead Karnataka’s Grama Panchayats",
-      subheadline: "Namma Grama Nayaka is a statewide initiative to identify, prepare and support capable young leaders who want to serve their wards and strengthen grassroots self governance.",
+      headline: "Building India's Next Generation of Village Leaders",
+      subheadline: "Every elected representative deserves the knowledge, digital tools and institutional support to lead with confidence. Namma Grama Nayaka combines AI, capacity building and community participation to strengthen grassroots governance.",
       primaryCta: "Become a Ward Member",
       secondaryCta: "Explore the Initiative",
       urgency: "The Grama Panchayat elections are approaching. The time to prepare is now."
@@ -200,8 +200,8 @@ export const translations = {
       contact: "ಸಂಪರ್ಕಿಸಿ"
     },
     hero: {
-      headline: "ಯುವಕರೇ ಮುನ್ನಡೆಸುವರು ಕರ್ನಾಟಕದ ಗ್ರಾಮ ಪಂಚಾಯತಿಗಳನ್ನು",
-      subheadline: "ನಮ್ಮ ಗ್ರಾಮ ನಾಯಕವು ಯುವ ನಾಯಕರನ್ನು ಗುರುತಿಸಿ, ಸಿದ್ಧಪಡಿಸಿ, ಬೆಂಬಲಿಸುವ ರಾಜ್ಯವ್ಯಾಪಿ ಉಪಕ್ರಮವಾಗಿದೆ.",
+      headline: "ಭಾರತದ ಮುಂದಿನ ಪೀಳಿಗೆಯ ಗ್ರಾಮ ನಾಯಕರ ನಿರ್ಮಾಣ",
+      subheadline: "ಪ್ರತಿಯೊಬ್ಬ ಚುನಾಯಿತ ಪ್ರತಿನಿಧಿಯೂ ಆತ್ಮವಿಶ್ವಾಸದಿಂದ ಮುನ್ನಡೆಸಲು ಜ್ಞಾನ, ಡಿಜಿಟಲ್ ಉಪಕರಣಗಳು ಮತ್ತು ಸಾಂಸ್ಥಿಕ ಬೆಂಬಲವನ್ನು ಪಡೆಯಲು ಅರ್ಹರಾಗಿದ್ದಾರೆ. ನಮ್ಮ ಗ್ರಾಮ ನಾಯಕವು ತಳಮಟ್ಟದ ಆಡಳಿತವನ್ನು ಸಶಕ್ತಗೊಳಿಸಲು AI, ಸಾಮರ್ಥ್ಯ ವೃದ್ಧಿ ಮತ್ತು ಸಮುದಾಯದ ಭಾಗವಹಿಸುವಿಕೆಯನ್ನು ಒಟ್ಟುಗೂಡಿಸುತ್ತದೆ.",
       primaryCta: "ವಾರ್ಡ್ ಸದಸ್ಯರಾಗಿ",
       secondaryCta: "ಉಪಕ್ರಮವನ್ನು ಅನ್ವೇಷಿಸಿ",
       urgency: "ಗ್ರಾಮ ಪಂಚಾಯತಿ ಚುನಾವಣೆಗಳು ಸಮೀಪಿಸುತ್ತಿವೆ. ಸಿದ್ಧತೆಗೆ ಇದುವೇ ಸಕಾಲ."
