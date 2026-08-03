@@ -161,21 +161,36 @@ export const WhyMatterSection = () => {
 // LEADERSHIP
 export const LeadershipSection = () => {
   const { t } = useLanguage();
+  
+  const icons = [
+    <Users className="w-6 h-6 text-green-700" />,
+    <HandHeart className="w-6 h-6 text-orange-600" />,
+    <Target className="w-6 h-6 text-blue-700" />,
+    <Flag className="w-6 h-6 text-purple-700" />,
+    <Shield className="w-6 h-6 text-emerald-700" />,
+    <Building2 className="w-6 h-6 text-amber-600" />
+  ];
+
   return (
     <Section className="bg-slate-50">
-      <SectionTitle title={t.leadership.title} />
-      <div className="max-w-4xl mx-auto space-y-4">
-        {[t.leadership.point1, t.leadership.point2, t.leadership.point3, t.leadership.point4].map((point, idx) => (
+      <SectionTitle title={t.leadership.title} subtitle={t.leadership.subtitle} />
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+        {t.leadership.points.map((point, idx) => (
           <motion.div 
             key={idx}
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: idx * 0.1 }}
-            className="flex items-start gap-4 bg-white p-6 rounded-xl shadow-sm border border-slate-100"
+            className="bg-white p-6 rounded-2xl shadow-sm border border-slate-200/80 hover:shadow-md transition-all flex flex-col justify-between"
           >
-            <CheckCircle className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" />
-            <p className="text-lg text-slate-700">{point}</p>
+            <div>
+              <div className="w-12 h-12 rounded-xl bg-slate-100 flex items-center justify-center mb-4">
+                {icons[idx % icons.length]}
+              </div>
+              <h3 className="text-lg font-bold text-slate-900 mb-2">{point.title}</h3>
+              <p className="text-slate-600 text-sm leading-relaxed">{point.desc}</p>
+            </div>
           </motion.div>
         ))}
       </div>

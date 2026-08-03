@@ -70,10 +70,33 @@ export const translations = {
     },
     leadership: {
       title: "Why Leadership at the Ward Level Matters",
-      point1: "A ward is small enough for a leader to know local families and issues intimately.",
-      point2: "Ward members act as the crucial bridge connecting citizens directly with the Grama Panchayat.",
-      point3: "Prepared ward leaders can significantly improve accountability, participation and local development.",
-      point4: "Strong local leadership helps convert public funds and constitutional responsibilities into visible, tangible outcomes."
+      subtitle: "Empowered Ward Members are the foundation of effective grassroots governance.",
+      points: [
+        {
+          title: "Closest to the People",
+          desc: "Ward Members are the first point of contact for citizens, with the deepest understanding of local needs, challenges, and aspirations."
+        },
+        {
+          title: "Foundation of Participatory Governance",
+          desc: "Strong ward leadership encourages active citizen participation, ensuring that every voice contributes to local decision-making."
+        },
+        {
+          title: "Turning Local Issues into Local Solutions",
+          desc: "Effective leaders identify community challenges early, prioritize them, and drive timely action for better public service delivery."
+        },
+        {
+          title: "Driving Inclusive Development",
+          desc: "Ward-level leadership ensures that women, youth, vulnerable groups, and underserved communities are represented in development planning."
+        },
+        {
+          title: "Building Transparent and Accountable Governance",
+          desc: "Empowered Ward Members strengthen trust by promoting transparency, responsiveness, and continuous engagement with citizens."
+        },
+        {
+          title: "The Building Blocks of Strong Gram Panchayats",
+          desc: "Every successful Gram Panchayat begins with capable Ward Members who transform local leadership into sustainable village development."
+        }
+      ]
     },
     objectives: {
       title: "Putting the Pancha in Panchayats",
@@ -264,10 +287,33 @@ export const translations = {
     },
     leadership: {
       title: "ವಾರ್ಡ್ ಮಟ್ಟದ ನಾಯಕತ್ವ ಏಕೆ ಮುಖ್ಯ?",
-      point1: "ವಾರ್ಡ್ ಚಿಕ್ಕದಾಗಿರುವುದರಿಂದ ನಾಯಕರಿಗೆ ಸ್ಥಳೀಯ ಕುಟುಂಬಗಳು ಮತ್ತು ಸಮಸ್ಯೆಗಳ ಅರಿವಿರುತ್ತದೆ.",
-      point2: "ವಾರ್ಡ್ ಸದಸ್ಯರು ನಾಗರಿಕರು ಮತ್ತು ಗ್ರಾಮ ಪಂಚಾಯತಿ ನಡುವಿನ ಪ್ರಮುಖ ಕೊಂಡಿಯಾಗಿ ಕಾರ್ಯನಿರ್ವಹಿಸುತ್ತಾರೆ.",
-      point3: "ತರಬೇತಿ ಪಡೆದ ವಾರ್ಡ್ ನಾಯಕರು ಹೊಣೆಗಾರಿಕೆ ಮತ್ತು ಸ್ಥಳೀಯ ಅಭಿವೃದ್ಧಿಯನ್ನು ಸುಧಾರಿಸಬಹುದು.",
-      point4: "ಬಲವಾದ ನಾಯಕತ್ವವು ಸಾರ್ವಜನಿಕ ನಿಧಿಯನ್ನು ಗೋಚರ ಫಲಿತಾಂಶಗಳಾಗಿ ಪರಿವರ್ತಿಸಲು ಸಹಾಯ ಮಾಡುತ್ತದೆ."
+      subtitle: "ಸಶಕ್ತ ವಾರ್ಡ್ ಸದಸ್ಯರು ಪರಿಣಾಮಕಾರಿ ತಳಮಟ್ಟದ ಆಡಳಿತದ ಬುನಾದಿಯಾಗಿದ್ದಾರೆ.",
+      points: [
+        {
+          title: "ಜನರಿಗೆ ಅತ್ಯಂತ ಹತ್ತಿರದವರು",
+          desc: "ವಾರ್ಡ್ ಸದಸ್ಯರು ನಾಗರಿಕರ ಮೊದಲ ಸಂಪರ್ಕ ಬಿಂದುವಾಗಿದ್ದು, ಸ್ಥಳೀಯ ಅಗತ್ಯಗಳು, ಸವಾಲುಗಳು ಮತ್ತು ಆಕಾಂಕ್ಷೆಗಳ ಆಳವಾದ ಅರಿವನ್ನು ಹೊಂದಿರುತ್ತಾರೆ."
+        },
+        {
+          title: "ಸಹಭಾಗಿತ್ವದ ಆಡಳಿತದ ಬುನಾದಿ",
+          desc: "ಬಲವಾದ ವಾರ್ಡ್ ನಾಯಕತ್ವವು ಸಕ್ರಿಯ ನಾಗರಿಕ ಭಾಗವಹಿಸುವಿಕೆಯನ್ನು ಪ್ರೋತ್ಸಾಹಿಸುತ್ತದೆ, ಪ್ರತಿಯೊಬ್ಬರ ಧ್ವನಿಯೂ ಸ್ಥಳೀಯ ನಿರ್ಧಾರ ಕೈಗೊಳ್ಳುವಿಕೆಯಲ್ಲಿ ಕೊಡುಗೆ ನೀಡುವುದನ್ನು ಖಚಿತಪಡಿಸುತ್ತದೆ."
+        },
+        {
+          title: "ಸ್ಥಳೀಯ ಸಮಸ್ಯೆಗಳನ್ನು ಸ್ಥಳೀಯ ಪರಿಹಾರಗಳಾಗಿ ಪರಿವರ್ತಿಸುವುದು",
+          desc: "ಪರಿಣಾಮಕಾರಿ ನಾಯಕರು ಸಮುದಾಯದ ಸವಾಲುಗಳನ್ನು ಮೊದಲೇ ಗುರುತಿಸಿ, ಅವುಗಳಿಗೆ ಆದ್ಯತೆ ನೀಡಿ, ಉತ್ತಮ ಸಾರ್ವಜನಿಕ ಸೇವೆಗೆ ಸಮಯೋಚಿತ ಕ್ರಮ ಕೈಗೊಳ್ಳುತ್ತಾರೆ."
+        },
+        {
+          title: "ಸಮಗ್ರ ಅಭಿವೃದ್ಧಿಯನ್ನು ಮುನ್ನಡೆಸುವುದು",
+          desc: "ವಾರ್ಡ್ ಮಟ್ಟದ ನಾಯಕತ್ವವು ಅಭಿವೃದ್ಧಿ ಯೋಜನೆಯಲ್ಲಿ ಮಹಿಳೆಯರು, ಯುವಕರು, ಸಂಕಷ್ಟದಲ್ಲಿರುವ ಸಮುದಾಯಗಳು ಪ್ರತಿನಿಧಿಸಲ್ಪಡುವುದನ್ನು ಖಚಿತಪಡಿಸುತ್ತದೆ."
+        },
+        {
+          title: "ಪಾರದರ್ಶಕ ಮತ್ತು ಜವಾಬ್ದಾರಿಯುತ ಆಡಳಿತ ನಿರ್ಮಾಣ",
+          desc: "ಸಶಕ್ತ ವಾರ್ಡ್ ಸದಸ್ಯರು ಪಾರದರ್ಶಕತೆ, ಸ್ಪಂದನಶೀಲತೆ ಮತ್ತು ನಾಗರಿಕರೊಂದಿಗೆ ನಿರಂತರ ತೊಡಗಿಸಿಕೊಳ್ಳುವಿಕೆಯನ್ನು ಉತ್ತೇಜಿಸುವ ಮೂಲಕ ನಂಬಿಕೆಯನ್ನು ಬಲಪಡಿಸುತ್ತಾರೆ."
+        },
+        {
+          title: "ಬಲವಾದ ಗ್ರಾಮ ಪಂಚಾಯತಿಗಳ ಮೂಲ ಕಲ್ಲುಗಳು",
+          desc: "ಪ್ರತಿಯೊಂದು ಯಶಸ್ವಿ ಗ್ರಾಮ ಪಂಚಾಯತಿಯು ಸಮರ್ಥ ವಾರ್ಡ್ ಸದಸ್ಯರಿಂದ ಪ್ರಾರಂಭವಾಗುತ್ತದೆ, ಅವರು ಸ್ಥಳೀಯ ನಾಯಕತ್ವವನ್ನು ಸುಸ್ಥಿರ ಗ್ರಾಮ ಅಭಿವೃದ್ಧಿಯಾಗಿ ಪರಿವರ್ತಿಸುತ್ತಾರೆ."
+        }
+      ]
     },
     objectives: {
       title: "ಪಂಚಾಯತ್‌ಗಳಲ್ಲಿ ಪಂಚ್ ತರುವುದು",
