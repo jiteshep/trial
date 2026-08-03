@@ -168,7 +168,7 @@ export const translations = {
     },
     partners: {
       title: "Together for Stronger Grama Panchayats",
-      supportedBy: "An Initiative Supported By"
+      supportedBy: "An Initiative Of"
     },
     faq: {
       title: "Frequently Asked Questions",
@@ -385,7 +385,7 @@ export const translations = {
     },
     partners: {
       title: "ಸಶಕ್ತ ಗ್ರಾಮ ಪಂಚಾಯತಿಗಳಿಗಾಗಿ ಒಟ್ಟಾಗಿ",
-      supportedBy: "ಉಪಕ್ರಮದ ಬೆಂಬಲಿಗರು"
+      supportedBy: "ಇವರ ಉಪಕ್ರಮ"
     },
     faq: {
       title: "ಪದೇ ಪದೇ ಕೇಳಲಾಗುವ ಪ್ರಶ್ನೆಗಳು",

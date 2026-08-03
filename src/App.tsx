@@ -8,25 +8,6 @@ import { CheckCircle, Target } from 'lucide-react';
 import { motion } from 'motion/react';
 import { config } from './config';
 
-const TrainingSection = () => {
-  const { t } = useLanguage();
-  return (
-    <Section id="training" className="bg-slate-900 text-white">
-      <SectionTitle title={t.training.title} subtitle={t.training.subtitle} />
-      <div className="max-w-4xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-4 mb-8">
-          {t.training.items.map((item, idx) => (
-             <div key={idx} className="flex gap-3 bg-slate-800 p-4 rounded-xl">
-               <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
-               <p className="text-slate-300">{item}</p>
-             </div>
-          ))}
-        </div>
-      </div>
-    </Section>
-  );
-};
-
 const ImpactSection = () => {
   const { t } = useLanguage();
   
@@ -94,7 +75,6 @@ function MainContent() {
         <ObjectivesSection />
         <TimelineSection />
         <ApplySection />
-        <TrainingSection />
         <VolunteerSection />
         <ImpactSection />
         <PartnersSection />
