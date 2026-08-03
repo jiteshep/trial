@@ -209,7 +209,7 @@ export const Hero = () => {
 };
 
 export const Footer = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   return (
     <footer className="bg-emerald-950 text-emerald-100 relative">
       {/* Top Gradient Divider Accent Line */}
@@ -218,14 +218,12 @@ export const Footer = () => {
       <div className="py-12 md:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-4 gap-12 mb-12">
           <div className="col-span-1 md:col-span-2">
-            <img src="/logo-header.png" alt="Namma Grama Nayaka" className="h-14 md:h-16 mb-6 brightness-0 invert" />
+            <span className="text-xl font-extrabold text-white tracking-wider block mb-6">
+              {language === 'kn' ? 'ನಮ್ಮ ಗ್ರಾಮ ನಾಯಕ' : 'NAMMA GRAMA NAYAKA'}
+            </span>
             <p className="text-emerald-200/90 mb-6 max-w-sm leading-relaxed text-sm md:text-base">
               {t.footer.mission}
             </p>
-            <div className="flex gap-6 items-center">
-               <img src="/logo-ep.png" alt="Empower Panchayat" className="h-12 md:h-14 object-contain brightness-0 invert opacity-90 hover:opacity-100 transition-opacity" />
-               <img src="/logo-ts.png" alt="Tejasvi Surya" className="h-10 md:h-12 object-contain brightness-0 invert opacity-90 hover:opacity-100 transition-opacity" />
-            </div>
           </div>
           <div>
             <h4 className="text-white font-bold mb-4 uppercase tracking-wider text-xs">{t.footer.quickLinks}</h4>
