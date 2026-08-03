@@ -3,27 +3,69 @@ import { useLanguage } from '../LanguageContext';
 import { config } from '../config';
 import { Section, SectionTitle } from './Sections';
 import { motion, AnimatePresence } from 'motion/react';
-import { ChevronDown, ChevronUp, Mail, Phone, MapPin } from 'lucide-react';
+import { ChevronDown, ChevronUp, Mail, Phone, MapPin, ExternalLink, Maximize2, X, ShieldCheck, Loader2 } from 'lucide-react';
 
 // APPLY SECTION
 export const ApplySection = () => {
   const { t } = useLanguage();
+  const [isLoading, setIsLoading] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const formUrl = config.WARD_MEMBER_GOOGLE_FORM_URL.includes('?') 
+    ? `${config.WARD_MEMBER_GOOGLE_FORM_URL}&embedded=true` 
+    : `${config.WARD_MEMBER_GOOGLE_FORM_URL}?embedded=true`;
+
   return (
-    <Section id="apply" className="bg-green-50 text-slate-900">
+    <Section id="apply" className="bg-gradient-to-b from-green-50/50 to-emerald-50 text-slate-900">
       <SectionTitle title={t.apply.title} subtitle={t.apply.subtitle} />
       <div className="max-w-4xl mx-auto">
-        <div className="bg-white rounded-2xl overflow-hidden shadow-xl text-slate-900">
-          <div className="p-4 bg-slate-50 border-b border-slate-100 text-sm text-slate-500 text-center">
-            {t.apply.privacy}
+        <div className="bg-white rounded-3xl overflow-hidden shadow-2xl border border-slate-100 text-slate-900 transition-all duration-300">
+          
+          {/* Form Header Bar / Toolbar */}
+          <div className="px-6 py-4 bg-slate-900 text-white flex flex-wrap items-center justify-between gap-3 border-b border-slate-800">
+            <div className="flex items-center gap-2 text-xs md:text-sm font-medium text-emerald-400">
+              <ShieldCheck className="w-4 h-4 text-emerald-400" />
+              <span>{t.apply.privacy}</span>
+            </div>
+            
+            <div className="flex items-center gap-3">
+              <button
+                onClick={() => setIsModalOpen(true)}
+                className="flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white transition-colors"
+                title="Expand Form"
+              >
+                <Maximize2 className="w-3.5 h-3.5" />
+                <span className="hidden sm:inline">Expand View</span>
+              </button>
+
+              <a 
+                href={config.WARD_MEMBER_GOOGLE_FORM_URL} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-1.5 text-xs font-semibold px-3.5 py-1.5 rounded-lg bg-orange-600 hover:bg-orange-700 text-white transition-colors shadow-sm"
+              >
+                <span>{t.apply.cta}</span>
+                <ExternalLink className="w-3.5 h-3.5" />
+              </a>
+            </div>
           </div>
-          <div className="relative w-full h-[600px] md:h-[800px]">
-            {/* Google Form Embed Placeholder */}
+
+          {/* Form Frame Container */}
+          <div className="relative w-full h-[650px] md:h-[850px] bg-slate-50">
+            {isLoading && (
+              <div className="absolute inset-0 flex flex-col items-center justify-center bg-slate-50 z-10 space-y-3">
+                <Loader2 className="w-10 h-10 text-emerald-600 animate-spin" />
+                <p className="text-sm font-medium text-slate-600">Loading Application Form...</p>
+              </div>
+            )}
+            
             <iframe 
-              src={config.WARD_MEMBER_GOOGLE_FORM_URL} 
+              src={formUrl} 
               width="100%" 
               height="100%" 
               title="Ward Member Interest Form"
               className="absolute inset-0 w-full h-full border-0"
+              onLoad={() => setIsLoading(false)}
               frameBorder="0" 
               marginHeight={0} 
               marginWidth={0}
@@ -31,20 +73,54 @@ export const ApplySection = () => {
               Loading…
             </iframe>
           </div>
-          <div className="p-6 text-center border-t border-slate-100 bg-slate-50 flex flex-col items-center">
-            <p className="text-slate-600 mb-4">{t.apply.fallback}</p>
-            <a 
-              href={config.WARD_MEMBER_GOOGLE_FORM_URL} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="px-8 py-3 bg-orange-600 hover:bg-orange-700 text-white font-bold rounded-full transition-colors"
-            >
-              {t.apply.cta}
-            </a>
-            <p className="text-xs text-slate-500 mt-4 max-w-2xl">{t.apply.notice}</p>
+
+          {/* Footer Notice */}
+          <div className="p-5 text-center border-t border-slate-100 bg-slate-50/80 flex flex-col items-center">
+            <p className="text-xs text-slate-500 max-w-2xl">{t.apply.notice}</p>
           </div>
         </div>
       </div>
+
+      {/* Fullscreen Form Modal */}
+      <AnimatePresence>
+        {isModalOpen && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/80 backdrop-blur-md"
+          >
+            <motion.div 
+              initial={{ scale: 0.95, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.95, opacity: 0 }}
+              className="bg-white w-full max-w-4xl h-[90vh] rounded-2xl overflow-hidden shadow-2xl flex flex-col"
+            >
+              <div className="p-4 bg-slate-900 text-white flex justify-between items-center">
+                <div className="flex items-center gap-2">
+                  <ShieldCheck className="w-5 h-5 text-emerald-400" />
+                  <span className="font-semibold text-sm">{t.apply.title}</span>
+                </div>
+                <button 
+                  onClick={() => setIsModalOpen(false)}
+                  className="p-1 rounded-full hover:bg-slate-800 text-slate-400 hover:text-white transition-colors"
+                >
+                  <X className="w-6 h-6" />
+                </button>
+              </div>
+              <div className="flex-1 w-full h-full relative">
+                <iframe 
+                  src={formUrl} 
+                  width="100%" 
+                  height="100%" 
+                  title="Ward Member Interest Form Modal"
+                  className="w-full h-full border-0"
+                />
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </Section>
   );
 };
