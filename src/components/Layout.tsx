@@ -126,34 +126,23 @@ export const Header = () => {
 export const Hero = () => {
   const { t } = useLanguage();
   return (
-    <section id="home" className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden bg-slate-50 min-h-[85vh] flex items-center">
-      {/* Background Dot Pattern */}
+    <section id="home" className="relative pt-28 pb-16 md:pt-36 md:pb-24 lg:pt-40 lg:pb-32 overflow-hidden bg-gradient-to-br from-slate-50 via-amber-50/20 to-slate-50 min-h-[85vh] flex items-center">
+      {/* Subtle background dot pattern */}
       <div className="absolute inset-0 z-0 opacity-15 pointer-events-none" style={{ backgroundImage: 'radial-gradient(#15803d 1px, transparent 1px)', backgroundSize: '32px 32px' }}></div>
 
-      {/* Right-Side Full-Height Vivid & Expanded Image */}
-      <div className="absolute top-0 right-0 bottom-0 w-full lg:w-2/3 xl:w-7/12 h-full z-0 pointer-events-none overflow-hidden flex items-center justify-end">
-        <motion.img 
-          initial={{ opacity: 0, scale: 1.05 }}
-          animate={{ opacity: 1, scale: 1.02 }}
-          transition={{ duration: 0.8 }}
-          src="/logo-ngn.png" 
-          alt="Namma Grama Nayaka Visual" 
-          className="w-full h-full object-cover object-right md:object-center mix-blend-multiply filter contrast-105 brightness-95 scale-105 transition-all duration-700" 
-        />
-        {/* Soft edge gradient fades focused on the left edge only to merge smoothly into text section while keeping right side crisp and full */}
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-50 via-slate-50/50 to-transparent w-full md:w-3/5"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-50/50 via-transparent to-slate-50/30"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-50/30 via-transparent to-slate-50/50"></div>
-      </div>
+      {/* Decorative ambient background glows */}
+      <div className="absolute top-1/4 right-10 w-96 h-96 bg-green-200/30 rounded-full blur-3xl pointer-events-none"></div>
+      <div className="absolute bottom-10 left-10 w-80 h-80 bg-orange-200/25 rounded-full blur-3xl pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-        <div className="grid lg:grid-cols-12 gap-8 items-center">
-          {/* Left Side Content */}
-          <div className="lg:col-span-7 xl:col-span-6 space-y-8 text-center md:text-left">
+        <div className="grid lg:grid-cols-12 gap-10 lg:gap-8 items-center">
+          
+          {/* Left Column: Content */}
+          <div className="lg:col-span-6 xl:col-span-6 space-y-6 md:space-y-8 text-center lg:text-left">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="inline-block px-4 py-1.5 rounded-full bg-green-100 text-green-800 text-sm font-bold uppercase tracking-wider mb-2 border border-green-200 shadow-sm"
+              className="inline-block px-4 py-1.5 rounded-full bg-green-100 text-green-800 text-sm font-bold uppercase tracking-wider border border-green-200 shadow-sm"
             >
               {t.hero.urgency}
             </motion.div>
@@ -161,7 +150,7 @@ export const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight tracking-tight"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight tracking-tight"
             >
               {t.hero.headline}
             </motion.h1>
@@ -169,7 +158,7 @@ export const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-lg md:text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto md:mx-0"
+              className="text-base sm:text-lg md:text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto lg:mx-0"
             >
               {t.hero.subheadline}
             </motion.p>
@@ -177,7 +166,7 @@ export const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="flex flex-col sm:flex-row items-center gap-4 justify-center md:justify-start pt-2"
+              className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start pt-2"
             >
               <a href="#apply" className="w-full sm:w-auto px-8 py-3.5 bg-green-700 hover:bg-green-800 text-white text-lg font-bold rounded-full transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 text-center">
                 {t.hero.primaryCta}
@@ -187,6 +176,32 @@ export const Hero = () => {
               </a>
             </motion.div>
           </div>
+
+          {/* Right Column: Hero Artwork - Seamlessly Masked & Merged into Background */}
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="lg:col-span-6 xl:col-span-6 flex justify-center items-center relative w-full max-w-xl lg:max-w-none mx-auto"
+          >
+            <div className="relative w-full h-[320px] sm:h-[420px] md:h-[480px] lg:h-[500px] xl:h-[540px] flex items-center justify-center">
+              {/* Radial Mask Container */}
+              <div 
+                className="w-full h-full flex items-center justify-center"
+                style={{
+                  maskImage: 'radial-gradient(ellipse at center, rgba(0,0,0,1) 65%, rgba(0,0,0,0) 98%)',
+                  WebkitMaskImage: 'radial-gradient(ellipse at center, rgba(0,0,0,1) 65%, rgba(0,0,0,0) 98%)'
+                }}
+              >
+                <img 
+                  src="/hero-artwork.png" 
+                  alt="Namma Grama Nayaka Leadership" 
+                  className="w-full h-full object-contain mix-blend-multiply filter contrast-105 transition-all duration-300"
+                />
+              </div>
+            </div>
+          </motion.div>
+
         </div>
       </div>
     </section>
