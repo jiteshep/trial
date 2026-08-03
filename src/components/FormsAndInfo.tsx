@@ -244,17 +244,31 @@ export const ContactSection = () => {
   );
 };
 
-// PARTNERS SECTION
 export const PartnersSection = () => {
   const { t } = useLanguage();
   return (
-    <Section className="bg-white border-t border-slate-100/80">
-      <div className="text-center mb-8">
-        <p className="text-xs font-extrabold text-slate-400 uppercase tracking-widest">{t.partners.supportedBy}</p>
+    <Section className="bg-white border-t border-slate-100/80 py-12 md:py-16">
+      <div className="text-center mb-10 md:mb-12">
+        <p className="text-xs sm:text-sm font-extrabold text-slate-400 uppercase tracking-widest">{t.partners.supportedBy}</p>
       </div>
-      <div className="flex flex-wrap justify-center items-center gap-12 md:gap-24">
-        <img src="/logo-ep.png" alt="Empower Panchayat" className="h-16 md:h-20 object-contain mix-blend-multiply opacity-90 hover:opacity-100 transition-opacity filter contrast-105" />
-        <img src="/logo-ts.png" alt="Tejasvi Surya" className="h-12 md:h-16 object-contain mix-blend-multiply opacity-90 hover:opacity-100 transition-opacity filter contrast-105" />
+      <div className="flex flex-col sm:flex-row justify-center items-center gap-8 md:gap-12 max-w-4xl mx-auto px-4">
+        {/* Card 1: Empower Panchayat (Vertical Card) */}
+        <div className="w-64 sm:w-64 md:w-72 h-64 sm:h-72 md:h-80 p-6 rounded-3xl bg-slate-50/80 border border-slate-200/80 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex items-center justify-center">
+          <img 
+            src="/logo-ep.png" 
+            alt="Empower Panchayat" 
+            className="max-h-[80%] max-w-[85%] object-contain mix-blend-multiply filter contrast-105 transition-all duration-300" 
+          />
+        </div>
+
+        {/* Card 2: Tejasvi Surya (Vertical Card - Person Portrait Prominently Displayed) */}
+        <div className="w-64 sm:w-64 md:w-72 h-64 sm:h-72 md:h-80 p-6 rounded-3xl bg-slate-50/80 border border-slate-200/80 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex items-center justify-center">
+          <img 
+            src="/logo-ts-enhanced.png" 
+            alt="Tejasvi Surya" 
+            className="max-h-[95%] max-w-[95%] object-contain mix-blend-multiply filter contrast-105 brightness-105 transition-all duration-300" 
+          />
+        </div>
       </div>
     </Section>
   );

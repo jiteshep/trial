@@ -223,8 +223,8 @@ export const Footer = () => {
               {t.footer.mission}
             </p>
             <div className="flex gap-6 items-center">
-               <img src="/logo-ep.png" alt="Empower Panchayat" className="h-9 object-contain brightness-0 invert opacity-80 hover:opacity-100 transition-opacity" />
-               <img src="/logo-ts.png" alt="Tejasvi Surya" className="h-7 object-contain brightness-0 invert opacity-80 hover:opacity-100 transition-opacity" />
+               <img src="/logo-ep.png" alt="Empower Panchayat" className="h-12 md:h-14 object-contain brightness-0 invert opacity-90 hover:opacity-100 transition-opacity" />
+               <img src="/logo-ts.png" alt="Tejasvi Surya" className="h-10 md:h-12 object-contain brightness-0 invert opacity-90 hover:opacity-100 transition-opacity" />
             </div>
           </div>
           <div>
