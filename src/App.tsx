@@ -3,7 +3,7 @@ import { useLanguage, LanguageProvider } from './LanguageContext';
 import { Section, SectionTitle } from './components/Sections';
 import { Header, Hero, Footer } from './components/Layout';
 import { AboutSection, WhyMatterSection, LeadershipSection, ObjectivesSection, TimelineSection } from './components/Sections';
-import { ApplySection, VolunteerSection, FaqSection, ContactSection, PartnersSection } from './components/FormsAndInfo';
+import { ApplySection, VolunteerSection, ElectionSection, ContactSection, PartnersSection } from './components/FormsAndInfo';
 import { CheckCircle, Target } from 'lucide-react';
 import { motion } from 'motion/react';
 import { config } from './config';
@@ -83,7 +83,7 @@ function MainContent() {
         <VolunteerSection />
         <ImpactSection />
         <PartnersSection />
-        <FaqSection />
+        <ElectionSection />
         <ContactSection />
       </main>
       <Footer />

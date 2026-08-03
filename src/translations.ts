@@ -9,7 +9,7 @@ export const translations = {
       programme: "Programme",
       eligibility: "Eligibility",
       impact: "Impact",
-      faq: "FAQ",
+      election: "Election",
       contact: "Contact"
     },
     hero: {
@@ -229,34 +229,43 @@ export const translations = {
       epName: "Empower Panchayat",
       tsName: "Tejasvi Surya"
     },
-    faq: {
-      title: "Frequently Asked Questions",
-      q1: "What is Namma Grama Nayaka?",
-      a1: "Namma Grama Nayaka is a initiative for capacity building aimed at identifying, preparing, and supporting capable young leaders to participate in governance at the ward level and strengthen Grama Panchayats.",
-      q2: "Who can register?",
-      a2: "Any resident interested in serving their community who is willing to undergo training and engage with citizens can register. This includes youth, women, social workers, farmers, and professionals.",
-      q3: "Is this only for young people?",
-      a3: "While there is a strong focus on empowering youth aged 21 to 35, anyone with a progressive, public service mindset is encouraged to participate.",
-      q4: "Can women apply?",
-      a4: "Yes, absolutely. A major ambition of the programme is to support thousands of women in entering grassroots public leadership.",
-      q6: "Does filling out the form guarantee candidature?",
-      a6: "No. Filling out the form expresses your interest. All eligibility related to elections, reservations, nominations, and procedures are strictly governed by applicable laws and official notifications.",
-      q7: "Will participants receive training?",
-      a7: "Yes. Participants will receive structured training on leadership, public speaking, local governance, Panchayati Raj, and capacity building. The programme aims to equip participants with the knowledge and skills needed for effective grassroots leadership.",
-      q8: "Is there any registration fee?",
-      a8: "Please refer to official programme communications regarding any specific training costs, but the core aim is affordable participation.",
-      q9: "What documents may be required?",
-      a9: "Standard identification and residence proof as required by election laws will be necessary if you choose to contest, but initial registration only requires the details in the form.",
-      q10: "How will my information be used?",
-      a10: "Your information will be used for communication, programme assessment, training, and purposes related to participation.",
-      q11: "Can volunteers and organisations participate?",
-      a11: "Yes, we actively welcome partnerships with NGOs, youth networks, universities, and trainers.",
-      q12: "In which areas of Karnataka will the initiative operate?",
-      a12: "The initiative aims to have a statewide reach across rural and significantly rural assembly constituencies in Karnataka.",
-      q13: "What is the role of a ward member?",
-      a13: "A ward member represents their local ward in the Grama Panchayat, acts as a bridge between citizens and government, and helps plan local development.",
-      q14: "What is the difference between a Ward Sabha and a Grama Sabha?",
-      a14: "A Ward Sabha is a meeting of voters within a specific ward, while a Grama Sabha is a meeting of all voters across the entire Grama Panchayat."
+    election: {
+      title: "Election & Eligibility",
+      eligibilityTitle: "Legal Eligibility Criteria",
+      profilesTitle: "Who Should Lead?",
+      legalPoints: [
+        "Any Indian citizen who is registered as a voter in the concerned ward.",
+        "Must be at least 21 years of age.",
+        "Must meet the eligibility criteria prescribed under the respective State Panchayati Raj Act (such as not being disqualified due to insolvency, certain criminal convictions, holding an office of profit, etc.).",
+        "Can contest from reserved wards (SC, ST, OBC, Women) only if they satisfy the reservation criteria applicable to that ward.",
+        "Does not require any prior political experience or government service experience."
+      ],
+      profiles: [
+        {
+          title: "Community Leaders",
+          desc: "Passionate about solving local challenges and uniting residents."
+        },
+        {
+          title: "Youth",
+          desc: "Eager to shape the future of their villages with energy and technology."
+        },
+        {
+          title: "Women Changemakers",
+          desc: "Committed to inclusive, progressive, and participatory governance."
+        },
+        {
+          title: "Farmers & Rural Entrepreneurs",
+          desc: "Who understand grassroots realities, agriculture, and local economies."
+        },
+        {
+          title: "Teachers, Social Workers & Professionals",
+          desc: "Ready to contribute their specialized knowledge and ethics to public service."
+        },
+        {
+          title: "Any Eligible Citizen",
+          desc: "With a strong vision and commitment to serve their village community."
+        }
+      ]
     },
     contact: {
       title: "Contact Us",
@@ -285,7 +294,7 @@ export const translations = {
       programme: "ಕಾರ್ಯಕ್ರಮ",
       eligibility: "ಅರ್ಹತೆ",
       impact: "ಪರಿಣಾಮ",
-      faq: "FAQ",
+      election: "ಚುನಾವಣೆ",
       contact: "ಸಂಪರ್ಕಿಸಿ"
     },
     hero: {
@@ -505,34 +514,43 @@ export const translations = {
       epName: "ಎಂಪವರ್ ಪಂಚಾಯತ್",
       tsName: "ತೇಜಸ್ವಿ ಸೂರ್ಯ"
     },
-    faq: {
-      title: "ಪದೇ ಪದೇ ಕೇಳಲಾಗುವ ಪ್ರಶ್ನೆಗಳು",
-      q1: "ನಮ್ಮ ಗ್ರಾಮ ನಾಯಕ ಎಂದರೇನು?",
-      a1: "ನಮ್ಮ ಗ್ರಾಮ ನಾಯಕವು ವಾರ್ಡ್ ಮಟ್ಟದ ಆಡಳಿತದಲ್ಲಿ ಭಾಗವಹಿಸಲು ಮತ್ತು ಗ್ರಾಮ ಪಂಚಾಯತಿಗಳನ್ನು ಬಲಪಡಿಸಲು ಸಮರ್ಥ ಯುವ ನಾಯಕರನ್ನು ಗುರುತಿಸುವ, ಸಿದ್ಧಪಡಿಸುವ ಮತ್ತು ಬೆಂಬಲಿಸುವ ಉಪಕ್ರಮವಾಗಿದೆ.",
-      q2: "ಯಾರು ನೋಂದಾಯಿಸಿಕೊಳ್ಳಬಹುದು?",
-      a2: "ತಮ್ಮ ಸಮುದಾಯಕ್ಕೆ ಸೇವೆ ಸಲ್ಲಿಸಲು ಆಸಕ್ತಿ ಹೊಂದಿರುವ ಮತ್ತು ತರಬೇತಿ ಪಡೆಯಲು ಸಿದ್ಧರಿರುವ ಯಾವುದೇ ನಿವಾಸಿ ನೋಂದಾಯಿಸಿಕೊಳ್ಳಬಹುದು.",
-      q3: "ಇದು ಯುವಕರಿಗೆ ಮಾತ್ರವೇ?",
-      a3: "ಯುವಕರ (21 ರಿಂದ 35 ವರ್ಷ) ಸಬಲೀಕರಣದ ಮೇಲೆ ಹೆಚ್ಚಿನ ಗಮನವಿದ್ದರೂ, ಪ್ರಗತಿಪರ ಮನಸ್ಥಿತಿ ಹೊಂದಿರುವ ಯಾರಾದರೂ ಭಾಗವಹಿಸಬಹುದು.",
-      q4: "ಮಹಿಳೆಯರು ಅರ್ಜಿ ಸಲ್ಲಿಸಬಹುದೇ?",
-      a4: "ಹೌದು, ಖಂಡಿತ. ಸಾವಿರಾರು ಮಹಿಳೆಯರನ್ನು ತಳಮಟ್ಟದ ಸಾರ್ವಜನಿಕ ನಾಯಕತ್ವಕ್ಕೆ ತರುವುದು ಕಾರ್ಯಕ್ರಮದ ಪ್ರಮುಖ ಮಹತ್ವಾಕಾಂಕ್ಷೆಯಾಗಿದೆ.",
-      q6: "ಫಾರ್ಮ್ ಭರ್ತಿ ಮಾಡುವುದರಿಂದ ಉಮೇದುವಾರಿಕೆ ಖಾತರಿಯಾಗುತ್ತದೆಯೇ?",
-      a6: "ಇಲ್ಲ. ಫಾರ್ಮ್ ಭರ್ತಿ ಮಾಡುವುದು ನಿಮ್ಮ ಆಸಕ್ತಿಯನ್ನು ವ್ಯಕ್ತಪಡಿಸುತ್ತದೆ. ಎಲ್ಲಾ ಚುನಾವಣಾ ಪ್ರಕ್ರಿಯೆಗಳು ಅನ್ವಯವಾಗುವ ಕಾನೂನುಗಳಿಂದ ನಿಯಂತ್ರಿಸಲ್ಪಡುತ್ತವೆ.",
-      q7: "ಭಾಗವಹಿಸುವವರಿಗೆ ತರಬೇತಿ ಸಿಗುತ್ತದೆಯೇ?",
-      a7: "ಹೌದು. ಭಾಗವಹಿಸುವವರಿಗೆ ನಾಯಕತ್ವ, ಸಾರ್ವಜನಿಕ ಭಾಷಣ, ಸ್ಥಳೀಯ ಆಡಳಿತ, ಪಂಚಾಯತ್ ರಾಜ್ ಮತ್ತು ಸಾಮರ್ಥ್ಯ ವೃದ್ಧಿಯ ಕುರಿತು ರಚನಾತ್ಮಕ ತರಬೇತಿಯನ್ನು ನೀಡಲಾಗುತ್ತದೆ. ಪರಿಣಾಮಕಾರಿ ತಳಮಟ್ಟದ ನಾಯಕತ್ವಕ್ಕೆ ಅಗತ್ಯವಾದ ಜ್ಞಾನ ಮತ್ತು ಕೌಶಲ್ಯಗಳೊಂದಿಗೆ ಭಾಗವಹಿಸುವವರನ್ನು ಸಜ್ಜುಗೊಳಿಸುವುದು ಈ ಕಾರ್ಯಕ್ರಮದ ಗುರಿಯಾಗಿದೆ.",
-      q8: "ಯಾವುದೇ ನೋಂದಣಿ ಶುಲ್ಕವಿದೆಯೇ?",
-      a8: "ಕೈಗೆಟುಕುವ ಭಾಗವಹಿಸುವಿಕೆಯು ನಮ್ಮ ಪ್ರಮುಖ ಗುರಿಯಾಗಿದೆ. ಯಾವುದೇ ನಿರ್ದಿಷ್ಟ ತರಬೇತಿ ವೆಚ್ಚಗಳ ಕುರಿತು ಅಧಿಕೃತ ಸಂವಹನಗಳನ್ನು ಗಮನಿಸಿ.",
-      q9: "ಯಾವ ದಾಖಲೆಗಳು ಬೇಕಾಗಬಹುದು?",
-      a9: "ಆರಂಭಿಕ ನೋಂದಣಿಗೆ ಫಾರ್ಮ್‌ನಲ್ಲಿರುವ ವಿವರಗಳು ಮಾತ್ರ ಸಾಕು. ಚುನಾವಣೆಗೆ ಸ್ಪರ್ಧಿಸಲು ಕಾನೂನಿನ ಪ್ರಕಾರ ಗುರುತಿನ ಮತ್ತು ವಾಸಸ್ಥಳದ ಪುರಾವೆಗಳು ಬೇಕಾಗುತ್ತವೆ.",
-      q10: "ನನ್ನ ಮಾಹಿತಿಯನ್ನು ಹೇಗೆ ಬಳಸಲಾಗುತ್ತದೆ?",
-      a10: "ನಿಮ್ಮ ಮಾಹಿತಿಯನ್ನು ಸಂವಹನ, ಕಾರ್ಯಕ್ರಮ ಮೌಲ್ಯಮಾಪನ ಮತ್ತು ತರಬೇತಿ ಉದ್ದೇಶಗಳಿಗಾಗಿ ಬಳಸಲಾಗುತ್ತದೆ.",
-      q11: "ಸ್ವಯಂಸೇವಕರು ಮತ್ತು ಸಂಸ್ಥೆಗಳು ಭಾಗವಹಿಸಬಹುದೇ?",
-      a11: "ಹೌದು, ಎನ್‌ಜಿಒಗಳು, ಯುವ ಜಾಲಗಳು ಮತ್ತು ತರಬೇತುದಾರರೊಂದಿಗಿನ ಪಾಲುದಾರಿಕೆಯನ್ನು ನಾವು ಸ್ವಾಗತಿಸುತ್ತೇವೆ.",
-      q12: "ಕರ್ನಾಟಕದ ಯಾವ ಪ್ರದೇಶಗಳಲ್ಲಿ ಉಪಕ್ರಮ ಕಾರ್ಯನಿರ್ವಹಿಸುತ್ತದೆ?",
-      a12: "ಕರ್ನಾಟಕದ ಗ್ರಾಮೀಣ ವಿಧಾನಸಭಾ ಕ್ಷೇತ್ರಗಳಾದ್ಯಂತ ರಾಜ್ಯವ್ಯಾಪಿ ತಲುಪುವ ಗುರಿಯನ್ನು ಉಪಕ್ರಮ ಹೊಂದಿದೆ.",
-      q13: "ವಾರ್ಡ್ ಸದಸ್ಯರ ಪಾತ್ರವೇನು?",
-      a13: "ವಾರ್ಡ್ ಸದಸ್ಯರು ಗ್ರಾಮ ಪಂಚಾಯತಿಯಲ್ಲಿ ತಮ್ಮ ವಾರ್ಡ್ ಅನ್ನು ಪ್ರತಿನಿಧಿಸುತ್ತಾರೆ, ನಾಗರಿಕರು ಮತ್ತು ಸರ್ಕಾರದ ನಡುವಿನ ಕೊಂಡಿಯಾಗಿ ಕಾರ್ಯನಿರ್ವಹಿಸುತ್ತಾರೆ.",
-      q14: "ವಾರ್ಡ್ ಸಭೆ ಮತ್ತು ಗ್ರಾಮ ಸಭೆಯ ನಡುವಿನ ವ್ಯತ್ಯಾಸವೇನು?",
-      a14: "ವಾರ್ಡ್ ಸಭೆಯು ನಿರ್ದಿಷ್ಟ ವಾರ್ಡ್‌ನ ಮತದಾರರ ಸಭೆಯಾಗಿದ್ದರೆ, ಗ್ರಾಮ ಸಭೆಯು ಇಡೀ ಗ್ರಾಮ ಪಂಚಾಯತಿಯ ಎಲ್ಲಾ ಮತದಾರರ ಸಭೆಯಾಗಿದೆ."
+    election: {
+      title: "ಚುನಾವಣೆ ಮತ್ತು ಅರ್ಹತೆ",
+      eligibilityTitle: "ಕಾನೂನುಬದ್ಧ ಅರ್ಹತಾ ಮಾನದಂಡಗಳು",
+      profilesTitle: "ಯಾರು ಸ್ಪರ್ಧಿಸಬಹುದು?",
+      legalPoints: [
+        "ಸಂಬಂಧಿತ ವಾರ್ಡ್‌ನಲ್ಲಿ ಮತದಾರರಾಗಿ ನೋಂದಾಯಿಸಲ್ಪಟ್ಟಿರುವ ಯಾವುದೇ ಭಾರತೀಯ ನಾಗರಿಕ.",
+        "ಕನಿಷ್ಠ 21 ವರ್ಷ ವಯಸ್ಸಿನವರಾಗಿರಬೇಕು.",
+        "ಸಂಬಂಧಿತ ರಾಜ್ಯ ಪಂಚಾಯತ್ ರಾಜ್ ಕಾಯ್ದೆಯಡಿ ನಿಗದಿಪಡಿಸಿದ ಅರ್ಹತಾ ಮಾನದಂಡಗಳನ್ನು ಪೂರೈಸಬೇಕು (ಉದಾಹರಣೆಗೆ ದಿವಾಳಿತನ, ಕೆಲವು ಅಪರಾಧ ಕೃತ್ಯಗಳ ಶಿಕ್ಷೆ, ಲಾಭದಾಯಕ ಹುದ್ದೆ ಹೊಂದಿರುವುದು ಮುಂತಾದ ಕಾರಣಗಳಿಂದ ಅನರ್ಹರಾಗಿರಬಾರದು).",
+        "ಮೀಸಲಾತಿ ವಾರ್ಡ್‌ಗಳಿಂದ (SC, ST, OBC, ಮಹಿಳಾ) ಸ್ಪರ್ಧಿಸಲು ಆ ವಾರ್ಡ್‌ಗೆ ಅನ್ವಯವಾಗುವ ಮೀಸಲಾತಿ ಮಾನದಂಡಗಳನ್ನು ಪೂರೈಸಿದಲ್ಲಿ ಮಾತ್ರ ಅವಕಾಶವಿರುತ್ತದೆ.",
+        "ಯಾವುದೇ ಪೂರ್ವ ರಾಜಕೀಯ ಅನುಭವ ಅಥವಾ ಸರ್ಕಾರಿ ಸೇವೆ ಅನುಭವದ ಅಗತ್ಯವಿರುವುದಿಲ್ಲ."
+      ],
+      profiles: [
+        {
+          title: "ಸಮುದಾಯದ ನಾಯಕರು",
+          desc: "ಸ್ಥಳೀಯ ಸವಾಲುಗಳನ್ನು ಪರಿಹರಿಸಲು ಮತ್ತು ನಿವಾಸಿಗಳನ್ನು ಒಗ್ಗೂಡಿಸಲು ಆಸಕ್ತಿ ಹೊಂದಿರುವವರು."
+        },
+        {
+          title: "ಯುವಜನತೆ",
+          desc: "ಉತ್ಸಾಹ ಮತ್ತು ತಂತ್ರಜ್ಞಾನದೊಂದಿಗೆ ತಮ್ಮ ಹಳ್ಳಿಗಳ ಭವಿಷ್ಯವನ್ನು ರೂಪಿಸಲು ಉತ್ಸುಕರಾಗಿರುವವರು."
+        },
+        {
+          title: "ಮಹಿಳಾ ಬದಲಾವಣೆಯ ಹರಿಕಾರರು",
+          desc: "ಸಮಗ್ರ, ಪ್ರಗತಿಪರ ಮತ್ತು ಸಹಭಾಗಿತ್ವದ ಆಡಳಿತಕ್ಕೆ ಬದ್ಧರಾಗಿರುವವರು."
+        },
+        {
+          title: "ರೈತರು ಮತ್ತು ಗ್ರಾಮೀಣ ಉದ್ಯಮಿಗಳು",
+          desc: "ತಳಮಟ್ಟದ ವಾಸ್ತವಗಳು, ಕೃಷಿ ಮತ್ತು ಸ್ಥಳೀಯ ಆರ್ಥಿಕತೆಯನ್ನು ಚೆನ್ನಾಗಿ ಅರ್ಥಮಾಡಿಕೊಂಡಿರುವವರು."
+        },
+        {
+          title: "ಶಿಕ್ಷಕರು, ಸಮಾಜ ಸೇವಕರು ಮತ್ತು ವೃತ್ತಿಪರರು",
+          desc: "ತಮ್ಮ ವಿಶಿಷ್ಟ ಜ್ಞಾನ ಮತ್ತು ನೈತಿಕತೆಯನ್ನು ಸಾರ್ವಜನಿಕ ಸೇವೆಗೆ ಕೊಡುಗೆ ನೀಡಲು ಸಿದ್ಧರಿರುವವರು."
+        },
+        {
+          title: "ಯಾವುದೇ ಅರ್ಹ ನಾಗರಿಕರು",
+          desc: "ತಮ್ಮ ಗ್ರಾಮಕ್ಕೆ ಸೇವೆ ಸಲ್ಲಿಸಲು ದೃಢವಾದ ದೃಷ್ಟಿಕೋನ ಮತ್ತು ಬದ್ಧತೆ ಹೊಂದಿರುವವರು."
+        }
+      ]
     },
     contact: {
       title: "ಸಂಪರ್ಕಿಸಿ",

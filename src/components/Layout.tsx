@@ -23,7 +23,7 @@ export const Header = () => {
     { name: t.nav.about, href: "#about" },
     { name: t.nav.mission, href: "#mission" },
     { name: t.nav.programme, href: "#programme" },
-    { name: t.nav.faq, href: "#faq" },
+    { name: t.nav.election, href: "#election" },
     { name: t.nav.contact, href: "#contact" },
   ];
 

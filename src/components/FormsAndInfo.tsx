@@ -3,7 +3,7 @@ import { useLanguage } from '../LanguageContext';
 import { config } from '../config';
 import { Section, SectionTitle } from './Sections';
 import { motion, AnimatePresence } from 'motion/react';
-import { ChevronDown, ChevronUp, Mail, MapPin, ExternalLink, Maximize2, X, ShieldCheck, Loader2 } from 'lucide-react';
+import { ChevronDown, ChevronUp, Mail, MapPin, ExternalLink, Maximize2, X, ShieldCheck, Loader2, Scale, Calendar, Award, UserCheck, Users, Zap, HandHeart, BookOpen, Flag, Sprout, Briefcase } from 'lucide-react';
 
 // APPLY SECTION
 export const ApplySection = () => {
@@ -148,64 +148,133 @@ export const VolunteerSection = () => {
   );
 };
 
-// FAQ SECTION
-export const FaqSection = () => {
-  const { t } = useLanguage();
-  const [openIdx, setOpenIdx] = useState<number | null>(null);
 
-  const faqs = [
-    { q: t.faq.q1, a: t.faq.a1 },
-    { q: t.faq.q2, a: t.faq.a2 },
-    { q: t.faq.q3, a: t.faq.a3 },
-    { q: t.faq.q4, a: t.faq.a4 },
-    { q: t.faq.q6, a: t.faq.a6 },
-    { q: t.faq.q7, a: t.faq.a7 },
-    { q: t.faq.q13, a: t.faq.a13 },
-    { q: t.faq.q14, a: t.faq.a14 },
+// ELECTION & ELIGIBILITY SECTION
+export const ElectionSection = () => {
+  const { t } = useLanguage();
+
+  const legalIcons = [
+    <UserCheck className="w-5 h-5 text-emerald-600 shrink-0" />,
+    <Calendar className="w-5 h-5 text-emerald-600 shrink-0" />,
+    <Scale className="w-5 h-5 text-emerald-600 shrink-0" />,
+    <Award className="w-5 h-5 text-emerald-600 shrink-0" />,
+    <ShieldCheck className="w-5 h-5 text-emerald-600 shrink-0" />,
+  ];
+
+  const profileConfigs = [
+    {
+      icon: <HandHeart className="w-5 h-5 text-orange-600" />,
+      bgColor: "bg-orange-50/60 hover:bg-orange-50",
+      borderColor: "border-orange-100 hover:border-orange-200",
+    },
+    {
+      icon: <Zap className="w-5 h-5 text-amber-600" />,
+      bgColor: "bg-amber-50/60 hover:bg-amber-50",
+      borderColor: "border-amber-100 hover:border-amber-200",
+    },
+    {
+      icon: <Users className="w-5 h-5 text-rose-600" />,
+      bgColor: "bg-rose-50/60 hover:bg-rose-50",
+      borderColor: "border-rose-100 hover:border-rose-200",
+    },
+    {
+      icon: <Sprout className="w-5 h-5 text-green-600" />,
+      bgColor: "bg-green-50/60 hover:bg-green-50",
+      borderColor: "border-green-100 hover:border-green-200",
+    },
+    {
+      icon: <BookOpen className="w-5 h-5 text-blue-600" />,
+      bgColor: "bg-blue-50/60 hover:bg-blue-50",
+      borderColor: "border-blue-100 hover:border-blue-200",
+    },
+    {
+      icon: <Flag className="w-5 h-5 text-indigo-600" />,
+      bgColor: "bg-indigo-50/60 hover:bg-indigo-50",
+      borderColor: "border-indigo-100 hover:border-indigo-200",
+    },
   ];
 
   return (
-    <Section id="faq" className="bg-slate-50">
-      <SectionTitle title={t.faq.title} />
-      <div className="max-w-3xl mx-auto space-y-4">
-        {faqs.map((faq, idx) => {
-          const isOpen = openIdx === idx;
-          return (
-            <div 
-              key={idx} 
-              className={`bg-white rounded-2xl border transition-all duration-300 overflow-hidden shadow-sm ${
-                isOpen ? 'border-emerald-500/80 ring-2 ring-emerald-500/20 shadow-md border-l-4 border-l-emerald-600' : 'border-slate-200/80 hover:border-slate-300'
-              }`}
-            >
-              <button 
-                className="w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none cursor-pointer"
-                onClick={() => setOpenIdx(isOpen ? null : idx)}
-                aria-expanded={isOpen}
-              >
-                <span className="font-extrabold text-slate-900 text-base md:text-lg pr-4">{faq.q}</span>
-                <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-colors ${isOpen ? 'bg-emerald-100 text-emerald-700' : 'bg-slate-100 text-slate-500'}`}>
-                  {isOpen ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
+    <Section id="election" className="bg-slate-50 relative overflow-hidden">
+      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-96 h-96 bg-emerald-100/35 rounded-full blur-3xl pointer-events-none"></div>
+      
+      <SectionTitle title={t.election.title} />
+
+      <div className="max-w-6xl mx-auto grid lg:grid-cols-12 gap-8 items-stretch relative z-10">
+        
+        {/* Left Column: Legal Eligibility Rules */}
+        <motion.div 
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="lg:col-span-6 bg-white p-6 md:p-8 rounded-3xl border border-slate-200/80 shadow-md hover:shadow-lg transition-shadow flex flex-col justify-between"
+        >
+          <div>
+            <h3 className="text-xl md:text-2xl font-black text-slate-900 mb-6 pb-3 border-b border-slate-100 flex items-center gap-3">
+              <Scale className="w-6 h-6 text-emerald-700" />
+              <span>{t.election.eligibilityTitle}</span>
+            </h3>
+            
+            <div className="space-y-4">
+              {t.election.legalPoints.map((point, idx) => (
+                <div key={idx} className="flex gap-4 items-start">
+                  <div className="w-8 h-8 rounded-full bg-emerald-50 border border-emerald-100 flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
+                    {legalIcons[idx] || <UserCheck className="w-4 h-4 text-emerald-600" />}
+                  </div>
+                  <p className="text-slate-700 font-medium text-sm md:text-base leading-relaxed">{point}</p>
                 </div>
-              </button>
-              <AnimatePresence>
-                {isOpen && (
-                  <motion.div 
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: 'auto', opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    className="px-6 pb-6 text-slate-600 text-sm md:text-base leading-relaxed whitespace-pre-line border-t border-slate-100/80 pt-4"
-                  >
-                    {faq.a}
-                  </motion.div>
-                )}
-              </AnimatePresence>
+              ))}
             </div>
-          );
-        })}
+          </div>
+          
+          <div className="mt-8 p-4 bg-amber-50/50 border border-amber-200/60 rounded-2xl flex gap-3 items-start">
+            <ShieldCheck className="w-5 h-5 text-orange-600 shrink-0 mt-0.5" />
+            <p className="text-xs text-amber-950 font-bold leading-relaxed">{t.timeline.disclaimer}</p>
+          </div>
+        </motion.div>
+
+        {/* Right Column: Ideal Profiles / Who can lead */}
+        <motion.div 
+          initial={{ opacity: 0, x: 20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="lg:col-span-6 flex flex-col justify-between"
+        >
+          <div className="bg-white p-6 md:p-8 rounded-3xl border border-slate-200/80 shadow-md hover:shadow-lg transition-shadow h-full flex flex-col">
+            <h3 className="text-xl md:text-2xl font-black text-slate-900 mb-6 pb-3 border-b border-slate-100 flex items-center gap-3">
+              <Users className="w-6 h-6 text-orange-600" />
+              <span>{t.election.profilesTitle}</span>
+            </h3>
+
+            <div className="grid sm:grid-cols-2 gap-4 flex-1">
+              {t.election.profiles.map((profile, idx) => {
+                const config = profileConfigs[idx] || profileConfigs[0];
+                return (
+                  <div 
+                    key={idx}
+                    className={`p-4 rounded-2xl border transition-all duration-300 flex flex-col justify-between ${config.bgColor} ${config.borderColor}`}
+                  >
+                    <div>
+                      <div className="w-10 h-10 rounded-xl bg-white flex items-center justify-center shadow-xs mb-3 border border-slate-100/50">
+                        {config.icon}
+                      </div>
+                      <h4 className="font-extrabold text-slate-950 text-sm md:text-base leading-snug mb-1">{profile.title}</h4>
+                      <p className="text-xs md:text-sm font-semibold text-slate-700 leading-normal">{profile.desc}</p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </motion.div>
+
       </div>
     </Section>
   );
 };
+
 
 // CONTACT SECTION
 export const ContactSection = () => {
