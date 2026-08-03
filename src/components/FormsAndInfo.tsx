@@ -3,7 +3,7 @@ import { useLanguage } from '../LanguageContext';
 import { config } from '../config';
 import { Section, SectionTitle } from './Sections';
 import { motion, AnimatePresence } from 'motion/react';
-import { ChevronDown, ChevronUp, Mail, Phone, MapPin, ExternalLink, Maximize2, X, ShieldCheck, Loader2 } from 'lucide-react';
+import { ChevronDown, ChevronUp, Mail, MapPin, ExternalLink, Maximize2, X, ShieldCheck, Loader2 } from 'lucide-react';
 
 // APPLY SECTION
 export const ApplySection = () => {
@@ -201,25 +201,18 @@ export const ContactSection = () => {
   return (
     <Section id="contact" className="bg-white">
       <SectionTitle title={t.contact.title} />
-      <div className="max-w-4xl mx-auto grid sm:grid-cols-3 gap-8">
-        <div className="flex flex-col items-center p-6 text-center bg-slate-50 rounded-2xl border border-slate-100">
+      <div className="max-w-3xl mx-auto grid sm:grid-cols-2 gap-8">
+        <div className="flex flex-col items-center p-6 text-center bg-slate-50 rounded-2xl border border-slate-100 hover:shadow-md transition-shadow">
           <Mail className="w-8 h-8 text-blue-600 mb-4" />
           <h3 className="font-bold text-slate-900 mb-2">{t.contact.email}</h3>
-          <a href={`mailto:${config.GENERAL_CONTACT_EMAIL}`} className="text-slate-600 hover:text-blue-600 transition-colors">
+          <a href={`mailto:${config.GENERAL_CONTACT_EMAIL}`} className="text-slate-600 hover:text-blue-600 transition-colors font-medium">
             {config.GENERAL_CONTACT_EMAIL}
           </a>
         </div>
-        <div className="flex flex-col items-center p-6 text-center bg-slate-50 rounded-2xl border border-slate-100">
-          <Phone className="w-8 h-8 text-green-600 mb-4" />
-          <h3 className="font-bold text-slate-900 mb-2">{t.contact.phone}</h3>
-          <a href={`tel:${config.GENERAL_CONTACT_PHONE}`} className="text-slate-600 hover:text-green-600 transition-colors">
-            {config.GENERAL_CONTACT_PHONE}
-          </a>
-        </div>
-        <div className="flex flex-col items-center p-6 text-center bg-slate-50 rounded-2xl border border-slate-100">
+        <div className="flex flex-col items-center p-6 text-center bg-slate-50 rounded-2xl border border-slate-100 hover:shadow-md transition-shadow">
           <MapPin className="w-8 h-8 text-orange-600 mb-4" />
           <h3 className="font-bold text-slate-900 mb-2">{t.contact.address}</h3>
-          <p className="text-slate-600">
+          <p className="text-slate-600 leading-relaxed">
             {config.OFFICE_ADDRESS}
           </p>
         </div>
