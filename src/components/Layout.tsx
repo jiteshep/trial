@@ -185,38 +185,41 @@ export const Hero = () => {
 export const Footer = () => {
   const { t } = useLanguage();
   return (
-    <footer className="bg-slate-900 text-slate-300 py-12 md:py-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <footer className="bg-slate-900 text-slate-300 relative">
+      {/* Top Gradient Divider Accent Line */}
+      <div className="h-1.5 bg-gradient-to-r from-green-600 via-emerald-500 to-orange-500 w-full"></div>
+      
+      <div className="py-12 md:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-4 gap-12 mb-12">
           <div className="col-span-1 md:col-span-2">
             <img src="/logo-ngn.png" alt="Namma Grama Nayaka" className="h-12 mb-6 brightness-0 invert" />
-            <p className="text-slate-400 mb-6 max-w-sm leading-relaxed">
+            <p className="text-slate-400 mb-6 max-w-sm leading-relaxed text-sm md:text-base">
               {t.footer.mission}
             </p>
-            <div className="flex gap-4">
-               <img src="/logo-ep.png" alt="Empower Panchayat" className="h-10 object-contain brightness-0 invert opacity-60" />
-               <img src="/logo-ts.png" alt="Tejasvi Surya" className="h-8 object-contain brightness-0 invert opacity-60" />
+            <div className="flex gap-6 items-center">
+               <img src="/logo-ep.png" alt="Empower Panchayat" className="h-9 object-contain brightness-0 invert opacity-70 hover:opacity-100 transition-opacity" />
+               <img src="/logo-ts.png" alt="Tejasvi Surya" className="h-7 object-contain brightness-0 invert opacity-70 hover:opacity-100 transition-opacity" />
             </div>
           </div>
           <div>
-            <h4 className="text-white font-bold mb-4 uppercase tracking-wider">{t.footer.quickLinks}</h4>
-            <ul className="space-y-3">
-              <li><a href="#home" className="hover:text-white transition-colors">{t.nav.home}</a></li>
-              <li><a href="#about" className="hover:text-white transition-colors">{t.nav.about}</a></li>
-              <li><a href="#programme" className="hover:text-white transition-colors">{t.nav.programme}</a></li>
-              <li><a href="#apply" className="hover:text-white transition-colors">{t.hero.primaryCta}</a></li>
+            <h4 className="text-white font-bold mb-4 uppercase tracking-wider text-xs">{t.footer.quickLinks}</h4>
+            <ul className="space-y-3 text-sm">
+              <li><a href="#home" className="hover:text-white transition-colors flex items-center gap-1.5"><span className="text-orange-500">›</span> {t.nav.home}</a></li>
+              <li><a href="#about" className="hover:text-white transition-colors flex items-center gap-1.5"><span className="text-orange-500">›</span> {t.nav.about}</a></li>
+              <li><a href="#programme" className="hover:text-white transition-colors flex items-center gap-1.5"><span className="text-orange-500">›</span> {t.nav.programme}</a></li>
+              <li><a href="#apply" className="hover:text-white transition-colors flex items-center gap-1.5"><span className="text-orange-500">›</span> {t.hero.primaryCta}</a></li>
             </ul>
           </div>
           <div>
-            <h4 className="text-white font-bold mb-4 uppercase tracking-wider">{t.footer.legal}</h4>
-            <ul className="space-y-3">
-              <li><a href={config.PRIVACY_POLICY_URL} className="hover:text-white transition-colors">{t.footer.privacyPolicy}</a></li>
-              <li><a href={config.TERMS_URL} className="hover:text-white transition-colors">{t.footer.disclaimer}</a></li>
-              <li><a href="#contact" className="hover:text-white transition-colors">{t.nav.contact}</a></li>
+            <h4 className="text-white font-bold mb-4 uppercase tracking-wider text-xs">{t.footer.legal}</h4>
+            <ul className="space-y-3 text-sm">
+              <li><a href={config.PRIVACY_POLICY_URL} className="hover:text-white transition-colors flex items-center gap-1.5"><span className="text-green-500">›</span> {t.footer.privacyPolicy}</a></li>
+              <li><a href={config.TERMS_URL} className="hover:text-white transition-colors flex items-center gap-1.5"><span className="text-green-500">›</span> {t.footer.disclaimer}</a></li>
+              <li><a href="#contact" className="hover:text-white transition-colors flex items-center gap-1.5"><span className="text-green-500">›</span> {t.nav.contact}</a></li>
             </ul>
           </div>
         </div>
-        <div className="border-t border-slate-800 pt-8 mt-8 text-sm text-slate-500">
+        <div className="border-t border-slate-800/80 pt-8 text-xs text-slate-500">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p>{t.footer.copyright}</p>
           </div>

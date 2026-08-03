@@ -20,26 +20,29 @@ const ImpactSection = () => {
   ];
 
   return (
-    <Section id="impact" className="bg-white">
+    <Section id="impact" className="bg-white relative overflow-hidden">
       <SectionTitle title={t.impact.title} />
       <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto items-center">
-        <div className="space-y-4">
-          <h3 className="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
-            <Target className="w-6 h-6 text-orange-600" />
-            {t.impact.targetsLabel}
+        <div className="space-y-6">
+          <h3 className="text-xl font-extrabold text-slate-900 mb-6 flex items-center gap-2.5">
+            <div className="w-8 h-8 rounded-lg bg-orange-100 text-orange-600 flex items-center justify-center">
+              <Target className="w-5 h-5" />
+            </div>
+            <span>{t.impact.targetsLabel}</span>
           </h3>
           <div className="grid grid-cols-2 gap-4">
-            <div className="p-4 rounded-xl bg-orange-50 border border-orange-100">
-              <p className="text-2xl font-bold text-orange-700">{config.STATS.TARGET_CANDIDATES}</p>
-              <p className="text-sm text-slate-600 mt-1">Candidates</p>
+            <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200/80 hover:shadow-lg hover:-translate-y-1 transition-all">
+              <p className="text-3xl font-black bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent">{config.STATS.TARGET_CANDIDATES}</p>
+              <p className="text-xs font-bold uppercase tracking-wider text-slate-500 mt-1">Candidates</p>
             </div>
-            <div className="p-4 rounded-xl bg-green-50 border border-green-100">
-              <p className="text-2xl font-bold text-green-700">{config.STATS.TARGET_WOMEN_CANDIDATES}</p>
-              <p className="text-sm text-slate-600 mt-1">Women Leaders</p>
+            <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200/80 hover:shadow-lg hover:-translate-y-1 transition-all">
+              <p className="text-3xl font-black bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">{config.STATS.TARGET_WOMEN_CANDIDATES}</p>
+              <p className="text-xs font-bold uppercase tracking-wider text-slate-500 mt-1">Women Leaders</p>
             </div>
-            <div className="p-4 rounded-xl bg-blue-50 border border-blue-100 col-span-2">
-              <p className="text-2xl font-bold text-blue-900">{config.STATS.PANCHAYATS}</p>
-              <p className="text-sm text-slate-600 mt-1">Grama Panchayats Supported</p>
+            <div className="p-5 rounded-2xl bg-slate-900 text-white border border-slate-800 col-span-2 shadow-xl hover:-translate-y-1 transition-all relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-green-500/10 rounded-full blur-2xl pointer-events-none"></div>
+              <p className="text-3xl font-black text-white">{config.STATS.PANCHAYATS}</p>
+              <p className="text-xs font-bold uppercase tracking-widest text-slate-400 mt-1">Grama Panchayats Supported</p>
             </div>
           </div>
         </div>
@@ -50,11 +53,13 @@ const ImpactSection = () => {
                initial={{ opacity: 0, x: 20 }}
                whileInView={{ opacity: 1, x: 0 }}
                viewport={{ once: true }}
-               transition={{ delay: idx * 0.1 }}
-               className="flex gap-3 items-start"
+               transition={{ delay: idx * 0.08 }}
+               className="flex gap-3.5 items-start p-3.5 rounded-xl hover:bg-slate-50 transition-colors"
              >
-               <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-               <p className="text-slate-700">{point}</p>
+               <div className="w-6 h-6 rounded-full bg-green-100 text-green-700 flex items-center justify-center shrink-0 mt-0.5">
+                 <CheckCircle className="w-4 h-4" />
+               </div>
+               <p className="text-slate-700 font-medium text-sm md:text-base leading-relaxed">{point}</p>
              </motion.div>
           ))}
         </div>

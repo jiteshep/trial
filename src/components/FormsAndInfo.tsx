@@ -129,18 +129,20 @@ export const ApplySection = () => {
 export const VolunteerSection = () => {
   const { t } = useLanguage();
   return (
-    <Section className="bg-orange-50 border-y border-orange-100">
-      <div className="max-w-4xl mx-auto text-center space-y-6">
-        <h2 className="text-3xl font-bold text-slate-900">{t.volunteer.title}</h2>
-        <p className="text-lg text-slate-700">{t.volunteer.subtitle}</p>
-        <a 
-          href={config.PARTNER_INTEREST_FORM_URL} 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="inline-block px-8 py-3.5 bg-blue-900 hover:bg-blue-800 text-white font-bold rounded-full transition-colors shadow-md hover:shadow-lg"
-        >
-          {t.volunteer.cta}
-        </a>
+    <Section className="bg-gradient-to-r from-orange-500/10 via-amber-500/10 to-emerald-500/10 border-y border-orange-200/60 relative overflow-hidden">
+      <div className="max-w-4xl mx-auto text-center space-y-6 relative z-10">
+        <h2 className="text-3xl md:text-4xl font-black text-slate-900 tracking-tight">{t.volunteer.title}</h2>
+        <p className="text-base md:text-lg text-slate-700 leading-relaxed max-w-2xl mx-auto">{t.volunteer.subtitle}</p>
+        <div>
+          <a 
+            href={config.PARTNER_INTEREST_FORM_URL} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-block px-8 py-3.5 bg-green-700 hover:bg-green-800 text-white font-extrabold rounded-full transition-all shadow-lg hover:shadow-xl hover:scale-105 active:scale-95"
+          >
+            {t.volunteer.cta}
+          </a>
+        </div>
       </div>
     </Section>
   );
@@ -166,30 +168,40 @@ export const FaqSection = () => {
     <Section id="faq" className="bg-slate-50">
       <SectionTitle title={t.faq.title} />
       <div className="max-w-3xl mx-auto space-y-4">
-        {faqs.map((faq, idx) => (
-          <div key={idx} className="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm">
-            <button 
-              className="w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
-              onClick={() => setOpenIdx(openIdx === idx ? null : idx)}
-              aria-expanded={openIdx === idx}
+        {faqs.map((faq, idx) => {
+          const isOpen = openIdx === idx;
+          return (
+            <div 
+              key={idx} 
+              className={`bg-white rounded-2xl border transition-all duration-300 overflow-hidden shadow-sm ${
+                isOpen ? 'border-emerald-500/80 ring-2 ring-emerald-500/20 shadow-md border-l-4 border-l-emerald-600' : 'border-slate-200/80 hover:border-slate-300'
+              }`}
             >
-              <span className="font-bold text-slate-900">{faq.q}</span>
-              {openIdx === idx ? <ChevronUp className="w-5 h-5 text-slate-500" /> : <ChevronDown className="w-5 h-5 text-slate-500" />}
-            </button>
-            <AnimatePresence>
-              {openIdx === idx && (
-                <motion.div 
-                  initial={{ height: 0, opacity: 0 }}
-                  animate={{ height: 'auto', opacity: 1 }}
-                  exit={{ height: 0, opacity: 0 }}
-                  className="px-6 pb-4 text-slate-600 leading-relaxed whitespace-pre-line"
-                >
-                  {faq.a}
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
-        ))}
+              <button 
+                className="w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none cursor-pointer"
+                onClick={() => setOpenIdx(isOpen ? null : idx)}
+                aria-expanded={isOpen}
+              >
+                <span className="font-extrabold text-slate-900 text-base md:text-lg pr-4">{faq.q}</span>
+                <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-colors ${isOpen ? 'bg-emerald-100 text-emerald-700' : 'bg-slate-100 text-slate-500'}`}>
+                  {isOpen ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
+                </div>
+              </button>
+              <AnimatePresence>
+                {isOpen && (
+                  <motion.div 
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: 'auto', opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    className="px-6 pb-6 text-slate-600 text-sm md:text-base leading-relaxed whitespace-pre-line border-t border-slate-100/80 pt-4"
+                  >
+                    {faq.a}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+          );
+        })}
       </div>
     </Section>
   );
@@ -202,20 +214,31 @@ export const ContactSection = () => {
     <Section id="contact" className="bg-white">
       <SectionTitle title={t.contact.title} />
       <div className="max-w-3xl mx-auto grid sm:grid-cols-2 gap-8">
-        <div className="flex flex-col items-center p-6 text-center bg-slate-50 rounded-2xl border border-slate-100 hover:shadow-md transition-shadow">
-          <Mail className="w-8 h-8 text-blue-600 mb-4" />
-          <h3 className="font-bold text-slate-900 mb-2">{t.contact.email}</h3>
-          <a href={`mailto:${config.GENERAL_CONTACT_EMAIL}`} className="text-slate-600 hover:text-blue-600 transition-colors font-medium">
+        <motion.div 
+          whileHover={{ y: -4 }}
+          className="flex flex-col items-center p-8 text-center bg-slate-50/80 rounded-3xl border border-slate-200/80 hover:border-green-300 hover:shadow-xl transition-all group"
+        >
+          <div className="w-16 h-16 rounded-2xl bg-green-100 text-green-700 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+            <Mail className="w-8 h-8 text-green-700" />
+          </div>
+          <h3 className="font-extrabold text-slate-900 text-lg mb-2">{t.contact.email}</h3>
+          <a href={`mailto:${config.GENERAL_CONTACT_EMAIL}`} className="text-slate-600 hover:text-green-700 transition-colors font-semibold text-sm">
             {config.GENERAL_CONTACT_EMAIL}
           </a>
-        </div>
-        <div className="flex flex-col items-center p-6 text-center bg-slate-50 rounded-2xl border border-slate-100 hover:shadow-md transition-shadow">
-          <MapPin className="w-8 h-8 text-orange-600 mb-4" />
-          <h3 className="font-bold text-slate-900 mb-2">{t.contact.address}</h3>
-          <p className="text-slate-600 leading-relaxed">
+        </motion.div>
+
+        <motion.div 
+          whileHover={{ y: -4 }}
+          className="flex flex-col items-center p-8 text-center bg-slate-50/80 rounded-3xl border border-slate-200/80 hover:border-orange-300 hover:shadow-xl transition-all group"
+        >
+          <div className="w-16 h-16 rounded-2xl bg-orange-100 text-orange-700 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+            <MapPin className="w-8 h-8 text-orange-600" />
+          </div>
+          <h3 className="font-extrabold text-slate-900 text-lg mb-2">{t.contact.address}</h3>
+          <p className="text-slate-600 text-sm leading-relaxed">
             {config.OFFICE_ADDRESS}
           </p>
-        </div>
+        </motion.div>
       </div>
     </Section>
   );
@@ -225,13 +248,13 @@ export const ContactSection = () => {
 export const PartnersSection = () => {
   const { t } = useLanguage();
   return (
-    <Section className="bg-white border-t border-slate-100">
+    <Section className="bg-white border-t border-slate-100/80">
       <div className="text-center mb-8">
-        <p className="text-sm font-bold text-slate-500 uppercase tracking-wider">{t.partners.supportedBy}</p>
+        <p className="text-xs font-extrabold text-slate-400 uppercase tracking-widest">{t.partners.supportedBy}</p>
       </div>
       <div className="flex flex-wrap justify-center items-center gap-12 md:gap-24">
-        <img src="/logo-ep.png" alt="Empower Panchayat" className="h-16 md:h-24 object-contain" />
-        <img src="/logo-ts.png" alt="Tejasvi Surya" className="h-12 md:h-16 object-contain" />
+        <img src="/logo-ep.png" alt="Empower Panchayat" className="h-16 md:h-20 object-contain opacity-80 hover:opacity-100 transition-opacity" />
+        <img src="/logo-ts.png" alt="Tejasvi Surya" className="h-12 md:h-16 object-contain opacity-80 hover:opacity-100 transition-opacity" />
       </div>
     </Section>
   );

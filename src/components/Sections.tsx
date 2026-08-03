@@ -18,8 +18,8 @@ export const Section = ({ id, className = "", children }: { id?: string, classNa
 
 export const SectionTitle = ({ title, subtitle, centered = true }: { title: string, subtitle?: string, centered?: boolean }) => (
   <div className={`mb-12 ${centered ? 'text-center' : ''}`}>
-    <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">{title}</h2>
-    {subtitle && <p className="text-lg text-slate-600 max-w-3xl mx-auto">{subtitle}</p>}
+    <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight mb-4">{title}</h2>
+    {subtitle && <p className="text-base md:text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">{subtitle}</p>}
   </div>
 );
 
@@ -30,13 +30,16 @@ export const AboutSection = () => {
   const highlightIcons = [
     <BookOpen className="w-6 h-6 text-amber-600" />,
     <Layers className="w-6 h-6 text-blue-600" />,
-    <Building2 className="w-6 h-6 text-red-600" />,
+    <Building2 className="w-6 h-6 text-rose-600" />,
     <Coins className="w-6 h-6 text-emerald-600" />,
     <Users className="w-6 h-6 text-purple-600" />,
   ];
 
   return (
-    <Section id="about" className="bg-slate-50">
+    <Section id="about" className="bg-slate-50 relative overflow-hidden">
+      {/* Background Radial Glow */}
+      <div className="absolute top-0 right-1/4 w-96 h-96 bg-green-200/20 rounded-full blur-3xl pointer-events-none"></div>
+
       <SectionTitle title={t.about.title} />
       
       {/* Narrative Card */}
@@ -44,18 +47,18 @@ export const AboutSection = () => {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="max-w-4xl mx-auto mb-12 p-8 md:p-10 rounded-2xl bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-white shadow-xl relative overflow-hidden border border-slate-700/50"
+        className="max-w-4xl mx-auto mb-14 p-8 md:p-12 rounded-3xl bg-slate-900 text-white shadow-2xl relative overflow-hidden border border-slate-800"
       >
-        <div className="absolute -top-10 -right-10 w-40 h-40 bg-orange-500/10 rounded-full blur-3xl pointer-events-none"></div>
-        <Quote className="w-10 h-10 text-orange-500/40 mb-4" />
-        <p className="text-xl md:text-2xl font-serif leading-relaxed text-slate-100 italic relative z-10">
+        <div className="absolute -top-12 -right-12 w-48 h-48 bg-gradient-to-br from-orange-500/20 to-emerald-500/20 rounded-full blur-3xl pointer-events-none"></div>
+        <Quote className="w-12 h-12 text-orange-500/50 mb-4" />
+        <p className="text-xl md:text-2xl lg:text-3xl font-serif leading-relaxed text-slate-100 italic relative z-10">
           "{t.about.narrative}"
         </p>
       </motion.div>
 
       {/* Problem Highlights */}
-      <div className="mb-12">
-        <h3 className="text-xl font-bold text-slate-800 mb-6 text-center">{t.about.highlightsTitle}</h3>
+      <div className="mb-14">
+        <h3 className="text-2xl font-extrabold text-slate-900 mb-8 text-center">{t.about.highlightsTitle}</h3>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {t.about.highlights.map((item, idx) => (
             <motion.div 
@@ -63,14 +66,14 @@ export const AboutSection = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: idx * 0.1 }}
-              className="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between"
+              transition={{ delay: idx * 0.08 }}
+              className="bg-white p-7 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group"
             >
               <div>
-                <div className="w-12 h-12 rounded-xl bg-slate-100 flex items-center justify-center mb-4">
+                <div className="w-12 h-12 rounded-xl bg-slate-100/80 group-hover:bg-orange-50 flex items-center justify-center mb-5 transition-colors">
                   {highlightIcons[idx % highlightIcons.length]}
                 </div>
-                <h4 className="text-lg font-bold text-slate-900 mb-2">{item.title}</h4>
+                <h4 className="text-lg font-bold text-slate-900 mb-2.5 group-hover:text-orange-600 transition-colors">{item.title}</h4>
                 <p className="text-slate-600 text-sm leading-relaxed">{item.desc}</p>
               </div>
             </motion.div>
@@ -81,26 +84,27 @@ export const AboutSection = () => {
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="bg-gradient-to-br from-green-900 to-slate-900 text-white p-6 rounded-2xl shadow-sm flex flex-col justify-between border border-green-800/40"
+            className="bg-gradient-to-br from-green-950 via-slate-900 to-slate-900 text-white p-7 rounded-2xl shadow-xl flex flex-col justify-between border border-green-800/40 relative overflow-hidden"
           >
+            <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 rounded-full blur-2xl pointer-events-none"></div>
             <div>
-              <h4 className="text-lg font-bold text-orange-400 mb-4">{t.stats.title}</h4>
+              <h4 className="text-lg font-extrabold text-orange-400 mb-4 tracking-wide uppercase text-xs">{t.stats.title}</h4>
               <div className="grid grid-cols-2 gap-4">
-                <div>
-                  <p className="text-2xl font-extrabold text-white">{config.STATS.PANCHAYATS}</p>
-                  <p className="text-xs text-slate-300 mt-0.5">{t.stats.panchayats}</p>
+                <div className="bg-slate-800/60 p-3 rounded-xl border border-slate-700/50">
+                  <p className="text-2xl font-black bg-gradient-to-r from-white to-slate-200 bg-clip-text text-transparent">{config.STATS.PANCHAYATS}</p>
+                  <p className="text-xs text-slate-400 mt-1 font-medium">{t.stats.panchayats}</p>
                 </div>
-                <div>
-                  <p className="text-2xl font-extrabold text-green-400">{config.STATS.WARDS}</p>
-                  <p className="text-xs text-slate-300 mt-0.5">{t.stats.wards}</p>
+                <div className="bg-slate-800/60 p-3 rounded-xl border border-slate-700/50">
+                  <p className="text-2xl font-black bg-gradient-to-r from-green-400 to-emerald-300 bg-clip-text text-transparent">{config.STATS.WARDS}</p>
+                  <p className="text-xs text-slate-400 mt-1 font-medium">{t.stats.wards}</p>
                 </div>
-                <div>
-                  <p className="text-2xl font-extrabold text-orange-400">{config.STATS.RURAL_VOTERS}</p>
-                  <p className="text-xs text-slate-300 mt-0.5">{t.stats.voters}</p>
+                <div className="bg-slate-800/60 p-3 rounded-xl border border-slate-700/50">
+                  <p className="text-2xl font-black bg-gradient-to-r from-orange-400 to-amber-300 bg-clip-text text-transparent">{config.STATS.RURAL_VOTERS}</p>
+                  <p className="text-xs text-slate-400 mt-1 font-medium">{t.stats.voters}</p>
                 </div>
-                <div>
-                  <p className="text-2xl font-extrabold text-blue-300">{config.STATS.RURAL_ACS}</p>
-                  <p className="text-xs text-slate-300 mt-0.5">{t.stats.acs}</p>
+                <div className="bg-slate-800/60 p-3 rounded-xl border border-slate-700/50">
+                  <p className="text-2xl font-black bg-gradient-to-r from-blue-400 to-sky-300 bg-clip-text text-transparent">{config.STATS.RURAL_ACS}</p>
+                  <p className="text-xs text-slate-400 mt-1 font-medium">{t.stats.acs}</p>
                 </div>
               </div>
             </div>
@@ -113,9 +117,9 @@ export const AboutSection = () => {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="max-w-3xl mx-auto text-center bg-orange-50 border-2 border-orange-200 p-6 rounded-2xl shadow-sm"
+        className="max-w-3xl mx-auto text-center bg-gradient-to-r from-orange-500/10 via-amber-500/10 to-orange-500/10 border-2 border-orange-200/80 p-7 rounded-2xl shadow-sm"
       >
-        <p className="text-xl md:text-2xl font-extrabold text-orange-900 tracking-tight">
+        <p className="text-xl md:text-2xl font-black text-orange-950 tracking-tight">
           ⚡ {t.about.transition}
         </p>
       </motion.div>
@@ -135,7 +139,7 @@ export const WhyMatterSection = () => {
   ];
 
   return (
-    <Section className="bg-white">
+    <Section className="bg-white relative overflow-hidden">
       <SectionTitle title={t.whyMatter.title} subtitle={t.whyMatter.subtitle} />
       <div className="grid md:grid-cols-2 gap-8">
         {points.map((point, idx) => (
@@ -145,13 +149,13 @@ export const WhyMatterSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: idx * 0.1 }}
-            className="p-6 rounded-2xl bg-slate-50 border border-slate-200/80 hover:shadow-md transition-shadow flex gap-4"
+            className="p-7 rounded-2xl bg-slate-50/70 border border-slate-200/80 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex gap-5 group"
           >
-            <div className="flex-shrink-0 w-12 h-12 rounded-full bg-green-100 text-green-700 flex items-center justify-center">
+            <div className="flex-shrink-0 w-14 h-14 rounded-2xl bg-gradient-to-br from-green-600 to-emerald-700 text-white flex items-center justify-center shadow-md group-hover:scale-105 transition-transform">
               {point.icon}
             </div>
             <div>
-              <h3 className="font-bold text-slate-900 text-lg mb-2">{point.title}</h3>
+              <h3 className="font-extrabold text-slate-900 text-xl mb-2 group-hover:text-green-700 transition-colors">{point.title}</h3>
               <p className="text-slate-600 text-sm leading-relaxed">{point.desc}</p>
             </div>
           </motion.div>
@@ -166,11 +170,11 @@ export const LeadershipSection = () => {
   const { t } = useLanguage();
   
   const icons = [
-    <Users className="w-6 h-6 text-green-700" />,
+    <Users className="w-6 h-6 text-emerald-600" />,
     <HandHeart className="w-6 h-6 text-orange-600" />,
-    <Target className="w-6 h-6 text-blue-700" />,
-    <Flag className="w-6 h-6 text-purple-700" />,
-    <Shield className="w-6 h-6 text-emerald-700" />,
+    <Target className="w-6 h-6 text-blue-600" />,
+    <Flag className="w-6 h-6 text-purple-600" />,
+    <Shield className="w-6 h-6 text-teal-600" />,
     <Building2 className="w-6 h-6 text-amber-600" />
   ];
 
@@ -184,14 +188,14 @@ export const LeadershipSection = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: idx * 0.1 }}
-            className="bg-white p-6 rounded-2xl shadow-sm border border-slate-200/80 hover:shadow-md transition-all flex flex-col justify-between"
+            transition={{ delay: idx * 0.08 }}
+            className="bg-white p-7 rounded-2xl shadow-sm border border-slate-200/80 hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group"
           >
             <div>
-              <div className="w-12 h-12 rounded-xl bg-slate-100 flex items-center justify-center mb-4">
+              <div className="w-12 h-12 rounded-xl bg-slate-100 group-hover:bg-green-50 flex items-center justify-center mb-5 transition-colors">
                 {icons[idx % icons.length]}
               </div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">{point.title}</h3>
+              <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-green-700 transition-colors">{point.title}</h3>
               <p className="text-slate-600 text-sm leading-relaxed">{point.desc}</p>
             </div>
           </motion.div>
@@ -223,14 +227,17 @@ export const ObjectivesSection = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: idx * 0.1 }}
-            className="p-6 rounded-2xl bg-orange-50 border border-orange-100"
+            transition={{ delay: idx * 0.08 }}
+            className="p-7 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 relative overflow-hidden group"
           >
-            <div className="w-12 h-12 bg-orange-100 text-orange-600 rounded-full flex items-center justify-center mb-4">
+            {/* Top Saffron Accent Line */}
+            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-500 to-amber-500 opacity-80"></div>
+            
+            <div className="w-12 h-12 bg-orange-100/80 text-orange-600 rounded-xl flex items-center justify-center mb-5 group-hover:bg-orange-600 group-hover:text-white transition-all">
               {obj.icon}
             </div>
-            <h3 className="text-xl font-bold text-slate-900 mb-2">{obj.title}</h3>
-            <p className="text-slate-700">{obj.desc}</p>
+            <h3 className="text-xl font-bold text-slate-900 mb-2 group-hover:text-orange-600 transition-colors">{obj.title}</h3>
+            <p className="text-slate-600 text-sm leading-relaxed">{obj.desc}</p>
           </motion.div>
         ))}
       </div>
