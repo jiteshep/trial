@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLanguage } from '../LanguageContext';
 import { config } from '../config';
-import { CheckCircle, Users, Lightbulb, TrendingUp, HandHeart, Flag, Shield, Laptop, BookOpen, Clock, Target, Home, Phone, Mail, MapPin, Scroll, Layers, Building2, Coins, AlertCircle, Quote } from 'lucide-react';
+import { CheckCircle, Users, Lightbulb, TrendingUp, HandHeart, Flag, Shield, Laptop, BookOpen, Clock, Target, Home, Phone, Mail, MapPin, Scroll, Layers, Building2, Coins, AlertCircle, Quote, Vote, UserPlus, ClipboardCheck, GraduationCap, Activity, Bot, LayoutDashboard, LineChart, ArrowRight } from 'lucide-react';
 import { motion } from 'motion/react';
 
 // Common Section Wrapper
@@ -235,33 +235,86 @@ export const ObjectivesSection = () => {
   );
 };
 
-// TIMELINE
+// TIMELINE (How the Initiative Works - 9-Step Governance Pipeline)
 export const TimelineSection = () => {
   const { t } = useLanguage();
+
+  const stepIcons = [
+    <Vote className="w-6 h-6 text-orange-400" />,
+    <UserPlus className="w-6 h-6 text-blue-400" />,
+    <ClipboardCheck className="w-6 h-6 text-purple-400" />,
+    <GraduationCap className="w-6 h-6 text-emerald-400" />,
+    <Activity className="w-6 h-6 text-amber-400" />,
+    <Bot className="w-6 h-6 text-cyan-300" />,
+    <Users className="w-6 h-6 text-green-400" />,
+    <LayoutDashboard className="w-6 h-6 text-indigo-400" />,
+    <LineChart className="w-6 h-6 text-rose-400" />,
+  ];
+
   return (
-    <Section id="programme" className="bg-slate-50">
-      <SectionTitle title={t.timeline.title} />
-      <div className="max-w-3xl mx-auto relative">
-        <div className="absolute left-6 md:left-8 top-0 bottom-0 w-0.5 bg-green-200"></div>
-        {[
-          { phase: t.timeline.phase1, desc: t.timeline.phase1Desc, icon: <BookOpen className="w-5 h-5" /> },
-          { phase: t.timeline.phase2, desc: t.timeline.phase2Desc, icon: <Users className="w-5 h-5" /> },
-          { phase: t.timeline.phase3, desc: t.timeline.phase3Desc, icon: <Flag className="w-5 h-5" /> },
-        ].map((item, idx) => (
-          <motion.div 
+    <Section id="programme" className="bg-slate-950 text-white relative overflow-hidden">
+      {/* Ambient background glow */}
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-tr from-green-600/10 via-orange-500/10 to-blue-600/10 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div className="text-center mb-16 relative z-10">
+        <span className="inline-block px-4 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/30 text-orange-400 text-xs font-bold uppercase tracking-widest mb-4 shadow-sm">
+          ⚡ {t.timeline.badge}
+        </span>
+        <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-4 tracking-tight">
+          {t.timeline.title}
+        </h2>
+        <p className="text-base md:text-lg text-slate-400 max-w-3xl mx-auto leading-relaxed">
+          {t.timeline.subtitle}
+        </p>
+      </div>
+
+      {/* Grid of 9 Governance Steps */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative z-10 max-w-7xl mx-auto">
+        {t.timeline.steps.map((step, idx) => (
+          <motion.div
             key={idx}
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="relative pl-16 md:pl-20 py-6"
+            transition={{ delay: idx * 0.07 }}
+            className="group relative bg-slate-900/90 backdrop-blur-md p-6 rounded-2xl border border-slate-800 hover:border-slate-700/80 transition-all duration-300 hover:shadow-2xl hover:shadow-orange-500/10 flex flex-col justify-between"
           >
-            <div className="absolute left-2 md:left-4 top-6 w-9 h-9 rounded-full bg-green-600 text-white flex items-center justify-center border-4 border-slate-50 z-10">
-              {item.icon}
+            <div>
+              {/* Header row with step icon and glowing number badge */}
+              <div className="flex items-center justify-between mb-5">
+                <div className="w-12 h-12 rounded-xl bg-slate-800/90 border border-slate-700/80 flex items-center justify-center group-hover:scale-110 group-hover:bg-slate-800 transition-all shadow-inner">
+                  {stepIcons[idx % stepIcons.length]}
+                </div>
+                <span className="text-2xl font-black text-slate-600 group-hover:text-orange-400 transition-colors tracking-wider font-mono">
+                  {step.num}
+                </span>
+              </div>
+
+              {/* Title & Description */}
+              <h3 className="text-lg font-bold text-white mb-2 group-hover:text-orange-300 transition-colors">
+                {step.title}
+              </h3>
+              <p className="text-slate-400 text-sm leading-relaxed">
+                {step.desc}
+              </p>
             </div>
-            <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-100">
-              <h3 className="text-xl font-bold text-slate-900 mb-2">{item.phase}</h3>
-              <p className="text-slate-600 leading-relaxed">{item.desc}</p>
-            </div>
+
+            {/* Bottom step progress connector */}
+            {idx < 8 ? (
+              <div className="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-500 font-semibold uppercase tracking-wider">
+                <span>Phase {step.num}</span>
+                <span className="text-orange-400/90 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                  Next <ArrowRight className="w-3.5 h-3.5" />
+                </span>
+              </div>
+            ) : (
+              <div className="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs text-emerald-400 font-semibold uppercase tracking-wider">
+                <span>Phase {step.num}</span>
+                <span className="flex items-center gap-1 text-emerald-400">
+                  ✓ Full Transformation
+                </span>
+              </div>
+            )}
           </motion.div>
         ))}
       </div>
