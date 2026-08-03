@@ -1,6 +1,6 @@
 export const config = {
   WARD_MEMBER_GOOGLE_FORM_URL: "https://docs.google.com/forms/d/e/1FAIpQLSd5wgNR8aE2qPxWPiCssewA9c-9xjhEEIloDhhe9ju6kLx-9A/viewform",
-  PARTNER_INTEREST_FORM_URL: "https://docs.google.com/forms/d/e/1FAIpQLSd5wgNR8aE2qPxWPiCssewA9c-9xjhEEIloDhhe9ju6kLx-9A/viewform",
+  PARTNER_INTEREST_FORM_URL: "https://docs.google.com/forms/d/e/1FAIpQLScoGzmxybS3Z5RYXAQ_wYwITxco4t7JdbUHxOP0A-xzvbHCRA/viewform",
   GENERAL_CONTACT_EMAIL: "amit@empowerpanchayat.org",
   GENERAL_CONTACT_PHONE: "+91 98712 93029",
   OFFICE_ADDRESS: "Bengaluru, Karnataka",

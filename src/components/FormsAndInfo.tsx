@@ -137,7 +137,7 @@ export const VolunteerSection = () => {
           href={config.PARTNER_INTEREST_FORM_URL} 
           target="_blank" 
           rel="noopener noreferrer"
-          className="inline-block px-8 py-3 bg-blue-900 hover:bg-blue-800 text-white font-bold rounded-full transition-colors"
+          className="inline-block px-8 py-3.5 bg-blue-900 hover:bg-blue-800 text-white font-bold rounded-full transition-colors shadow-md hover:shadow-lg"
         >
           {t.volunteer.cta}
         </a>
