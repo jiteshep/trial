@@ -268,29 +268,3 @@ export const TimelineSection = () => {
     </Section>
   );
 };
-
-// ELIGIBILITY
-export const EligibilitySection = () => {
-  const { t } = useLanguage();
-  return (
-    <Section id="eligibility" className="bg-white">
-      <SectionTitle title={t.eligibility.title} />
-      <div className="max-w-4xl mx-auto">
-        <div className="grid sm:grid-cols-2 gap-4 mb-8">
-          {[
-            t.eligibility.point1,
-            t.eligibility.point2,
-            t.eligibility.point3,
-            t.eligibility.point4,
-            t.eligibility.point5
-          ].map((point, idx) => (
-             <div key={idx} className="flex gap-3">
-               <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-               <p className="text-slate-700">{point}</p>
-             </div>
-          ))}
-        </div>
-      </div>
-    </Section>
-  );
-};
