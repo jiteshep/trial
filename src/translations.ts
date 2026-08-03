@@ -112,14 +112,71 @@ export const translations = {
       progressiveDesc: "Focusing on actual development subjects rather than partisan politics."
     },
     timeline: {
+      badge: "THE LEADERSHIP JOURNEY",
       title: "How the Initiative Works",
-      phase1: "Phase 1: Preparation",
-      phase1Desc: "Establishing constituency coordinators, trainers, and panchayat level volunteers. Developing training content, digital tools, and programme structure.",
-      phase2: "Phase 2: Identification",
-      phase2Desc: "Identifying suitable candidates for ward member, with a major focus on youth aged 21 to 35, women, community leaders, SHG members, student leaders, social workers, and those with a progressive, public service mindset.",
-      phase3: "Phase 3: Execution",
-      phase3Desc: "Delivering training modules on understanding the ward, Ward Sabha agendas, local manifestos, campaign planning, and providing guidance on nomination and candidature filing.",
-      disclaimer: "Final candidature and eligibility remain subject to applicable election laws, reservation rules, government notifications and official election procedures."
+      subtitle: "From election victory to measurable village transformation — empowering Ward Members at every step of their governance journey.",
+      phases: {
+        foundation: "Phase 1: Readiness & Onboarding",
+        empowerment: "Phase 2: Capacity & AI Intelligence",
+        action: "Phase 3: Execution & Impact"
+      },
+      steps: [
+        {
+          num: "01",
+          title: "Election",
+          sub: "Grassroots Mandate",
+          desc: "Democratically elected Ward Members take office with a mission to serve their village residents."
+        },
+        {
+          num: "02",
+          title: "Digital onboarding",
+          sub: "Platform Access",
+          desc: "Seamless digital registration and profile setup on the Namma Grama Nayaka portal."
+        },
+        {
+          num: "03",
+          title: "Leadership assessment",
+          sub: "Skill & Needs Mapping",
+          desc: "Evaluating key strengths, governance knowledge, and priority focus areas for localized growth."
+        },
+        {
+          num: "04",
+          title: "Learning modules",
+          sub: "Capacity Building",
+          desc: "Interactive self-paced training on 73rd Amendment duties, scheme execution, budgeting, and ethical leadership."
+        },
+        {
+          num: "05",
+          title: "Village diagnostics",
+          sub: "Data-Driven Mapping",
+          desc: "Ground-level audit of ward infrastructure, citizen amenities, water supply, sanitation, and social welfare gaps."
+        },
+        {
+          num: "06",
+          title: "AI governance assistant",
+          sub: "Intelligent Co-Pilot",
+          desc: "24/7 AI-powered advisor for instant scheme eligibility search, fund guidelines, and draft proposal generation."
+        },
+        {
+          num: "07",
+          title: "Gram Sabha planning",
+          sub: "Participatory Agendas",
+          desc: "Transforming citizen input into structured ward manifestos and prioritized action plans for Gram Sabha approval."
+        },
+        {
+          num: "08",
+          title: "Monitoring dashboards",
+          sub: "Progress & Transparency",
+          desc: "Real-time visual tracking of project milestones, fund utilization, and work resolution across the ward."
+        },
+        {
+          num: "09",
+          title: "Impact measurement",
+          sub: "Sustainable Governance",
+          desc: "Measuring tangible improvements in village quality of life, scheme coverage, and citizen satisfaction ratings."
+        }
+      ],
+      disclaimer: "Final candidature, official procedures and governance frameworks remain subject to applicable election laws and government notifications."
     },
     eligibility: {
       title: "Who Can Become a Ward Member",
@@ -329,14 +386,71 @@ export const translations = {
       progressiveDesc: "ಪಕ್ಷಪಾತಿ ರಾಜಕೀಯಕ್ಕಿಂತ ಅಭಿವೃದ್ಧಿ ವಿಷಯಗಳ ಮೇಲೆ ಗಮನಹರಿಸುವುದು."
     },
     timeline: {
+      badge: "ನಾಯಕತ್ವದ ಪಯಣ",
       title: "ಉಪಕ್ರಮವು ಹೇಗೆ ಕಾರ್ಯನಿರ್ವಹಿಸುತ್ತದೆ",
-      phase1: "ಹಂತ 1: ಸಿದ್ಧತೆ",
-      phase1Desc: "ಸಂಯೋಜಕರು, ತರಬೇತುದಾರರು ಮತ್ತು ಸ್ವಯಂಸೇವಕರನ್ನು ಸ್ಥಾಪಿಸುವುದು. ತರಬೇತಿ ವಿಷಯ ಮತ್ತು ಡಿಜಿಟಲ್ ಸಾಧನಗಳನ್ನು ಅಭಿವೃದ್ಧಿಪಡಿಸುವುದು.",
-      phase2: "ಹಂತ 2: ಗುರುತಿಸುವಿಕೆ",
-      phase2Desc: "ಯುವಕರು, ಮಹಿಳೆಯರು, ಸಮುದಾಯದ ಮುಖಂಡರು ಮತ್ತು ಸೇವಾ ಮನೋಭಾವವುಳ್ಳ ಸೂಕ್ತ ವಾರ್ಡ್ ಸದಸ್ಯ ಅಭ್ಯರ್ಥಿಗಳನ್ನು ಗುರುತಿಸುವುದು.",
-      phase3: "ಹಂತ 3: ಅನುಷ್ಠಾನ",
-      phase3Desc: "ವಾರ್ಡ್ ಸಭೆ, ಪ್ರಣಾಳಿಕೆ, ಪ್ರಚಾರ ಯೋಜನೆ ಮತ್ತು ನಾಮಪತ್ರ ಸಲ್ಲಿಕೆ ಕುರಿತು ತರಬೇತಿ ನೀಡುವುದು.",
-      disclaimer: "ಅಂತಿಮ ಉಮೇದುವಾರಿಕೆ ಮತ್ತು ಅರ್ಹತೆಯು ಅನ್ವಯವಾಗುವ ಚುನಾವಣಾ ಕಾನೂನುಗಳು ಮತ್ತು ಮೀಸಲಾತಿ ನಿಯಮಗಳಿಗೆ ಒಳಪಟ್ಟಿರುತ್ತದೆ."
+      subtitle: "ಚುನಾವಣೆಯ ಗೆಲುವಿನಿಂದ ಸುಸ್ಥಿರ ಗ್ರಾಮ ಬದಲಾವಣೆಯವರೆಗೆ — ಆಡಳಿತ ಪಯಣದ ಪ್ರತಿಯೊಂದು ಹಂತದಲ್ಲೂ ವಾರ್ಡ್ ಸದಸ್ಯರನ್ನು ಸಶಕ್ತಗೊಳಿಸುವುದು.",
+      phases: {
+        foundation: "ಹಂತ 1: ಬುನಾದಿ ಮತ್ತು ಆನ್‌ಬೋರ್ಡಿಂಗ್",
+        empowerment: "ಹಂತ 2: ಸಾಮರ್ಥ್ಯ ಮತ್ತು ಎಐ ತಂತ್ರಜ್ಞಾನ",
+        action: "ಹಂತ 3: ಅನುಷ್ಠಾನ ಮತ್ತು ಪರಿಣಾಮ"
+      },
+      steps: [
+        {
+          num: "01",
+          title: "ಚುನಾವಣೆ",
+          sub: "ಪ್ರಜಾಸತ್ತಾತ್ಮಕ ಜವಾಬ್ದಾರಿ",
+          desc: "ತಮ್ಮ ಗ್ರಾಮಕ್ಕೆ ಸೇವೆ ಸಲ್ಲಿಸಲು ಪ್ರಜಾಸತ್ತಾತ್ಮಕವಾಗಿ ಆಯ್ಕೆಯಾದ ವಾರ್ಡ್ ಸದಸ್ಯರು ಅಧಿಕಾರ ವಹಿಸಿಕೊಳ್ಳುತ್ತಾರೆ."
+        },
+        {
+          num: "02",
+          title: "ಡಿಜಿಟಲ್ ಆನ್‌ಬೋರ್ಡಿಂಗ್",
+          sub: "ಪ್ಲಾಟ್‌ಫಾರ್ಮ್ ಪ್ರವೇಶ",
+          desc: "ನಮ್ಮ ಗ್ರಾಮ ನಾಯಕ ಆಡಳಿತ ವೇದಿಕೆಯಲ್ಲಿ ಸುಲಭ ಡಿಜಿಟಲ್ ನೋಂದಣಿ ಮತ್ತು ಪ್ರೊಫೈಲ್ ಸ್ಥಾಪನೆ."
+        },
+        {
+          num: "03",
+          title: "ನಾಯಕತ್ವ ಮೌಲ್ಯಮಾಪನ",
+          sub: "ಸಾಮರ್ಥ್ಯ ನಕ್ಷೆ",
+          desc: "ಸ್ಥಳೀಯ ಆಡಳಿತ ಜ್ಞಾನ, ಆದ್ಯತೆಯ ಕ್ಷೇತ್ರಗಳು ಮತ್ತು ಪ್ರಮುಖ ಕೌಶಲ್ಯದ ಅಗತ್ಯತೆಗಳ ಆರಂಭಿಕ ಮೌಲ್ಯಮಾಪನ."
+        },
+        {
+          num: "04",
+          title: "ಕಲಿಕಾ ಮಾಡ್ಯೂಲ್‌ಗಳು",
+          sub: "ಸಾಮರ್ಥ್ಯ ವೃದ್ಧಿ",
+          desc: "73ನೇ ತಿದ್ದುಪಡಿಯ ಕರ್ತವ್ಯಗಳು, ಯೋಜನೆಗಳ ಅನುಷ್ಠಾನ ಮತ್ತು ಬಜೆಟ್ ನಿರ್ವಹಣೆಯ ಕುರಿತು ತರಬೇತಿ."
+        },
+        {
+          num: "05",
+          title: "ಗ್ರಾಮ ವಿಶ್ಲೇಷಣೆ",
+          sub: "ದತ್ತಾಂಶ ಆಧಾರಿತ ಪರಿಶೀಲನೆ",
+          desc: "ವಾರ್ಡ್‌ನ ಮೂಲಸೌಕರ್ಯ, ನಾಗರಿಕ ಸೌಲಭ್ಯಗಳು ಮತ್ತು ಸಂಪನ್ಮೂಲಗಳ ಮೂಲಮಟ್ಟದ ನಕ್ಷೆ ತಯಾರಿ."
+        },
+        {
+          num: "06",
+          title: "ಎಐ ಆಡಳಿತ ಸಹಾಯಕ",
+          sub: "ಬುದ್ಧಿವಂತ ಸಹನಾಯಕ",
+          desc: "ಸರ್ಕಾರಿ ಯೋಜನೆಗಳ ಮಾಹಿತಿ, ಮಾರ್ಗಸೂಚಿಗಳು ಮತ್ತು ಪ್ರಸ್ತಾವನೆಗಳ ಬೆಂಬಲಕ್ಕಾಗಿ 24/7 ಎಐ ಸಹಾಯಕ."
+        },
+        {
+          num: "07",
+          title: "ಗ್ರಾಮ ಸಭಾ ಯೋಜನೆ",
+          sub: "ಸಹಭಾಗಿತ್ವದ ಕಾರ್ಯಸೂಚಿ",
+          desc: "ನಾಗರಿಕರ ಅಭಿಪ್ರಾಯಗಳನ್ನು ರಚನಾತ್ಮಕ ವಾರ್ಡ್ ಯೋಜನೆಗಳಾಗಿ ರೂಪಿಸಿ ಗ್ರಾಮ ಸಭೆಯ ಅನುಮೋದನೆಗೆ ಸಲ್ಲಿಸುವುದು."
+        },
+        {
+          num: "08",
+          title: "ಮೇಲ್ವಿಚಾರಣಾ ಡ್ಯಾಶ್‌ಬೋರ್ಡ್‌ಗಳು",
+          sub: "ಪಾರದರ್ಶಕತೆ ಮತ್ತು ಪ್ರಗತಿ",
+          desc: "ಕಾಮಗಾರಿಗಳ ಪ್ರಗತಿ, ಯೋಜನೆಗಳ ಅನುಷ್ಠಾನ ಮತ್ತು ಅನುದಾನ ಬಳಕೆಯ ನೈಜ-ಸಮಯದ ದೃಶ್ಯ ಮೇಲ್ವಿಚಾರಣೆ."
+        },
+        {
+          num: "09",
+          title: "ಪರಿಣಾಮ ಮಾಪನ",
+          sub: "ಸುಸ್ಥಿರ ಆಡಳಿತ",
+          desc: "ಗ್ರಾಮದ ಜೀವನಮಟ್ಟದ ಸುಧಾರಣೆ, ಕಲ್ಯಾಣ ಯೋಜನೆಗಳ ತಲುಪುವಿಕೆ ಮತ್ತು ನಾಗರಿಕರ ತೃಪ್ತಿಯ ಅಳತೆ."
+        }
+      ],
+      disclaimer: "ಅಂತಿಮ ಉಮೇದುವಾರಿಕೆ ಮತ್ತು ಅಧಿಕೃತ ಪ್ರಕ್ರಿಯೆಗಳು ಅನ್ವಯವಾಗುವ ಚುನಾವಣಾ ಕಾನೂನುಗಳು ಮತ್ತು ಸರ್ಕಾರಿ ಸೂಚನೆಗಳಿಗೆ ಒಳಪಟ್ಟಿರುತ್ತವೆ."
     },
     eligibility: {
       title: "ಯಾರು ವಾರ್ಡ್ ಸದಸ್ಯರಾಗಬಹುದು?",

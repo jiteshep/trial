@@ -1,7 +1,10 @@
 import React from 'react';
 import { useLanguage } from '../LanguageContext';
 import { config } from '../config';
-import { CheckCircle, Users, Lightbulb, TrendingUp, HandHeart, Flag, Shield, Laptop, BookOpen, Clock, Target, Home, Phone, Mail, MapPin, Scroll, Layers, Building2, Coins, AlertCircle, Quote } from 'lucide-react';
+import { 
+  CheckCircle, Users, Lightbulb, TrendingUp, HandHeart, Flag, Shield, Laptop, BookOpen, Clock, Target, Home, Phone, Mail, MapPin, Scroll, Layers, Building2, Coins, AlertCircle, Quote,
+  Vote, UserCheck, Search, Sparkles, LayoutDashboard, Trophy, ArrowRight, ArrowDown, ChevronRight, Zap
+} from 'lucide-react';
 import { motion } from 'motion/react';
 
 // Common Section Wrapper
@@ -235,35 +238,246 @@ export const ObjectivesSection = () => {
   );
 };
 
-// TIMELINE
+// TIMELINE (HOW THE INITIATIVE WORKS - VISUAL LEADERSHIP JOURNEY)
 export const TimelineSection = () => {
   const { t } = useLanguage();
+  const [activeStep, setActiveStep] = React.useState<number | null>(null);
+
+  const stepIcons = [
+    <Vote className="w-6 h-6 text-amber-600" />,
+    <UserCheck className="w-6 h-6 text-amber-600" />,
+    <Target className="w-6 h-6 text-amber-600" />,
+    <BookOpen className="w-6 h-6 text-emerald-600" />,
+    <Search className="w-6 h-6 text-emerald-600" />,
+    <Sparkles className="w-6 h-6 text-emerald-600" />,
+    <Users className="w-6 h-6 text-blue-600" />,
+    <LayoutDashboard className="w-6 h-6 text-blue-600" />,
+    <Trophy className="w-6 h-6 text-blue-600" />,
+  ];
+
+  const phaseColors = [
+    {
+      badgeBg: 'bg-amber-100/80 text-amber-900 border-amber-200',
+      iconBg: 'bg-amber-500/10 text-amber-600 border-amber-200',
+      cardBorder: 'border-amber-200/70 hover:border-amber-400',
+      cardGlow: 'hover:shadow-amber-500/10',
+      dotBg: 'bg-amber-500',
+      phaseTitle: t.timeline.phases?.foundation || 'Phase 1: Readiness & Onboarding',
+      headerBg: 'from-amber-50/80 to-amber-100/40 text-amber-950 border-amber-200'
+    },
+    {
+      badgeBg: 'bg-emerald-100/80 text-emerald-900 border-emerald-200',
+      iconBg: 'bg-emerald-500/10 text-emerald-600 border-emerald-200',
+      cardBorder: 'border-emerald-200/70 hover:border-emerald-400',
+      cardGlow: 'hover:shadow-emerald-500/10',
+      dotBg: 'bg-emerald-500',
+      phaseTitle: t.timeline.phases?.empowerment || 'Phase 2: Capacity & AI Intelligence',
+      headerBg: 'from-emerald-50/80 to-emerald-100/40 text-emerald-950 border-emerald-200'
+    },
+    {
+      badgeBg: 'bg-blue-100/80 text-blue-900 border-blue-200',
+      iconBg: 'bg-blue-500/10 text-blue-600 border-blue-200',
+      cardBorder: 'border-blue-200/70 hover:border-blue-400',
+      cardGlow: 'hover:shadow-blue-500/10',
+      dotBg: 'bg-blue-500',
+      phaseTitle: t.timeline.phases?.action || 'Phase 3: Execution & Impact',
+      headerBg: 'from-blue-50/80 to-blue-100/40 text-blue-950 border-blue-200'
+    }
+  ];
+
+  const steps = t.timeline.steps || [];
+
   return (
-    <Section id="programme" className="bg-slate-50">
-      <SectionTitle title={t.timeline.title} />
-      <div className="max-w-3xl mx-auto relative">
-        <div className="absolute left-6 md:left-8 top-0 bottom-0 w-0.5 bg-green-200"></div>
-        {[
-          { phase: t.timeline.phase1, desc: t.timeline.phase1Desc, icon: <BookOpen className="w-5 h-5" /> },
-          { phase: t.timeline.phase2, desc: t.timeline.phase2Desc, icon: <Users className="w-5 h-5" /> },
-          { phase: t.timeline.phase3, desc: t.timeline.phase3Desc, icon: <Flag className="w-5 h-5" /> },
-        ].map((item, idx) => (
+    <Section id="programme" className="bg-gradient-to-b from-slate-50 via-white to-slate-50 overflow-hidden relative">
+      {/* Background Subtle Blur Accents */}
+      <div className="absolute top-1/4 left-0 w-96 h-96 bg-orange-200/20 rounded-full blur-3xl pointer-events-none"></div>
+      <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-emerald-200/20 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div className="relative z-10 max-w-7xl mx-auto">
+        {/* Section Header */}
+        <div className="text-center mb-12">
           <motion.div 
-            key={idx}
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: -10 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="relative pl-16 md:pl-20 py-6"
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange-100/80 border border-orange-200 text-orange-900 text-xs font-extrabold tracking-widest uppercase mb-4 shadow-xs"
           >
-            <div className="absolute left-2 md:left-4 top-6 w-9 h-9 rounded-full bg-green-600 text-white flex items-center justify-center border-4 border-slate-50 z-10">
-              {item.icon}
-            </div>
-            <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-100">
-              <h3 className="text-xl font-bold text-slate-900 mb-2">{item.phase}</h3>
-              <p className="text-slate-600 leading-relaxed">{item.desc}</p>
-            </div>
+            <Sparkles className="w-4 h-4 text-orange-600 animate-pulse" />
+            {t.timeline.badge || 'THE LEADERSHIP JOURNEY'}
           </motion.div>
-        ))}
+
+          <h2 className="text-3xl md:text-5xl font-black text-slate-900 tracking-tight mb-4">
+            {t.timeline.title}
+          </h2>
+
+          <p className="text-slate-600 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+            {t.timeline.subtitle}
+          </p>
+        </div>
+
+        {/* Horizontal Pipeline Trail (Visual Flow Indicator Bar) */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-14 p-4 md:p-6 rounded-2xl bg-slate-900 text-white shadow-xl border border-slate-800 overflow-x-auto scrollbar-none"
+        >
+          <div className="flex items-center justify-between min-w-[900px] gap-2">
+            {steps.map((st: { num: string; title: string }, idx: number) => {
+              const isSelected = activeStep === idx;
+              return (
+                <React.Fragment key={idx}>
+                  <button
+                    onClick={() => setActiveStep(isSelected ? null : idx)}
+                    className={`flex items-center gap-2 px-3 py-2 rounded-xl transition-all text-xs font-semibold shrink-0 cursor-pointer ${
+                      isSelected 
+                        ? 'bg-orange-500 text-white shadow-lg shadow-orange-500/30 scale-105' 
+                        : 'bg-slate-800/80 hover:bg-slate-700 text-slate-200 hover:text-white'
+                    }`}
+                  >
+                    <span className="w-5 h-5 rounded-full bg-white/10 flex items-center justify-center text-[10px] font-bold">
+                      {st.num}
+                    </span>
+                    <span>{st.title}</span>
+                  </button>
+                  {idx < steps.length - 1 && (
+                    <ArrowRight className="w-4 h-4 text-slate-600 shrink-0" />
+                  )}
+                </React.Fragment>
+              );
+            })}
+          </div>
+        </motion.div>
+
+        {/* 9-Step Visual Journey Cards */}
+        <div className="space-y-12">
+          {[0, 1, 2].map((phaseIdx) => {
+            const phaseInfo = phaseColors[phaseIdx];
+            const phaseSteps = steps.slice(phaseIdx * 3, phaseIdx * 3 + 3);
+
+            return (
+              <div key={phaseIdx} className="relative">
+                {/* Phase Title Ribbon */}
+                <div className="flex items-center gap-4 mb-6">
+                  <div className={`px-4 py-2 rounded-xl border text-sm font-extrabold tracking-wide uppercase shadow-sm bg-gradient-to-r ${phaseInfo.headerBg} flex items-center gap-2`}>
+                    <span className={`w-3 h-3 rounded-full ${phaseInfo.dotBg} animate-ping`}></span>
+                    {phaseInfo.phaseTitle}
+                  </div>
+                  <div className="flex-1 h-px bg-slate-200"></div>
+                </div>
+
+                {/* Grid of 3 Step Cards */}
+                <div className="grid md:grid-cols-3 gap-6 relative">
+                  {phaseSteps.map((step: { num: string; title: string; sub: string; desc: string }, itemIdx: number) => {
+                    const globalIdx = phaseIdx * 3 + itemIdx;
+                    const isLastInRow = itemIdx === 2;
+                    const isLastOverall = globalIdx === steps.length - 1;
+                    const isHighlighted = activeStep === globalIdx;
+
+                    return (
+                      <motion.div
+                        key={globalIdx}
+                        initial={{ opacity: 0, y: 25 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: itemIdx * 0.12 }}
+                        whileHover={{ y: -6 }}
+                        onMouseEnter={() => setActiveStep(globalIdx)}
+                        onMouseLeave={() => setActiveStep(null)}
+                        className={`relative p-6 rounded-2xl bg-white border transition-all duration-300 shadow-md ${phaseInfo.cardBorder} ${phaseInfo.cardGlow} ${
+                          isHighlighted ? 'ring-2 ring-orange-500 shadow-xl border-transparent -translate-y-1.5' : ''
+                        }`}
+                      >
+                        {/* Flow Arrow Badges */}
+                        {!isLastInRow && (
+                          <div className="hidden md:flex absolute -right-4 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white border border-slate-200 shadow-sm items-center justify-center z-20 text-slate-400">
+                            <ArrowRight className="w-4 h-4 text-slate-600" />
+                          </div>
+                        )}
+                        {isLastInRow && !isLastOverall && (
+                          <div className="hidden md:flex absolute -bottom-5 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-white border border-slate-200 shadow-sm items-center justify-center z-20 text-slate-400">
+                            <ArrowDown className="w-4 h-4 text-slate-600" />
+                          </div>
+                        )}
+
+                        {/* Top Card Row */}
+                        <div className="flex items-center justify-between mb-4">
+                          <span className={`px-3 py-1 rounded-full text-xs font-black tracking-wider uppercase border ${phaseInfo.badgeBg}`}>
+                            STEP {step.num}
+                          </span>
+                          <div className={`w-12 h-12 rounded-xl border flex items-center justify-center ${phaseInfo.iconBg} shadow-xs`}>
+                            {stepIcons[globalIdx % stepIcons.length]}
+                          </div>
+                        </div>
+
+                        {/* Subtitle tag */}
+                        <p className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">
+                          {step.sub}
+                        </p>
+
+                        {/* Title */}
+                        <h3 className="text-xl font-bold text-slate-900 mb-2 group-hover:text-orange-600 transition-colors">
+                          {step.title}
+                        </h3>
+
+                        {/* Description */}
+                        <p className="text-slate-600 text-sm leading-relaxed">
+                          {step.desc}
+                        </p>
+
+                        {/* Mobile Flow Arrow */}
+                        {!isLastOverall && (
+                          <div className="md:hidden flex justify-center mt-4 pt-2 border-t border-slate-100">
+                            <ArrowDown className="w-4 h-4 text-orange-500 animate-bounce" />
+                          </div>
+                        )}
+                      </motion.div>
+                    );
+                  })}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Leadership Journey Bottom Callout Banner */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.97 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          className="mt-16 p-8 rounded-3xl bg-gradient-to-r from-orange-600 via-amber-600 to-emerald-600 text-white shadow-2xl relative overflow-hidden text-center md:text-left flex flex-col md:flex-row items-center justify-between gap-6"
+        >
+          <div className="absolute top-0 right-0 -mt-10 -mr-10 w-48 h-48 bg-white/10 rounded-full blur-2xl pointer-events-none"></div>
+          
+          <div className="space-y-2 max-w-2xl relative z-10">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 text-white text-xs font-extrabold uppercase tracking-widest backdrop-blur-sm">
+              <Zap className="w-3.5 h-3.5" /> Empowering 58,000+ Ward Leaders
+            </div>
+            <h4 className="text-2xl md:text-3xl font-extrabold text-white">
+              A Continuous Cycle of Grassroots Transformation
+            </h4>
+            <p className="text-orange-100 text-sm md:text-base leading-relaxed">
+              By equipping Ward Members with AI co-pilots, diagnostic tools, and capacity modules, we turn grassroots governance into a driver of measurable community progress.
+            </p>
+          </div>
+
+          <div className="shrink-0 relative z-10">
+            <a
+              href="#apply"
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white text-orange-900 font-extrabold hover:bg-orange-50 transition-all shadow-lg hover:shadow-xl hover:scale-105 active:scale-95"
+            >
+              Start the Journey
+              <ChevronRight className="w-5 h-5 text-orange-600" />
+            </a>
+          </div>
+        </motion.div>
+
+        {/* Disclaimer */}
+        {t.timeline.disclaimer && (
+          <p className="mt-8 text-center text-xs text-slate-400 italic max-w-3xl mx-auto">
+            {t.timeline.disclaimer}
+          </p>
+        )}
       </div>
     </Section>
   );
