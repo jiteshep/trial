@@ -28,101 +28,137 @@ export const AboutSection = () => {
   const { t } = useLanguage();
   
   const highlightIcons = [
-    <BookOpen className="w-6 h-6 text-amber-600" />,
-    <Layers className="w-6 h-6 text-blue-600" />,
-    <Building2 className="w-6 h-6 text-rose-600" />,
-    <Coins className="w-6 h-6 text-emerald-600" />,
-    <Users className="w-6 h-6 text-purple-600" />,
+    <BookOpen className="w-5 h-5 text-amber-600 shrink-0" />,
+    <Layers className="w-5 h-5 text-blue-600 shrink-0" />,
+    <Building2 className="w-5 h-5 text-rose-600 shrink-0" />,
+    <Coins className="w-5 h-5 text-emerald-600 shrink-0" />,
+    <Users className="w-5 h-5 text-purple-600 shrink-0" />,
   ];
 
   return (
-    <Section id="about" className="bg-slate-50 relative overflow-hidden">
+    <Section id="about" className="bg-slate-50 relative overflow-hidden py-10 md:py-16">
       {/* Background Radial Glow */}
-      <div className="absolute top-0 right-1/4 w-96 h-96 bg-green-200/20 rounded-full blur-3xl pointer-events-none"></div>
+      <div className="absolute top-0 right-1/4 w-96 h-96 bg-emerald-200/20 rounded-full blur-3xl pointer-events-none"></div>
 
-      <SectionTitle title={t.about.title} />
-      
-      {/* Narrative Card */}
-      <motion.div 
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="max-w-4xl mx-auto mb-14 p-8 md:p-12 rounded-3xl bg-slate-900 text-white shadow-2xl relative overflow-hidden border border-slate-800"
-      >
-        <div className="absolute -top-12 -right-12 w-48 h-48 bg-gradient-to-br from-orange-500/20 to-emerald-500/20 rounded-full blur-3xl pointer-events-none"></div>
-        <Quote className="w-12 h-12 text-orange-500/50 mb-4" />
-        <p className="text-xl md:text-2xl lg:text-3xl font-serif leading-relaxed text-slate-100 italic relative z-10">
+      {/* Header: Title & Subtitle */}
+      <div className="max-w-4xl mx-auto text-center mb-8 md:mb-10">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight mb-3">
+          {t.about.title}
+        </h2>
+        <p className="text-base md:text-lg text-slate-700 max-w-3xl mx-auto leading-relaxed italic font-medium">
           "{t.about.narrative}"
         </p>
-      </motion.div>
+      </div>
+      
+      {/* Single Viewport Responsive Split Grid */}
+      <div className="grid lg:grid-cols-12 gap-6 items-stretch max-w-7xl mx-auto">
+        
+        {/* HERO CARD (HIGHEST PRIVILEGE): The Landscape of Local Governance (Bright Luminous Light Emerald Card) */}
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.98 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4 }}
+          className="lg:col-span-7 bg-gradient-to-br from-emerald-50 via-teal-50/40 to-amber-50/30 text-slate-900 p-7 md:p-9 rounded-3xl shadow-xl border-2 border-emerald-600/30 relative overflow-hidden flex flex-col justify-between group"
+        >
+          {/* Ambient Decorative Backdrops */}
+          <div className="absolute -top-20 -right-20 w-72 h-72 bg-emerald-400/15 rounded-full blur-3xl pointer-events-none"></div>
+          <div className="absolute -bottom-20 -left-20 w-72 h-72 bg-amber-400/15 rounded-full blur-3xl pointer-events-none"></div>
 
-      {/* Problem Highlights */}
-      <div className="mb-14">
-        <h3 className="text-2xl font-extrabold text-slate-900 mb-8 text-center">{t.about.highlightsTitle}</h3>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {t.about.highlights.map((item, idx) => (
-            <motion.div 
-              key={idx}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.08 }}
-              className="bg-white p-7 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group"
-            >
-              <div>
-                <div className="w-12 h-12 rounded-xl bg-slate-100/80 group-hover:bg-orange-50 flex items-center justify-center mb-5 transition-colors">
-                  {highlightIcons[idx % highlightIcons.length]}
-                </div>
-                <h4 className="text-lg font-bold text-slate-900 mb-2.5 group-hover:text-orange-600 transition-colors">{item.title}</h4>
-                <p className="text-slate-600 text-sm leading-relaxed">{item.desc}</p>
+          <div className="relative z-10">
+            <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
+              <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-black uppercase tracking-wider bg-emerald-700 text-white shadow-xs">
+                <Sparkles className="w-4 h-4 text-amber-300" /> Featured Pillar
+              </span>
+              <span className="text-xs text-emerald-900 font-bold bg-emerald-100/90 px-3 py-1 rounded-full border border-emerald-200">
+                Karnataka Governance Context
+              </span>
+            </div>
+
+            <h3 className="text-2xl md:text-3xl lg:text-4xl font-black text-slate-900 mb-3 tracking-tight">
+              {t.stats.title}
+            </h3>
+            <p className="text-sm md:text-base text-slate-700 mb-6 leading-relaxed max-w-xl font-medium">
+              Grassroots democracy in Karnataka functions across thousands of rural communities. Building institutional capacity at this scale is critical to grassroots transformation.
+            </p>
+
+            {/* Stats Grid with Clean Crisp White Cards & Vibrant Numbers */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3.5 md:gap-4">
+              <div className="bg-white/90 backdrop-blur-sm p-4 md:p-5 rounded-2xl border border-emerald-200/80 shadow-md hover:shadow-lg transition-all flex flex-col justify-between">
+                <p className="text-2xl md:text-3xl lg:text-4xl font-black text-slate-900">{config.STATS.PANCHAYATS}</p>
+                <p className="text-xs md:text-sm text-slate-700 mt-2 font-bold leading-snug">{t.stats.panchayats}</p>
               </div>
-            </motion.div>
-          ))}
 
-          {/* Landscape Stats Card in Grid */}
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="bg-gradient-to-br from-green-950 via-slate-900 to-slate-900 text-white p-7 rounded-2xl shadow-xl flex flex-col justify-between border border-green-800/40 relative overflow-hidden"
-          >
-            <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 rounded-full blur-2xl pointer-events-none"></div>
-            <div>
-              <h4 className="text-lg font-extrabold text-orange-400 mb-4 tracking-wide uppercase text-xs">{t.stats.title}</h4>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="bg-slate-800/60 p-3 rounded-xl border border-slate-700/50">
-                  <p className="text-2xl font-black bg-gradient-to-r from-white to-slate-200 bg-clip-text text-transparent">{config.STATS.PANCHAYATS}</p>
-                  <p className="text-xs text-slate-400 mt-1 font-medium">{t.stats.panchayats}</p>
-                </div>
-                <div className="bg-slate-800/60 p-3 rounded-xl border border-slate-700/50">
-                  <p className="text-2xl font-black bg-gradient-to-r from-green-400 to-emerald-300 bg-clip-text text-transparent">{config.STATS.WARDS}</p>
-                  <p className="text-xs text-slate-400 mt-1 font-medium">{t.stats.wards}</p>
-                </div>
-                <div className="bg-slate-800/60 p-3 rounded-xl border border-slate-700/50">
-                  <p className="text-2xl font-black bg-gradient-to-r from-orange-400 to-amber-300 bg-clip-text text-transparent">{config.STATS.RURAL_VOTERS}</p>
-                  <p className="text-xs text-slate-400 mt-1 font-medium">{t.stats.voters}</p>
-                </div>
-                <div className="bg-slate-800/60 p-3 rounded-xl border border-slate-700/50">
-                  <p className="text-2xl font-black bg-gradient-to-r from-blue-400 to-sky-300 bg-clip-text text-transparent">{config.STATS.RURAL_ACS}</p>
-                  <p className="text-xs text-slate-400 mt-1 font-medium">{t.stats.acs}</p>
-                </div>
+              <div className="bg-white/90 backdrop-blur-sm p-4 md:p-5 rounded-2xl border border-emerald-200/80 shadow-md hover:shadow-lg transition-all flex flex-col justify-between">
+                <p className="text-2xl md:text-3xl lg:text-4xl font-black text-emerald-700">{config.STATS.WARDS}</p>
+                <p className="text-xs md:text-sm text-slate-700 mt-2 font-bold leading-snug">{t.stats.wards}</p>
+              </div>
+
+              <div className="bg-white/90 backdrop-blur-sm p-4 md:p-5 rounded-2xl border border-amber-200/80 shadow-md hover:shadow-lg transition-all flex flex-col justify-between">
+                <p className="text-2xl md:text-3xl lg:text-4xl font-black text-orange-600">{config.STATS.RURAL_VOTERS}</p>
+                <p className="text-xs md:text-sm text-slate-700 mt-2 font-bold leading-snug">{t.stats.voters}</p>
+              </div>
+
+              <div className="bg-white/90 backdrop-blur-sm p-4 md:p-5 rounded-2xl border border-blue-200/80 shadow-md hover:shadow-lg transition-all flex flex-col justify-between">
+                <p className="text-2xl md:text-3xl lg:text-4xl font-black text-blue-700">{config.STATS.RURAL_ACS}</p>
+                <p className="text-xs md:text-sm text-slate-700 mt-2 font-bold leading-snug">{t.stats.acs}</p>
               </div>
             </div>
-          </motion.div>
-        </div>
-      </div>
+          </div>
 
-      {/* Transition Statement */}
-      <motion.div 
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="max-w-3xl mx-auto text-center bg-gradient-to-r from-orange-500/10 via-amber-500/10 to-orange-500/10 border-2 border-orange-200/80 p-7 rounded-2xl shadow-sm"
-      >
-        <p className="text-xl md:text-2xl font-black text-orange-950 tracking-tight">
-          ⚡ {t.about.transition}
-        </p>
-      </motion.div>
+          {/* High Visibility Transition Highlight Bar */}
+          <div className="relative z-10 mt-6 pt-4 border-t border-emerald-200/80 flex items-center justify-between">
+            <span className="flex items-center gap-2 text-sm md:text-base text-emerald-950 font-extrabold bg-white/80 px-4 py-2 rounded-xl border border-emerald-200 w-full shadow-2xs">
+              <Zap className="w-5 h-5 text-orange-500 shrink-0 fill-orange-500/20" />
+              <span>{t.about.transition}</span>
+            </span>
+          </div>
+        </motion.div>
+
+        {/* SECONDARY SIDE PANEL: Key Challenges (Clear High-Contrast Cards, No Clipping) */}
+        <motion.div 
+          initial={{ opacity: 0, x: 20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4, delay: 0.1 }}
+          className="lg:col-span-5 bg-white p-6 md:p-7 rounded-3xl border border-slate-200 shadow-xl flex flex-col justify-between"
+        >
+          <div>
+            <div className="flex items-center justify-between mb-4 pb-3 border-b border-slate-100">
+              <h4 className="text-xs font-black uppercase tracking-wider text-slate-700">{t.about.highlightsTitle}</h4>
+              <span className="text-xs font-extrabold text-orange-700 bg-orange-100 px-3 py-1 rounded-full border border-orange-200">Core Challenges</span>
+            </div>
+
+            <div className="space-y-3">
+              {t.about.highlights.map((item, idx) => (
+                <motion.div 
+                  key={idx}
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.06 }}
+                  className="p-3.5 rounded-2xl bg-slate-50 hover:bg-orange-50/70 border border-slate-200/80 hover:border-orange-300 transition-all flex items-center gap-3.5 group cursor-default shadow-xs"
+                >
+                  <div className="w-10 h-10 rounded-xl bg-white shadow-xs flex items-center justify-center shrink-0 border border-slate-200 group-hover:border-orange-300 transition-colors">
+                    {highlightIcons[idx % highlightIcons.length]}
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-sm font-extrabold text-slate-900 group-hover:text-orange-950 transition-colors leading-snug whitespace-normal break-words">
+                      {item.title}
+                    </p>
+                  </div>
+                  <ChevronRight className="w-4 h-4 text-slate-400 group-hover:text-orange-600 transition-colors shrink-0" />
+                </motion.div>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-4 pt-3 border-t border-slate-100 text-center">
+            <p className="text-xs text-slate-500 font-bold">Addressing grassroots structural bottlenecks with AI & Capacity Support</p>
+          </div>
+        </motion.div>
+
+      </div>
     </Section>
   );
 };
@@ -327,7 +363,7 @@ export const TimelineSection = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-14 p-4 md:p-6 rounded-2xl bg-slate-900 text-white shadow-xl border border-slate-800 overflow-x-auto scrollbar-none"
+          className="mb-14 p-4 md:p-6 rounded-2xl bg-white text-slate-900 shadow-md border border-slate-200 overflow-x-auto scrollbar-none"
         >
           <div className="flex items-center justify-between min-w-[900px] gap-2">
             {steps.map((st: { num: string; title: string }, idx: number) => {
@@ -336,19 +372,21 @@ export const TimelineSection = () => {
                 <React.Fragment key={idx}>
                   <button
                     onClick={() => setActiveStep(isSelected ? null : idx)}
-                    className={`flex items-center gap-2 px-3 py-2 rounded-xl transition-all text-xs font-semibold shrink-0 cursor-pointer ${
+                    className={`flex items-center gap-2 px-3.5 py-2 rounded-xl transition-all text-xs font-bold shrink-0 cursor-pointer ${
                       isSelected 
-                        ? 'bg-orange-500 text-white shadow-lg shadow-orange-500/30 scale-105' 
-                        : 'bg-slate-800/80 hover:bg-slate-700 text-slate-200 hover:text-white'
+                        ? 'bg-emerald-700 text-white shadow-md shadow-emerald-700/20 scale-105' 
+                        : 'bg-slate-100 hover:bg-emerald-50 text-slate-700 hover:text-emerald-800 border border-slate-200/60'
                     }`}
                   >
-                    <span className="w-5 h-5 rounded-full bg-white/10 flex items-center justify-center text-[10px] font-bold">
+                    <span className={`w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-black ${
+                      isSelected ? 'bg-white/20 text-white' : 'bg-slate-200 text-slate-700'
+                    }`}>
                       {st.num}
                     </span>
                     <span>{st.title}</span>
                   </button>
                   {idx < steps.length - 1 && (
-                    <ArrowRight className="w-4 h-4 text-slate-600 shrink-0" />
+                    <ArrowRight className="w-4 h-4 text-slate-300 shrink-0" />
                   )}
                 </React.Fragment>
               );

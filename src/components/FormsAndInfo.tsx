@@ -22,16 +22,16 @@ export const ApplySection = () => {
         <div className="bg-white rounded-3xl overflow-hidden shadow-2xl border border-slate-100 text-slate-900 transition-all duration-300">
           
           {/* Form Header Bar / Toolbar */}
-          <div className="px-6 py-4 bg-slate-900 text-white flex flex-wrap items-center justify-between gap-3 border-b border-slate-800">
-            <div className="flex items-center gap-2 text-xs md:text-sm font-medium text-emerald-400">
-              <ShieldCheck className="w-4 h-4 text-emerald-400" />
+          <div className="px-6 py-4 bg-gradient-to-r from-emerald-800 via-green-800 to-emerald-900 text-white flex flex-wrap items-center justify-between gap-3 border-b border-emerald-700">
+            <div className="flex items-center gap-2 text-xs md:text-sm font-medium text-emerald-200">
+              <ShieldCheck className="w-4 h-4 text-emerald-300" />
               <span>{t.apply.privacy}</span>
             </div>
             
             <div className="flex items-center gap-3">
               <button
                 onClick={() => setIsModalOpen(true)}
-                className="flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white transition-colors"
+                className="flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-lg bg-emerald-900/60 hover:bg-emerald-900 text-emerald-100 border border-emerald-600/60 transition-colors"
                 title="Expand Form"
               >
                 <Maximize2 className="w-3.5 h-3.5" />
@@ -88,7 +88,7 @@ export const ApplySection = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/80 backdrop-blur-md"
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-emerald-950/60 backdrop-blur-md"
           >
             <motion.div 
               initial={{ scale: 0.95, opacity: 0 }}
@@ -96,14 +96,14 @@ export const ApplySection = () => {
               exit={{ scale: 0.95, opacity: 0 }}
               className="bg-white w-full max-w-4xl h-[90vh] rounded-2xl overflow-hidden shadow-2xl flex flex-col"
             >
-              <div className="p-4 bg-slate-900 text-white flex justify-between items-center">
+              <div className="p-4 bg-emerald-900 text-white flex justify-between items-center">
                 <div className="flex items-center gap-2">
-                  <ShieldCheck className="w-5 h-5 text-emerald-400" />
+                  <ShieldCheck className="w-5 h-5 text-emerald-300" />
                   <span className="font-semibold text-sm">{t.apply.title}</span>
                 </div>
                 <button 
                   onClick={() => setIsModalOpen(false)}
-                  className="p-1 rounded-full hover:bg-slate-800 text-slate-400 hover:text-white transition-colors"
+                  className="p-1 rounded-full hover:bg-emerald-800 text-emerald-200 hover:text-white transition-colors"
                 >
                   <X className="w-6 h-6" />
                 </button>

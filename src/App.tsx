@@ -39,10 +39,10 @@ const ImpactSection = () => {
               <p className="text-3xl font-black bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">{config.STATS.TARGET_WOMEN_CANDIDATES}</p>
               <p className="text-xs font-bold uppercase tracking-wider text-slate-500 mt-1">Women Leaders</p>
             </div>
-            <div className="p-5 rounded-2xl bg-slate-900 text-white border border-slate-800 col-span-2 shadow-xl hover:-translate-y-1 transition-all relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-green-500/10 rounded-full blur-2xl pointer-events-none"></div>
+            <div className="p-5 rounded-2xl bg-gradient-to-r from-emerald-700 to-green-700 text-white border border-emerald-600 col-span-2 shadow-lg hover:-translate-y-1 transition-all relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl pointer-events-none"></div>
               <p className="text-3xl font-black text-white">{config.STATS.PANCHAYATS}</p>
-              <p className="text-xs font-bold uppercase tracking-widest text-slate-400 mt-1">Grama Panchayats Supported</p>
+              <p className="text-xs font-bold uppercase tracking-widest text-emerald-100 mt-1">Grama Panchayats Supported</p>
             </div>
           </div>
         </div>
