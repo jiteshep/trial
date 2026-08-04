@@ -515,7 +515,7 @@ export const TimelineSection = () => {
           initial={{ opacity: 0, scale: 0.97 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="mt-16 p-8 rounded-3xl bg-gradient-to-r from-orange-600 via-amber-600 to-emerald-600 text-white shadow-2xl relative overflow-hidden text-center md:text-left flex flex-col md:flex-row items-center justify-between gap-6"
+          className="mt-16 p-8 rounded-3xl bg-gradient-to-r from-emerald-900 via-emerald-800 to-teal-700 text-white shadow-2xl relative overflow-hidden text-center md:text-left flex flex-col md:flex-row items-center justify-between gap-6"
         >
           <div className="absolute top-0 right-0 -mt-10 -mr-10 w-48 h-48 bg-white/10 rounded-full blur-2xl pointer-events-none"></div>
           
@@ -526,7 +526,7 @@ export const TimelineSection = () => {
             <h4 className="text-2xl md:text-3xl font-extrabold text-white">
               {t.timeline.callout?.title || "A Continuous Cycle of Grassroots Transformation"}
             </h4>
-            <p className="text-orange-100 text-sm md:text-base leading-relaxed">
+            <p className="text-emerald-100 text-sm md:text-base leading-relaxed">
               {t.timeline.callout?.desc || "By equipping Ward Members with AI co-pilots, diagnostic tools, and capacity modules, we turn grassroots governance into a driver of measurable community progress."}
             </p>
           </div>
@@ -534,10 +534,10 @@ export const TimelineSection = () => {
           <div className="shrink-0 relative z-10">
             <a
               href="#apply"
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white text-orange-900 font-extrabold hover:bg-orange-50 transition-all shadow-lg hover:shadow-xl hover:scale-105 active:scale-95"
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white text-emerald-950 font-extrabold hover:bg-emerald-50 transition-all shadow-lg hover:shadow-xl hover:scale-105 active:scale-95"
             >
               {t.timeline.callout?.cta || "Start the Journey"}
-              <ChevronRight className="w-5 h-5 text-orange-600" />
+              <ChevronRight className="w-5 h-5 text-emerald-700" />
             </a>
           </div>
         </motion.div>
