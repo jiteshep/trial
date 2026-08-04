@@ -176,7 +176,13 @@ export const translations = {
           desc: "Measuring tangible improvements in village quality of life, scheme coverage, and citizen satisfaction ratings."
         }
       ],
-      disclaimer: "Final candidature, official procedures and governance frameworks remain subject to applicable election laws and government notifications."
+      disclaimer: "Final candidature, official procedures and governance frameworks remain subject to applicable election laws and government notifications.",
+      callout: {
+        badge: "Empowering 58,000+ Ward Leaders",
+        title: "A Continuous Cycle of Grassroots Transformation",
+        desc: "By equipping Ward Members with AI co-pilots, diagnostic tools, and capacity modules, we turn grassroots governance into a driver of measurable community progress.",
+        cta: "Start the Journey"
+      }
     },
     eligibility: {
       title: "Who Can Become a Ward Member",
@@ -465,7 +471,13 @@ export const translations = {
           desc: "ಗ್ರಾಮದ ಜೀವನಮಟ್ಟದ ಸುಧಾರಣೆ, ಕಲ್ಯಾಣ ಯೋಜನೆಗಳ ತಲುಪುವಿಕೆ ಮತ್ತು ನಾಗರಿಕರ ತೃಪ್ತಿಯ ಅಳತೆ."
         }
       ],
-      disclaimer: "ಅಂತಿಮ ಉಮೇದುವಾರಿಕೆ ಮತ್ತು ಅಧಿಕೃತ ಪ್ರಕ್ರಿಯೆಗಳು ಅನ್ವಯವಾಗುವ ಚುನಾವಣಾ ಕಾನೂನುಗಳು ಮತ್ತು ಸರ್ಕಾರಿ ಸೂಚನೆಗಳಿಗೆ ಒಳಪಟ್ಟಿರುತ್ತವೆ."
+      disclaimer: "ಅಂತಿಮ ಉಮೇದುವಾರಿಕೆ ಮತ್ತು ಅಧಿಕೃತ ಪ್ರಕ್ರಿಯೆಗಳು ಅನ್ವಯವಾಗುವ ಚುನಾವಣಾ ಕಾನೂನುಗಳು ಮತ್ತು ಸರ್ಕಾರಿ ಸೂಚನೆಗಳಿಗೆ ಒಳಪಟ್ಟಿರುತ್ತವೆ.",
+      callout: {
+        badge: "58,000+ ವಾರ್ಡ್ ನಾಯಕರ ಸಬಲೀಕರಣ",
+        title: "ತಳಮಟ್ಟದ ಪರಿವರ್ತನೆಯ ನಿರಂತರ ಚಕ್ರ",
+        desc: "ವಾರ್ಡ್ ಸದಸ್ಯರಿಗೆ ಎಐ (AI) ಸಹನಾಯಕರು, ವಿಶ್ಲೇಷಣಾತ್ಮಕ ಉಪಕರಣಗಳು ಮತ್ತು ಸಾಮರ್ಥ್ಯ ವೃದ್ಧಿ ಮಾಡ್ಯೂಲ್‌ಗಳನ್ನು ಒದಗಿಸುವ ಮೂಲಕ, ನಾವು ತಳಮಟ್ಟದ ಆಡಳಿತವನ್ನು ಅಳೆಯಬಹುದಾದ ಸಮುದಾಯದ ಪ್ರಗತಿಯ ಚಾಲಕ ಶಕ್ತಿಯನ್ನಾಗಿ ಪರಿವರ್ತಿಸುತ್ತೇವೆ.",
+        cta: "ಪಯಣವನ್ನು ಪ್ರಾರಂಭಿಸಿ"
+      }
     },
     eligibility: {
       title: "ಯಾರು ವಾರ್ಡ್ ಸದಸ್ಯರಾಗಬಹುದು?",

@@ -521,13 +521,13 @@ export const TimelineSection = () => {
           
           <div className="space-y-2 max-w-2xl relative z-10">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 text-white text-xs font-extrabold uppercase tracking-widest backdrop-blur-sm">
-              <Zap className="w-3.5 h-3.5" /> Empowering 58,000+ Ward Leaders
+              <Zap className="w-3.5 h-3.5" /> {t.timeline.callout?.badge || "Empowering 58,000+ Ward Leaders"}
             </div>
             <h4 className="text-2xl md:text-3xl font-extrabold text-white">
-              A Continuous Cycle of Grassroots Transformation
+              {t.timeline.callout?.title || "A Continuous Cycle of Grassroots Transformation"}
             </h4>
             <p className="text-orange-100 text-sm md:text-base leading-relaxed">
-              By equipping Ward Members with AI co-pilots, diagnostic tools, and capacity modules, we turn grassroots governance into a driver of measurable community progress.
+              {t.timeline.callout?.desc || "By equipping Ward Members with AI co-pilots, diagnostic tools, and capacity modules, we turn grassroots governance into a driver of measurable community progress."}
             </p>
           </div>
 
@@ -536,7 +536,7 @@ export const TimelineSection = () => {
               href="#apply"
               className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white text-orange-900 font-extrabold hover:bg-orange-50 transition-all shadow-lg hover:shadow-xl hover:scale-105 active:scale-95"
             >
-              Start the Journey
+              {t.timeline.callout?.cta || "Start the Journey"}
               <ChevronRight className="w-5 h-5 text-orange-600" />
             </a>
           </div>
